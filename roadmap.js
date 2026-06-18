@@ -1,14 +1,17 @@
-// Solar Sense Pro - Landing Page with Improved UX
-// Simplified interactions focused on clarity and information accessibility
+// Solar Sense Pro - Landing Page Minimal & Elegant
+// Simplified interactions focused on clarity and elegance
 
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize components
-  initCountdownTimer();
+  initSimpleCountdown();
   generateRoadmapTimeline();
   initMobileToggle();
 
-  // 1. COUNTDOWN TIMER
-  function initCountdownTimer() {
+  // 1. SIMPLE COUNTDOWN (text-based)
+  function initSimpleCountdown() {
+    const countdownElement = document.getElementById('countdown-simple');
+    if (!countdownElement) return;
+    
     const launchDate = new Date('2026-07-01T00:00:00');
     
     function updateCountdown() {
@@ -16,29 +19,26 @@ document.addEventListener('DOMContentLoaded', () => {
       const diff = launchDate - now;
 
       if (diff <= 0) {
-        document.getElementById('countdown-days').textContent = '0';
-        document.getElementById('countdown-hours').textContent = '0';
-        document.getElementById('countdown-minutes').textContent = '0';
-        document.getElementById('countdown-seconds').textContent = '0';
+        countdownElement.textContent = 'launching now';
         return;
       }
 
       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
       const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-      document.getElementById('countdown-days').textContent = days;
-      document.getElementById('countdown-hours').textContent = String(hours).padStart(2, '0');
-      document.getElementById('countdown-minutes').textContent = String(minutes).padStart(2, '0');
-      document.getElementById('countdown-seconds').textContent = String(seconds).padStart(2, '0');
+      
+      if (days > 0) {
+        countdownElement.textContent = `${days} ${days === 1 ? 'day' : 'days'}, ${hours} ${hours === 1 ? 'hour' : 'hours'}`;
+      } else {
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        countdownElement.textContent = `${hours} ${hours === 1 ? 'hour' : 'hours'}, ${minutes} ${minutes === 1 ? 'minute' : 'minutes'}`;
+      }
     }
 
     updateCountdown();
-    setInterval(updateCountdown, 1000);
+    setInterval(updateCountdown, 60000); // Update every minute (less aggressive)
   }
 
-  // 2. GENERATE ROADMAP TIMELINE (At-a-Glance)
+  // 2. GENERATE ROADMAP TIMELINE (Simple Phase Cards)
   function generateRoadmapTimeline() {
     const container = document.getElementById('roadmap-timeline');
     if (!container || !executionPlan.roadmapPhases) return;
@@ -84,12 +84,4 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   }
-
-  // 4. SMOOTH SCROLL TO DASHBOARD
-  const dashboardLinks = document.querySelectorAll('a[href="execution.html"]');
-  dashboardLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      // Optional: Add analytics or pre-loading logic here
-    });
-  });
 });
