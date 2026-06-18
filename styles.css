@@ -1752,7 +1752,7 @@ a:hover {
 /* Floating Logo Animation */
 .floating-logo {
     position: absolute;
-    top: 120px;
+    top: 60px;
     left: 50%;
     transform: translateX(-50%);
     width: clamp(47px, 6.67vw, 67px);
@@ -1872,20 +1872,20 @@ a:hover {
 .roadmap-timeline {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--space-6);
+    gap: var(--space-8);
 }
 
 @media (min-width: 768px) {
     .roadmap-timeline {
         grid-template-columns: repeat(2, 1fr);
-        gap: var(--space-7);
+        gap: var(--space-9);
     }
 }
 
 @media (min-width: 1024px) {
     .roadmap-timeline {
         grid-template-columns: repeat(3, 1fr);
-        gap: var(--space-8);
+        gap: clamp(var(--space-9), 3vw, var(--space-10));
     }
 }
 
