@@ -1936,13 +1936,14 @@ a:hover {
     background: rgba(24, 24, 31, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 16px;
-    padding: var(--space-6);
+    padding: var(--space-7);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     cursor: pointer;
     overflow: hidden;
     animation: floatIdle 6s ease-in-out infinite;
     will-change: transform;
+    text-align: center;
 }
 
 .phase-card::before {
@@ -2114,8 +2115,9 @@ a:hover {
 .phase-header {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: var(--space-4);
-    margin-bottom: var(--space-4);
+    margin-bottom: var(--space-5);
 }
 
 .phase-number {
@@ -2145,7 +2147,7 @@ a:hover {
     font-size: var(--font-size-xs);
     font-weight: 600;
     color: var(--gold);
-    margin-bottom: var(--space-4);
+    margin-bottom: var(--space-5);
     text-transform: uppercase;
     letter-spacing: 0.08em;
     opacity: 0.8;
@@ -2155,7 +2157,7 @@ a:hover {
     font-size: var(--font-size-sm);
     line-height: 1.8;
     color: var(--text-secondary);
-    margin-bottom: var(--space-5);
+    margin-bottom: var(--space-6);
 }
 
 .phase-outcome {
@@ -2163,7 +2165,7 @@ a:hover {
     background: transparent;
     border: none;
     border-radius: 0;
-    margin-top: var(--space-4);
+    margin-top: var(--space-5);
 }
 
 .phase-outcome-label {
@@ -2173,13 +2175,13 @@ a:hover {
     text-transform: uppercase;
     letter-spacing: 0.08em;
     display: block;
-    margin-bottom: var(--space-3);
+    margin-bottom: var(--space-4);
 }
 
 .phase-outcome-text {
     font-size: var(--font-size-sm);
     color: var(--text-primary);
-    line-height: 1.7;
+    line-height: 1.8;
 }
 
 /* Expanded Card Content */
