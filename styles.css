@@ -2687,3 +2687,56 @@ a:hover {
     background-color: #6b7280;
     color: white;
 }
+
+/* ====================================
+   Floating Back Button
+   ==================================== */
+
+.floating-back-btn {
+    position: fixed;
+    top: 80px;
+    left: 24px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: rgba(24, 24, 31, 0.8);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(196, 163, 90, 0.2);
+    border-radius: 24px;
+    color: var(--gold);
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.floating-back-btn:hover {
+    background: rgba(24, 24, 31, 0.95);
+    border-color: var(--gold);
+    transform: translateX(-4px);
+    box-shadow: 0 4px 12px rgba(196, 163, 90, 0.2);
+}
+
+.floating-back-btn svg {
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .floating-back-btn {
+        top: 70px;
+        left: 16px;
+        padding: 10px 16px;
+        font-size: 0.8125rem;
+    }
+    
+    .floating-back-btn span {
+        display: none;
+    }
+    
+    .floating-back-btn:hover {
+        transform: translateX(-2px);
+    }
+}
