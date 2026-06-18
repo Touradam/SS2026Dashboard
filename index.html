@@ -35,134 +35,169 @@
     </header>
 
     <main class="main">
-        <!-- Hero Section -->
+        <!-- Hero Section - Clear Value Proposition -->
         <section class="hero-section">
-            <div class="container">
-                <div class="hero-logo-container">
-                    <img src="assets/logo.svg" alt="Solar Sense Pro" class="hero-logo">
-                </div>
-                <span class="hero-eyebrow">Internal Strategy Memo</span>
-                <h1 class="hero-title">China Launch Execution Plan</h1>
-                <p class="hero-subtitle">Plug and Play Cross-Border Acceleration Camp - Nantong Summer Cohort</p>
-                
-                <!-- Countdown Timer -->
-                <div class="countdown-timer" id="countdown-timer">
-                    <div class="countdown-unit">
-                        <div class="countdown-value" id="countdown-days">—</div>
-                        <div class="countdown-label">Days</div>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="hero-logo-badge">
+                        <img src="assets/logo.svg" alt="Solar Sense Pro" class="hero-logo">
                     </div>
-                    <div class="countdown-unit">
-                        <div class="countdown-value" id="countdown-hours">—</div>
-                        <div class="countdown-label">Hours</div>
+                    <span class="hero-eyebrow">Solar Sense Pro</span>
+                    <h1 class="hero-title">China Market Entry</h1>
+                    <p class="hero-mission">Transform solar monitoring technology into a validated commercial product through Plug and Play's Nantong accelerator program</p>
+                    
+                    <div class="hero-timeline">
+                        <div class="timeline-item">
+                            <span class="timeline-label">Launch</span>
+                            <span class="timeline-value">July 1, 2026</span>
+                        </div>
+                        <div class="timeline-divider">→</div>
+                        <div class="timeline-item">
+                            <span class="timeline-label">Completion</span>
+                            <span class="timeline-value">December 31, 2026</span>
+                        </div>
                     </div>
-                    <div class="countdown-unit">
-                        <div class="countdown-value" id="countdown-minutes">—</div>
-                        <div class="countdown-label">Minutes</div>
-                    </div>
-                    <div class="countdown-unit">
-                        <div class="countdown-value" id="countdown-seconds">—</div>
-                        <div class="countdown-label">Seconds</div>
-                    </div>
-                </div>
-                <p class="countdown-caption">Until Launch: July 1, 2026</p>
 
-                <!-- Quick Stats Pills -->
-                <div class="hero-stats">
-                    <div class="hero-stat-pill">
-                        <span class="hero-stat-value">26</span>
-                        <span class="hero-stat-label">Weeks</span>
+                    <div class="hero-cta">
+                        <a href="execution.html" class="btn btn-primary btn-lg">View Execution Dashboard</a>
                     </div>
-                    <div class="hero-stat-pill">
-                        <span class="hero-stat-value">6</span>
-                        <span class="hero-stat-label">Phases</span>
+                </div>
+
+                <!-- Countdown Card -->
+                <div class="countdown-card">
+                    <div class="countdown-card-header">
+                        <span class="countdown-label">Time to Launch</span>
                     </div>
-                    <div class="hero-stat-pill">
-                        <span class="hero-stat-value">1,070</span>
-                        <span class="hero-stat-label">Team Hours</span>
+                    <div class="countdown-timer" id="countdown-timer">
+                        <div class="countdown-unit">
+                            <div class="countdown-value" id="countdown-days">—</div>
+                            <div class="countdown-label">Days</div>
+                        </div>
+                        <div class="countdown-unit">
+                            <div class="countdown-value" id="countdown-hours">—</div>
+                            <div class="countdown-label">Hours</div>
+                        </div>
+                        <div class="countdown-unit">
+                            <div class="countdown-value" id="countdown-minutes">—</div>
+                            <div class="countdown-label">Min</div>
+                        </div>
+                        <div class="countdown-unit">
+                            <div class="countdown-value" id="countdown-seconds">—</div>
+                            <div class="countdown-label">Sec</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Phase Navigation -->
-        <section class="phase-nav-section">
+        <!-- Execution Roadmap - At-a-Glance -->
+        <section class="roadmap-overview-section">
             <div class="container">
-                <h2 class="phase-nav-title">6-Month Execution Roadmap</h2>
-                <div class="phase-nav-pills" role="tablist" aria-label="Monthly phases">
-                    <button class="phase-nav-pill" data-phase="1" role="tab" aria-selected="false" tabindex="-1">
-                        <span class="phase-pill-month">July</span>
-                        <span class="phase-pill-label">Pipeline Seeding</span>
-                    </button>
-                    <button class="phase-nav-pill" data-phase="2" role="tab" aria-selected="false" tabindex="-1">
-                        <span class="phase-pill-month">August</span>
-                        <span class="phase-pill-label">Audits & Commitments</span>
-                    </button>
-                    <button class="phase-nav-pill" data-phase="3" role="tab" aria-selected="false" tabindex="-1">
-                        <span class="phase-pill-month">September</span>
-                        <span class="phase-pill-label">Production Kickoff</span>
-                    </button>
-                    <button class="phase-nav-pill" data-phase="4" role="tab" aria-selected="false" tabindex="-1">
-                        <span class="phase-pill-month">October</span>
-                        <span class="phase-pill-label">Hardware Validation</span>
-                    </button>
-                    <button class="phase-nav-pill" data-phase="5" role="tab" aria-selected="false" tabindex="-1">
-                        <span class="phase-pill-month">November</span>
-                        <span class="phase-pill-label">Field Deployment</span>
-                    </button>
-                    <button class="phase-nav-pill" data-phase="6" role="tab" aria-selected="false" tabindex="-1">
-                        <span class="phase-pill-month">December</span>
-                        <span class="phase-pill-label">Scale & Graduation</span>
-                    </button>
+                <div class="section-header">
+                    <h2 class="section-title">6-Phase Execution Roadmap</h2>
+                    <p class="section-subtitle">26 weeks from pipeline seeding to market validation</p>
+                </div>
+
+                <div class="roadmap-timeline" id="roadmap-timeline">
+                    <!-- Phases will be dynamically generated here -->
                 </div>
             </div>
         </section>
 
-        <!-- SVG Roadmap (Desktop Only) -->
-        <section class="roadmap-svg-section desktop-only">
+        <!-- Success Metrics -->
+        <section class="metrics-section">
             <div class="container">
-                <div class="roadmap-svg-container">
-                    <img src="assets/roadmap.svg" alt="6-month execution roadmap" class="roadmap-svg">
-                    <!-- Hotspot overlays will be added by JavaScript -->
-                    <div class="roadmap-hotspot" data-phase="1" style="left: 3.75%; top: 27.8%; width: 13.75%; height: 44.4%;" 
-                         role="button" tabindex="0" aria-label="View July phase details"></div>
-                    <div class="roadmap-hotspot" data-phase="2" style="left: 19.375%; top: 27.8%; width: 13.75%; height: 44.4%;" 
-                         role="button" tabindex="0" aria-label="View August phase details"></div>
-                    <div class="roadmap-hotspot" data-phase="3" style="left: 35%; top: 27.8%; width: 13.75%; height: 44.4%;" 
-                         role="button" tabindex="0" aria-label="View September phase details"></div>
-                    <div class="roadmap-hotspot" data-phase="4" style="left: 50.625%; top: 27.8%; width: 13.75%; height: 44.4%;" 
-                         role="button" tabindex="0" aria-label="View October phase details"></div>
-                    <div class="roadmap-hotspot" data-phase="5" style="left: 66.25%; top: 27.8%; width: 13.75%; height: 44.4%;" 
-                         role="button" tabindex="0" aria-label="View November phase details"></div>
-                    <div class="roadmap-hotspot" data-phase="6" style="left: 81.875%; top: 27.8%; width: 13.75%; height: 44.4%;" 
-                         role="button" tabindex="0" aria-label="View December phase details"></div>
+                <div class="section-header">
+                    <h2 class="section-title">Success Criteria</h2>
+                    <p class="section-subtitle">Critical milestones for market entry validation</p>
                 </div>
-            </div>
-        </section>
 
-        <!-- Monthly Flip Cards -->
-        <section class="flip-cards-section">
-            <div class="container">
-                <div class="flip-cards-grid" id="flip-cards-grid">
-                    <!-- Flip cards will be dynamically generated here -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Quick Info Bar -->
-        <section class="quick-info-section">
-            <div class="container">
-                <div class="quick-info-bar">
-                    <div class="quick-info-item">
-                        <span class="quick-info-label">Timeline</span>
-                        <span class="quick-info-value">July - December 2026</span>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-icon">🎯</div>
+                        <div class="metric-content">
+                            <h3 class="metric-title">Pilot Deployment</h3>
+                            <p class="metric-description">Live installation with 21+ days of continuous telemetry data</p>
+                            <div class="metric-target">
+                                <span class="target-label">Target:</span>
+                                <span class="target-value">November 2026</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="quick-info-item">
-                        <span class="quick-info-label">Duration</span>
-                        <span class="quick-info-value">26 Weeks | 6 Months</span>
+
+                    <div class="metric-card">
+                        <div class="metric-icon">🏭</div>
+                        <div class="metric-content">
+                            <h3 class="metric-title">Manufacturing Partner</h3>
+                            <p class="metric-description">Validated EMS partner with 3 pricing tiers (10-50, 100-500, 1000+ units)</p>
+                            <div class="metric-target">
+                                <span class="target-label">Target:</span>
+                                <span class="target-value">September 2026</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="quick-info-item">
-                        <span class="quick-info-label">Team</span>
-                        <span class="quick-info-value">Adama (On-site) + Jordan (Remote)</span>
+
+                    <div class="metric-card">
+                        <div class="metric-icon">📈</div>
+                        <div class="metric-content">
+                            <h3 class="metric-title">Pipeline Expansion</h3>
+                            <p class="metric-description">2 additional Q1 2027 pilot agreements secured</p>
+                            <div class="metric-target">
+                                <span class="target-label">Target:</span>
+                                <span class="target-value">December 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Context & Team -->
+        <section class="context-section">
+            <div class="container">
+                <div class="context-grid">
+                    <div class="context-card">
+                        <h3 class="context-title">Program Context</h3>
+                        <dl class="context-list">
+                            <div class="context-item">
+                                <dt>Accelerator</dt>
+                                <dd>Plug and Play Tech Center</dd>
+                            </div>
+                            <div class="context-item">
+                                <dt>Location</dt>
+                                <dd>Nantong, Jiangsu Province, China</dd>
+                            </div>
+                            <div class="context-item">
+                                <dt>Program</dt>
+                                <dd>Cross-Border Acceleration Camp - Summer 2026</dd>
+                            </div>
+                            <div class="context-item">
+                                <dt>Duration</dt>
+                                <dd>26 weeks (6 months)</dd>
+                            </div>
+                        </dl>
+                    </div>
+
+                    <div class="context-card">
+                        <h3 class="context-title">Team Structure</h3>
+                        <dl class="context-list">
+                            <div class="context-item">
+                                <dt>On-Site Lead</dt>
+                                <dd>Adama - Commercial & Operations</dd>
+                            </div>
+                            <div class="context-item">
+                                <dt>Remote Lead</dt>
+                                <dd>Jordan - Technical Architecture</dd>
+                            </div>
+                            <div class="context-item">
+                                <dt>Collaboration</dt>
+                                <dd>Notion workspace + WeChat</dd>
+                            </div>
+                            <div class="context-item">
+                                <dt>Total Hours</dt>
+                                <dd>1,070 hours planned</dd>
+                            </div>
+                        </dl>
                     </div>
                 </div>
             </div>
@@ -172,11 +207,10 @@
         <section class="cta-section">
             <div class="container">
                 <div class="cta-content">
-                    <h2 class="cta-title">Ready to Explore the Full Dashboard?</h2>
-                    <p class="cta-subtitle">View detailed weekly timelines, checklists, milestones, and relationship matrices</p>
+                    <h2 class="cta-title">Explore the Full Execution Plan</h2>
+                    <p class="cta-subtitle">Dive into weekly timelines, task breakdowns, relationship matrices, and progress tracking</p>
                     <div class="cta-buttons">
-                        <a href="execution.html" class="btn btn-primary">View Full Dashboard</a>
-                        <button class="btn btn-secondary" id="download-plan-btn">Download Plan</button>
+                        <a href="execution.html" class="btn btn-primary btn-lg">Open Dashboard</a>
                     </div>
                 </div>
             </div>
