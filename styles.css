@@ -2689,6 +2689,21 @@ a:hover {
 }
 
 /* ====================================
+   Bottom CTA Section
+   ==================================== */
+
+.bottom-cta-section {
+    padding: 4rem 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(196, 163, 90, 0.03) 50%, transparent 100%);
+}
+
+.bottom-cta-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ====================================
    Floating Back Button
    ==================================== */
 
