@@ -57,3 +57,11 @@ coverage/
 *.pid
 *.seed
 *.pid.lock
+
+# Documentation & Development Guides
+china-launch-execution-plan.md
+COMPLETION_SUMMARY.md
+LLM_DESIGN_GUIDE.md
+LLM_PROJECT_PRESENTATION_PROMPT.md
+QUICKSTART.md
+WEBAPP_DEVELOPMENT_GUIDE.md
