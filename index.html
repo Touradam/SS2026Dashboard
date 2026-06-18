@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Solar Sense Pro - China Launch Execution Dashboard - Track 6-month market entry progress">
-    <title>Solar Sense Pro - China Launch Dashboard</title>
+    <meta name="description" content="Solar Sense Pro - China Launch Interactive Roadmap">
+    <title>Solar Sense Pro - China Launch Roadmap</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,8 +13,11 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <h1>Solar Sense Pro</h1>
-                    <span class="subtitle">China Launch Dashboard</span>
+                    <img src="assets/logo.svg" alt="Solar Sense Pro" class="logo-image">
+                    <div class="logo-text">
+                        <h1 class="logo-title">Solar Sense Pro</h1>
+                        <span class="logo-subtitle">China Launch</span>
+                    </div>
                 </div>
                 <nav class="nav" aria-label="Main navigation">
                     <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -23,14 +26,8 @@
                         <span></span>
                     </button>
                     <ul class="nav-menu">
-                        <li><a href="#overview" class="nav-link">Overview</a></li>
-                        <li><a href="#timeline" class="nav-link">Timeline</a></li>
-                        <li><a href="#monthly" class="nav-link">Monthly</a></li>
-                        <li><a href="#relationships" class="nav-link">Relationships</a></li>
-                        <li><a href="#checklist" class="nav-link">Readiness</a></li>
-                        <li><a href="#milestones" class="nav-link">Milestones</a></li>
-                        <li><a href="#dates" class="nav-link">Key Dates</a></li>
-                        <li><a href="#glossary" class="nav-link">Glossary</a></li>
+                        <li><a href="index.html" class="nav-link active">Landing</a></li>
+                        <li><a href="execution.html" class="nav-link">Execution</a></li>
                     </ul>
                 </nav>
             </div>
@@ -38,317 +35,148 @@
     </header>
 
     <main class="main">
-        <!-- Dashboard Overview Section -->
-        <section id="overview" class="section overview-section">
+        <!-- Hero Section -->
+        <section class="hero-section">
             <div class="container">
-                <div class="hero">
-                    <span class="section-eyebrow">Internal Strategy Memo</span>
-                    <h2 class="section-title">China Launch Execution Plan</h2>
-                    <p class="hero-subtitle">Plug and Play Cross-Border Acceleration Camp - Nantong Summer Cohort</p>
-                    <div class="timeline-badge">
-                        <span class="timeline-dates">July 2026 - December 2026</span>
-                        <span class="timeline-duration">26 Weeks | 6 Months</span>
-                    </div>
+                <div class="hero-logo-container">
+                    <img src="assets/logo.svg" alt="Solar Sense Pro" class="hero-logo">
                 </div>
-
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-icon">📊</div>
-                        <div class="stat-content">
-                            <div class="stat-value" id="overall-progress">0%</div>
-                            <div class="stat-label">Overall Progress</div>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">📅</div>
-                        <div class="stat-content">
-                            <div class="stat-value" id="current-week">Week 1</div>
-                            <div class="stat-label">Current Week</div>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">⏱️</div>
-                        <div class="stat-content">
-                            <div class="stat-value" id="days-remaining">—</div>
-                            <div class="stat-label">Days to Completion</div>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">✓</div>
-                        <div class="stat-content">
-                            <div class="stat-value" id="checklist-progress">0/14</div>
-                            <div class="stat-label">Checklist Items</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="quick-stats">
-                    <div class="quick-stat">
-                        <span class="quick-stat-label">Total Weeks:</span>
-                        <span class="quick-stat-value">26</span>
-                    </div>
-                    <div class="quick-stat">
-                        <span class="quick-stat-label">Phases:</span>
-                        <span class="quick-stat-value">6</span>
-                    </div>
-                    <div class="quick-stat">
-                        <span class="quick-stat-label">Team Hours:</span>
-                        <span class="quick-stat-value" id="total-hours">1,070</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Timeline Visualization Section -->
-        <section id="timeline" class="section timeline-section">
-            <div class="container">
-                <span class="section-eyebrow">Execution Roadmap</span>
-                <h2 class="section-title">26-Week Timeline</h2>
-                <p class="section-description">Interactive weekly timeline with phase-based color coding</p>
+                <span class="hero-eyebrow">Internal Strategy Memo</span>
+                <h1 class="hero-title">China Launch Execution Plan</h1>
+                <p class="hero-subtitle">Plug and Play Cross-Border Acceleration Camp - Nantong Summer Cohort</p>
                 
-                <div class="phase-legend">
-                    <div class="legend-item"><span class="legend-color phase-july"></span>Pipeline Seeding</div>
-                    <div class="legend-item"><span class="legend-color phase-august"></span>Audits & Commitments</div>
-                    <div class="legend-item"><span class="legend-color phase-september"></span>Production Kickoff</div>
-                    <div class="legend-item"><span class="legend-color phase-october"></span>Hardware Validation</div>
-                    <div class="legend-item"><span class="legend-color phase-november"></span>Field Deployment</div>
-                    <div class="legend-item"><span class="legend-color phase-december"></span>Scale & Graduation</div>
-                </div>
-
-                <div id="timeline-container" class="timeline-container">
-                    <!-- Timeline weeks will be dynamically generated here -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Monthly Objectives Section -->
-        <section id="monthly" class="section monthly-section">
-            <div class="container">
-                <span class="section-eyebrow">Strategic Planning</span>
-                <h2 class="section-title">Monthly Objectives</h2>
-                <p class="section-description">Detailed monthly goals and weekly breakdowns</p>
-
-                <div class="month-tabs">
-                    <button class="month-tab active" data-month="July">July</button>
-                    <button class="month-tab" data-month="August">August</button>
-                    <button class="month-tab" data-month="September">September</button>
-                    <button class="month-tab" data-month="October">October</button>
-                    <button class="month-tab" data-month="November">November</button>
-                    <button class="month-tab" data-month="December">December</button>
-                </div>
-
-                <div id="month-content" class="month-content">
-                    <!-- Monthly content will be dynamically generated here -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Relationship Matrix Section -->
-        <section id="relationships" class="section relationships-section">
-            <div class="container">
-                <span class="section-eyebrow">Network Building</span>
-                <h2 class="section-title">Relationship Matrix</h2>
-                <p class="section-description">Key contacts and strategic partnerships</p>
-
-                <div class="search-bar">
-                    <input type="text" id="relationship-search" class="search-input" placeholder="Search relationships...">
-                </div>
-
-                <div class="relationships-grid">
-                    <div class="relationship-category">
-                        <h3 class="category-title">Plug and Play Core Network</h3>
-                        <div id="pnp-core-list" class="relationship-list">
-                            <!-- PnP Core relationships will be dynamically generated here -->
-                        </div>
+                <!-- Countdown Timer -->
+                <div class="countdown-timer" id="countdown-timer">
+                    <div class="countdown-unit">
+                        <div class="countdown-value" id="countdown-days">—</div>
+                        <div class="countdown-label">Days</div>
                     </div>
-
-                    <div class="relationship-category">
-                        <h3 class="category-title">Verified Manufacturing Partners</h3>
-                        <div id="manufacturing-list" class="relationship-list">
-                            <!-- Manufacturing relationships will be dynamically generated here -->
-                        </div>
+                    <div class="countdown-unit">
+                        <div class="countdown-value" id="countdown-hours">—</div>
+                        <div class="countdown-label">Hours</div>
                     </div>
+                    <div class="countdown-unit">
+                        <div class="countdown-value" id="countdown-minutes">—</div>
+                        <div class="countdown-label">Minutes</div>
+                    </div>
+                    <div class="countdown-unit">
+                        <div class="countdown-value" id="countdown-seconds">—</div>
+                        <div class="countdown-label">Seconds</div>
+                    </div>
+                </div>
+                <p class="countdown-caption">Until Launch: July 1, 2026</p>
 
-                    <div class="relationship-category">
-                        <h3 class="category-title">Target Pilot Champions & Customers</h3>
-                        <div id="pilot-champions-list" class="relationship-list">
-                            <!-- Pilot champion relationships will be dynamically generated here -->
-                        </div>
+                <!-- Quick Stats Pills -->
+                <div class="hero-stats">
+                    <div class="hero-stat-pill">
+                        <span class="hero-stat-value">26</span>
+                        <span class="hero-stat-label">Weeks</span>
+                    </div>
+                    <div class="hero-stat-pill">
+                        <span class="hero-stat-value">6</span>
+                        <span class="hero-stat-label">Phases</span>
+                    </div>
+                    <div class="hero-stat-pill">
+                        <span class="hero-stat-value">1,070</span>
+                        <span class="hero-stat-label">Team Hours</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Launch Readiness Checklist Section -->
-        <section id="checklist" class="section checklist-section">
+        <!-- Phase Navigation -->
+        <section class="phase-nav-section">
             <div class="container">
-                <span class="section-eyebrow">Operational Metrics</span>
-                <h2 class="section-title">Launch Readiness Checklist</h2>
-                <p class="section-description">14 critical items to achieve 100% launch readiness by January 1, 2027</p>
-
-                <div class="overall-progress">
-                    <div class="progress-header">
-                        <span class="progress-label">Overall Completion</span>
-                        <span class="progress-percentage" id="checklist-overall-percent">0%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" id="checklist-overall-fill" style="width: 0%"></div>
-                    </div>
-                    <div class="progress-status" id="checklist-status">Not Started</div>
+                <h2 class="phase-nav-title">6-Month Execution Roadmap</h2>
+                <div class="phase-nav-pills" role="tablist" aria-label="Monthly phases">
+                    <button class="phase-nav-pill" data-phase="1" role="tab" aria-selected="false" tabindex="-1">
+                        <span class="phase-pill-month">July</span>
+                        <span class="phase-pill-label">Pipeline Seeding</span>
+                    </button>
+                    <button class="phase-nav-pill" data-phase="2" role="tab" aria-selected="false" tabindex="-1">
+                        <span class="phase-pill-month">August</span>
+                        <span class="phase-pill-label">Audits & Commitments</span>
+                    </button>
+                    <button class="phase-nav-pill" data-phase="3" role="tab" aria-selected="false" tabindex="-1">
+                        <span class="phase-pill-month">September</span>
+                        <span class="phase-pill-label">Production Kickoff</span>
+                    </button>
+                    <button class="phase-nav-pill" data-phase="4" role="tab" aria-selected="false" tabindex="-1">
+                        <span class="phase-pill-month">October</span>
+                        <span class="phase-pill-label">Hardware Validation</span>
+                    </button>
+                    <button class="phase-nav-pill" data-phase="5" role="tab" aria-selected="false" tabindex="-1">
+                        <span class="phase-pill-month">November</span>
+                        <span class="phase-pill-label">Field Deployment</span>
+                    </button>
+                    <button class="phase-nav-pill" data-phase="6" role="tab" aria-selected="false" tabindex="-1">
+                        <span class="phase-pill-month">December</span>
+                        <span class="phase-pill-label">Scale & Graduation</span>
+                    </button>
                 </div>
+            </div>
+        </section>
 
-                <div class="checklist-categories">
-                    <div class="checklist-category">
-                        <div class="category-header">
-                            <h3 class="category-title">Active Pilot & Field Operations</h3>
-                            <span class="category-count" id="pilot-count">0/4</span>
-                        </div>
-                        <div id="pilot-checklist" class="checklist-items">
-                            <!-- Pilot checklist items will be dynamically generated here -->
-                        </div>
+        <!-- SVG Roadmap (Desktop Only) -->
+        <section class="roadmap-svg-section desktop-only">
+            <div class="container">
+                <div class="roadmap-svg-container">
+                    <img src="assets/roadmap.svg" alt="6-month execution roadmap" class="roadmap-svg">
+                    <!-- Hotspot overlays will be added by JavaScript -->
+                    <div class="roadmap-hotspot" data-phase="1" style="left: 3.75%; top: 27.8%; width: 13.75%; height: 44.4%;" 
+                         role="button" tabindex="0" aria-label="View July phase details"></div>
+                    <div class="roadmap-hotspot" data-phase="2" style="left: 19.375%; top: 27.8%; width: 13.75%; height: 44.4%;" 
+                         role="button" tabindex="0" aria-label="View August phase details"></div>
+                    <div class="roadmap-hotspot" data-phase="3" style="left: 35%; top: 27.8%; width: 13.75%; height: 44.4%;" 
+                         role="button" tabindex="0" aria-label="View September phase details"></div>
+                    <div class="roadmap-hotspot" data-phase="4" style="left: 50.625%; top: 27.8%; width: 13.75%; height: 44.4%;" 
+                         role="button" tabindex="0" aria-label="View October phase details"></div>
+                    <div class="roadmap-hotspot" data-phase="5" style="left: 66.25%; top: 27.8%; width: 13.75%; height: 44.4%;" 
+                         role="button" tabindex="0" aria-label="View November phase details"></div>
+                    <div class="roadmap-hotspot" data-phase="6" style="left: 81.875%; top: 27.8%; width: 13.75%; height: 44.4%;" 
+                         role="button" tabindex="0" aria-label="View December phase details"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Monthly Flip Cards -->
+        <section class="flip-cards-section">
+            <div class="container">
+                <div class="flip-cards-grid" id="flip-cards-grid">
+                    <!-- Flip cards will be dynamically generated here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Info Bar -->
+        <section class="quick-info-section">
+            <div class="container">
+                <div class="quick-info-bar">
+                    <div class="quick-info-item">
+                        <span class="quick-info-label">Timeline</span>
+                        <span class="quick-info-value">July - December 2026</span>
                     </div>
-
-                    <div class="checklist-category">
-                        <div class="category-header">
-                            <h3 class="category-title">Validated Manufacturing & Supply Chain</h3>
-                            <span class="category-count" id="manufacturing-count">0/7</span>
-                        </div>
-                        <div id="manufacturing-checklist" class="checklist-items">
-                            <!-- Manufacturing checklist items will be dynamically generated here -->
-                        </div>
+                    <div class="quick-info-item">
+                        <span class="quick-info-label">Duration</span>
+                        <span class="quick-info-value">26 Weeks | 6 Months</span>
                     </div>
-
-                    <div class="checklist-category">
-                        <div class="category-header">
-                            <h3 class="category-title">Strategic Network & Post-Program Autonomy</h3>
-                            <span class="category-count" id="network-count">0/3</span>
-                        </div>
-                        <div id="network-checklist" class="checklist-items">
-                            <!-- Network checklist items will be dynamically generated here -->
-                        </div>
+                    <div class="quick-info-item">
+                        <span class="quick-info-label">Team</span>
+                        <span class="quick-info-value">Adama (On-site) + Jordan (Remote)</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Quarterly Milestones Section -->
-        <section id="milestones" class="section milestones-section">
+        <!-- Call-to-Action -->
+        <section class="cta-section">
             <div class="container">
-                <span class="section-eyebrow">Key Deliverables</span>
-                <h2 class="section-title">Quarterly Milestones</h2>
-                <p class="section-description">Critical checkpoints for Q3 and Q4 2026</p>
-
-                <div class="milestones-grid">
-                    <div class="milestone-card">
-                        <div class="milestone-header">
-                            <h3 class="milestone-title">Q3 2026</h3>
-                            <span class="milestone-date">September 30, 2026</span>
-                        </div>
-                        <p class="milestone-subtitle">Commercial Commitments & Production Kickoff</p>
-                        <div id="q3-criteria" class="milestone-criteria">
-                            <!-- Q3 criteria will be dynamically generated here -->
-                        </div>
-                        <div class="milestone-progress">
-                            <span class="milestone-progress-label">Progress</span>
-                            <div class="progress-bar">
-                                <div class="progress-fill" id="q3-progress-fill" style="width: 0%"></div>
-                            </div>
-                            <span class="milestone-progress-percent" id="q3-progress-percent">0%</span>
-                        </div>
-                    </div>
-
-                    <div class="milestone-card">
-                        <div class="milestone-header">
-                            <h3 class="milestone-title">Q4 2026</h3>
-                            <span class="milestone-date">December 31, 2026</span>
-                        </div>
-                        <p class="milestone-subtitle">Live Field Operations & Scale Readiness</p>
-                        <div id="q4-criteria" class="milestone-criteria">
-                            <!-- Q4 criteria will be dynamically generated here -->
-                        </div>
-                        <div class="milestone-progress">
-                            <span class="milestone-progress-label">Progress</span>
-                            <div class="progress-bar">
-                                <div class="progress-fill" id="q4-progress-fill" style="width: 0%"></div>
-                            </div>
-                            <span class="milestone-progress-percent" id="q4-progress-percent">0%</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Key Dates Calendar Section -->
-        <section id="dates" class="section dates-section">
-            <div class="container">
-                <span class="section-eyebrow">Timeline Events</span>
-                <h2 class="section-title">Key Dates Calendar</h2>
-                <p class="section-description">Critical events from July 2026 to January 2027</p>
-
-                <div class="countdown-banner" id="next-event-banner">
-                    <span class="countdown-label">Next Event:</span>
-                    <span class="countdown-event" id="next-event-name">—</span>
-                    <span class="countdown-time" id="next-event-countdown">—</span>
-                </div>
-
-                <div class="dates-filters">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="Program">Program</button>
-                    <button class="filter-btn" data-filter="Travel">Travel</button>
-                    <button class="filter-btn" data-filter="Manufacturing">Manufacturing</button>
-                    <button class="filter-btn" data-filter="Deployment">Deployment</button>
-                    <button class="filter-btn" data-filter="Milestone">Milestone</button>
-                    <button class="filter-btn" data-filter="Holiday">Holiday</button>
-                </div>
-
-                <div id="dates-list" class="dates-list">
-                    <!-- Key dates will be dynamically generated here -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Glossary & Quick Reference Section -->
-        <section id="glossary" class="section glossary-section">
-            <div class="container">
-                <span class="section-eyebrow">Reference Materials</span>
-                <h2 class="section-title">Glossary & Quick Reference</h2>
-                <p class="section-description">Acronyms and key contacts</p>
-
-                <div class="glossary-grid">
-                    <div class="glossary-panel">
-                        <h3 class="panel-title">Acronym Glossary</h3>
-                        <div class="search-bar">
-                            <input type="text" id="glossary-search" class="search-input" placeholder="Search acronyms...">
-                        </div>
-                        <div id="glossary-list" class="glossary-list">
-                            <!-- Glossary items will be dynamically generated here -->
-                        </div>
-                    </div>
-
-                    <div class="glossary-panel">
-                        <h3 class="panel-title">Key Contacts</h3>
-                        <div class="contact-cards">
-                            <div class="contact-card">
-                                <h4 class="contact-name">Aboli</h4>
-                                <p class="contact-role">Operations Lead, Plug and Play China</p>
-                                <p class="contact-detail"><strong>Communication:</strong> WeChat</p>
-                                <p class="contact-detail"><strong>Responsibilities:</strong> Local logistics, housing, hub resource access, translation support sourcing</p>
-                            </div>
-
-                            <div class="contact-card">
-                                <h4 class="contact-name">Jordan</h4>
-                                <p class="contact-role">Technical Lead (US-based)</p>
-                                <p class="contact-detail"><strong>Communication:</strong> Notion workspace</p>
-                                <p class="contact-detail"><strong>Responsibilities:</strong> Architecture sign-offs, DFM feedback, system logs review, firmware validation</p>
-                            </div>
-
-                            <div class="contact-card">
-                                <h4 class="contact-name">Plug and Play China</h4>
-                                <p class="contact-role">Nantong Hub</p>
-                                <p class="contact-detail"><strong>Location:</strong> Nantong, Jiangsu Province, China</p>
-                                <p class="contact-detail"><strong>Program:</strong> Cross-Border Acceleration Camp - Summer Cohort 2026</p>
-                            </div>
-                        </div>
+                <div class="cta-content">
+                    <h2 class="cta-title">Ready to Explore the Full Dashboard?</h2>
+                    <p class="cta-subtitle">View detailed weekly timelines, checklists, milestones, and relationship matrices</p>
+                    <div class="cta-buttons">
+                        <a href="execution.html" class="btn btn-primary">View Full Dashboard</a>
+                        <button class="btn btn-secondary" id="download-plan-btn">Download Plan</button>
                     </div>
                 </div>
             </div>
@@ -361,32 +189,14 @@
             <div class="footer-content">
                 <div class="footer-info">
                     <p><strong>Solar Sense Pro</strong> - China Launch Execution Plan</p>
-                    <p>Version: Draft 1.0 | Last Updated: June 17, 2026</p>
-                </div>
-                <div class="footer-actions">
-                    <button id="export-btn" class="btn btn-secondary">Export Progress</button>
-                    <button id="reset-btn" class="btn btn-danger">Reset All</button>
+                    <p>Version: Draft 1.0 | Last Updated: June 18, 2026</p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Modal for Week Details -->
-    <div id="week-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
-        <div class="modal-overlay"></div>
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 id="modal-title" class="modal-title"></h3>
-                <button class="modal-close" aria-label="Close modal">&times;</button>
-            </div>
-            <div id="modal-body" class="modal-body">
-                <!-- Week details will be dynamically populated here -->
-            </div>
-        </div>
-    </div>
-
     <!-- Scripts -->
     <script src="data.js"></script>
-    <script src="app.js"></script>
+    <script src="roadmap.js"></script>
 </body>
 </html>

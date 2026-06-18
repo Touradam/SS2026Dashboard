@@ -1,0 +1,135 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1600" height="900" fill="#0c0c0f"/>
+  
+  <!-- Subtle grid pattern -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#18181f" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e2c887;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#c4a35a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9a7b3c;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#grid)" opacity="0.3"/>
+  
+  <!-- Central Path Line -->
+  <path d="M 100 450 L 1500 450" stroke="#c4a35a" stroke-width="3" stroke-dasharray="10 5" opacity="0.4"/>
+  
+  <!-- Phase Cards -->
+  <!-- July -->
+  <g id="phase-1" data-phase="1">
+    <rect x="60" y="250" width="220" height="400" rx="12" fill="#18181f" stroke="#c4a35a" stroke-width="2"/>
+    <circle cx="170" cy="300" r="30" fill="url(#goldGradient)"/>
+    <text x="170" y="310" font-family="Outfit, sans-serif" font-size="24" font-weight="700" fill="#0c0c0f" text-anchor="middle">01</text>
+    <text x="170" y="370" font-family="Outfit, sans-serif" font-size="20" font-weight="700" fill="#e2c887" text-anchor="middle">JULY</text>
+    <text x="170" y="400" font-family="DM Sans, sans-serif" font-size="14" fill="#9c9a94" text-anchor="middle">Pipeline Seeding</text>
+    <rect x="80" y="440" width="180" height="4" rx="2" fill="#c4a35a" opacity="0.3"/>
+    <text x="170" y="475" font-family="DM Sans, sans-serif" font-size="12" fill="#6b6963" text-anchor="middle">Build pipeline of</text>
+    <text x="170" y="495" font-family="DM Sans, sans-serif" font-size="12" fill="#6b6963" text-anchor="middle">15 target partners</text>
+    <circle cx="170" cy="580" r="35" fill="#c4a35a" opacity="0.15"/>
+    <text x="170" y="590" font-family="Outfit, sans-serif" font-size="18" font-weight="600" fill="#c4a35a" text-anchor="middle">Week</text>
+    <text x="170" y="610" font-family="Outfit, sans-serif" font-size="22" font-weight="700" fill="#e2c887" text-anchor="middle">1-4</text>
+  </g>
+  
+  <!-- Connector 1-2 -->
+  <path d="M 280 450 L 310 450" stroke="#c4a35a" stroke-width="2" opacity="0.5"/>
+  <circle cx="295" cy="450" r="4" fill="#c4a35a"/>
+  
+  <!-- August -->
+  <g id="phase-2" data-phase="2">
+    <rect x="310" y="250" width="220" height="400" rx="12" fill="#18181f" stroke="#c4a35a" stroke-width="2"/>
+    <circle cx="420" cy="300" r="30" fill="url(#goldGradient)"/>
+    <text x="420" y="310" font-family="Outfit, sans-serif" font-size="24" font-weight="700" fill="#0c0c0f" text-anchor="middle">02</text>
+    <text x="420" y="370" font-family="Outfit, sans-serif" font-size="20" font-weight="700" fill="#e2c887" text-anchor="middle">AUGUST</text>
+    <text x="420" y="400" font-family="DM Sans, sans-serif" font-size="14" fill="#9c9a94" text-anchor="middle">Audits & Commitments</text>
+    <rect x="330" y="440" width="180" height="4" rx="2" fill="#c4a35a" opacity="0.3"/>
+    <text x="420" y="475" font-family="DM Sans, sans-serif" font-size="12" fill="#6b6963" text-anchor="middle">Secure 3 formal</text>
+    <text x="420" y="495" font-family="DM Sans, sans-serif" font-size="12" fill="#6b6963" text-anchor="middle">pilot agreements</text>
+    <circle cx="420" cy="580" r="35" fill="#c4a35a" opacity="0.15"/>
+    <text x="420" y="590" font-family="Outfit, sans-serif" font-size="18" font-weight="600" fill="#c4a35a" text-anchor="middle">Week</text>
+    <text x="420" y="610" font-family="Outfit, sans-serif" font-size="22" font-weight="700" fill="#e2c887" text-anchor="middle">5-8</text>
+  </g>
+  
+  <!-- Connector 2-3 -->
+  <path d="M 530 450 L 560 450" stroke="#c4a35a" stroke-width="2" opacity="0.5"/>
+  <circle cx="545" cy="450" r="4" fill="#c4a35a"/>
+  
+  <!-- September -->
+  <g id="phase-3" data-phase="3">
+    <rect x="560" y="250" width="220" height="400" rx="12" fill="#18181f" stroke="#c4a35a" stroke-width="2"/>
+    <circle cx="670" cy="300" r="30" fill="url(#goldGradient)"/>
+    <text x="670" y="310" font-family="Outfit, sans-serif" font-size="24" font-weight="700" fill="#0c0c0f" text-anchor="middle">03</text>
+    <text x="670" y="370" font-family="Outfit, sans-serif" font-size="20" font-weight="700" fill="#e2c887" text-anchor="middle">SEPTEMBER</text>
+    <text x="670" y="400" font-family="DM Sans, sans-serif" font-size="14" fill="#9c9a94" text-anchor="middle">Production Kickoff</text>
+    <rect x="580" y="440" width="180" height="4" rx="2" fill="#c4a35a" opacity="0.3"/>
+    <text x="670" y="475" font-family="DM Sans, sans-serif" font-size="12" fill="#6b6963" text-anchor="middle">Kick off 10-50 unit</text>
+    <text x="670" y="495" font-family="DM Sans, sans-serif" font-size="12" fill="#6b6963" text-anchor="middle">production run</text>
+    <circle cx="670" cy="580" r="35" fill="#c4a35a" opacity="0.15"/>
+    <text x="670" y="590" font-family="Outfit, sans-serif" font-size="18" font-weight="600" fill="#c4a35a" text-anchor="middle">Week</text>
+    <text x="670" y="610" font-family="Outfit, sans-serif" font-size="22" font-weight="700" fill="#e2c887" text-anchor="middle">9-12</text>
+  </g>
+  
+  <!-- Connector 3-4 -->
+  <path d="M 780 450 L 810 450" stroke="#c4a35a" stroke-width="2" opacity="0.5"/>
+  <circle cx="795" cy="450" r="4" fill="#c4a35a"/>
+  
+  <!-- October -->
+  <g id="phase-4" data-phase="4">
+    <rect x="810" y="250" width="220" height="400" rx="12" fill="#18181f" stroke="#c4a35a" stroke-width="2"/>
+    <circle cx="920" cy="300" r="30" fill="url(#goldGradient)"/>
+    <text x="920" y="310" font-family="Outfit, sans-serif" font-size="24" font-weight="700" fill="#0c0c0f" text-anchor="middle">04</text>
+    <text x="920" y="370" font-family="Outfit, sans-serif" font-size="20" font-weight="700" fill="#e2c887" text-anchor="middle">OCTOBER</text>
+    <text x="920" y="400" font-family="DM Sans, sans-serif" font-size="14" fill="#9c9a94" text-anchor="middle">Hardware Validation</text>
+    <rect x="830" y="440" width="180" height="4" rx="2" fill="#c4a35a" opacity="0.3"/>
+    <text x="920" y="475" font-family="DM Sans, sans-serif" font-size="12" fill="#6b6963" text-anchor="middle">Ingest and validate</text>
+    <text x="920" y="495" font-family="DM Sans, sans-serif" font-size="12" fill="#6b6963" text-anchor="middle">10-50 unit batch</text>
+    <circle cx="920" cy="580" r="35" fill="#c4a35a" opacity="0.15"/>
+    <text x="920" y="590" font-family="Outfit, sans-serif" font-size="18" font-weight="600" fill="#c4a35a" text-anchor="middle">Week</text>
+    <text x="920" y="610" font-family="Outfit, sans-serif" font-size="22" font-weight="700" fill="#e2c887" text-anchor="middle">13-17</text>
+  </g>
+  
+  <!-- Connector 4-5 -->
+  <path d="M 1030 450 L 1060 450" stroke="#c4a35a" stroke-width="2" opacity="0.5"/>
+  <circle cx="1045" cy="450" r="4" fill="#c4a35a"/>
+  
+  <!-- November -->
+  <g id="phase-5" data-phase="5">
+    <rect x="1060" y="250" width="220" height="400" rx="12" fill="#18181f" stroke="#c4a35a" stroke-width="2"/>
+    <circle cx="1170" cy="300" r="30" fill="url(#goldGradient)"/>
+    <text x="1170" y="310" font-family="Outfit, sans-serif" font-size="24" font-weight="700" fill="#0c0c0f" text-anchor="middle">05</text>
+    <text x="1170" y="370" font-family="Outfit, sans-serif" font-size="20" font-weight="700" fill="#e2c887" text-anchor="middle">NOVEMBER</text>
+    <text x="1170" y="400" font-family="DM Sans, sans-serif" font-size="14" fill="#9c9a94" text-anchor="middle">Field Deployment</text>
+    <rect x="1080" y="440" width="180" height="4" rx="2" fill="#c4a35a" opacity="0.3"/>
+    <text x="1170" y="475" font-family="DM Sans, sans-serif" font-size="12" fill="#6b6963" text-anchor="middle">Deploy live</text>
+    <text x="1170" y="495" font-family="DM Sans, sans-serif" font-size="12" fill="#6b6963" text-anchor="middle">installation</text>
+    <circle cx="1170" cy="580" r="35" fill="#c4a35a" opacity="0.15"/>
+    <text x="1170" y="590" font-family="Outfit, sans-serif" font-size="18" font-weight="600" fill="#c4a35a" text-anchor="middle">Week</text>
+    <text x="1170" y="610" font-family="Outfit, sans-serif" font-size="22" font-weight="700" fill="#e2c887" text-anchor="middle">18-21</text>
+  </g>
+  
+  <!-- Connector 5-6 -->
+  <path d="M 1280 450 L 1310 450" stroke="#c4a35a" stroke-width="2" opacity="0.5"/>
+  <circle cx="1295" cy="450" r="4" fill="#c4a35a"/>
+  
+  <!-- December -->
+  <g id="phase-6" data-phase="6">
+    <rect x="1310" y="250" width="220" height="400" rx="12" fill="#18181f" stroke="#c4a35a" stroke-width="2"/>
+    <circle cx="1420" cy="300" r="30" fill="url(#goldGradient)"/>
+    <text x="1420" y="310" font-family="Outfit, sans-serif" font-size="24" font-weight="700" fill="#0c0c0f" text-anchor="middle">06</text>
+    <text x="1420" y="370" font-family="Outfit, sans-serif" font-size="20" font-weight="700" fill="#e2c887" text-anchor="middle">DECEMBER</text>
+    <text x="1420" y="400" font-family="DM Sans, sans-serif" font-size="14" fill="#9c9a94" text-anchor="middle">Scale & Graduation</text>
+    <rect x="1330" y="440" width="180" height="4" rx="2" fill="#c4a35a" opacity="0.3"/>
+    <text x="1420" y="475" font-family="DM Sans, sans-serif" font-size="12" fill="#6b6963" text-anchor="middle">Secure 2 additional</text>
+    <text x="1420" y="495" font-family="DM Sans, sans-serif" font-size="12" fill="#6b6963" text-anchor="middle">Q1 2027 pilots</text>
+    <circle cx="1420" cy="580" r="35" fill="#c4a35a" opacity="0.15"/>
+    <text x="1420" y="590" font-family="Outfit, sans-serif" font-size="18" font-weight="600" fill="#c4a35a" text-anchor="middle">Week</text>
+    <text x="1420" y="610" font-family="Outfit, sans-serif" font-size="22" font-weight="700" fill="#e2c887" text-anchor="middle">22-26</text>
+  </g>
+  
+  <!-- Subtle glow effects on corners -->
+  <circle cx="800" cy="100" r="150" fill="#c4a35a" opacity="0.03"/>
+  <circle cx="800" cy="800" r="150" fill="#c4a35a" opacity="0.03"/>
+</svg>

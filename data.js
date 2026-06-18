@@ -771,7 +771,149 @@ const executionPlan = {
       location: 'Nantong, Jiangsu Province, China',
       program: 'Cross-Border Acceleration Camp - Summer Cohort 2026'
     }
-  }
+  },
+
+  // Roadmap Phases for Landing Page
+  roadmapPhases: [
+    {
+      id: 1,
+      month: 'July',
+      tag: 'Phase 1',
+      title: 'Pipeline Seeding',
+      lead: 'Commercial Pipeline Seeding & Baseline Sourcing',
+      outcome: 'Build pipeline of 15 target partners',
+      weeks: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+      weekRange: '1-4',
+      deliverables: [
+        'Operational Notion workspace',
+        'EMS partner list (5 targets)',
+        'RFQ packages in English and Chinese',
+        'Localized component tracking database'
+      ],
+      criticalMilestone: 'Week 3: 5 EMS partners identified',
+      keyActivities: [
+        'Stand up Notion workspace with technical baseline',
+        'Onboard with PnP and seed matching pipeline',
+        'Map hardware BOM to local component availability',
+        'Source 5 regional EMS manufacturing targets'
+      ]
+    },
+    {
+      id: 2,
+      month: 'August',
+      tag: 'Phase 2',
+      title: 'Audits & Commitments',
+      lead: 'On-Site Manufacturing Audits & Pilot Commitment Closure',
+      outcome: 'Secure 3 formal pilot agreements',
+      weeks: ['Week 5', 'Week 6', 'Week 7', 'Week 8'],
+      weekRange: '5-8',
+      deliverables: [
+        'Signed pilot deployment contract',
+        'On-site EMS audit reports (2 facilities)',
+        'Gerber files and production documentation package',
+        'Finalized manufacturing partner selection'
+      ],
+      criticalMilestone: 'Week 6: First pilot commitment secured',
+      keyActivities: [
+        'Narrow EMS candidates to 2 top choices',
+        'Conduct on-site manufacturing audits',
+        'Close 3 pilot agreement commitments',
+        'Deliver complete production documentation to EMS partner'
+      ]
+    },
+    {
+      id: 3,
+      month: 'September',
+      tag: 'Phase 3',
+      title: 'Production Kickoff',
+      lead: 'Low-Volume Production Run & Site Readiness',
+      outcome: 'Kick off 10-50 unit production run',
+      weeks: ['Week 9', 'Week 10', 'Week 11', 'Week 12'],
+      weekRange: '9-12',
+      deliverables: [
+        'Hardware bring-up guide',
+        'Production batch initiated (10-50 units)',
+        'Site preparation parameters finalized',
+        'Installation and commissioning roadmap'
+      ],
+      criticalMilestone: 'Week 10: Production run officially started',
+      keyActivities: [
+        'Officially kick off 10-50 unit production batch',
+        'Finalize site preparation and installation parameters',
+        'Conduct hardware bring-up validation',
+        'Weekly Jordan sync on production milestones'
+      ]
+    },
+    {
+      id: 4,
+      month: 'October',
+      tag: 'Phase 4',
+      title: 'Hardware Validation',
+      lead: 'Hardware Ingestion, Testing & Logistics Clearance',
+      outcome: 'Ingest and validate 10-50 unit batch',
+      weeks: ['Week 13', 'Week 14', 'Week 15', 'Week 16', 'Week 17'],
+      weekRange: '13-17',
+      deliverables: [
+        'Production batch validated',
+        'QA test reports (100% batch coverage)',
+        'Pre-installation inspection completed',
+        'Deployment logistics plan finalized'
+      ],
+      criticalMilestone: 'Week 15: Full batch validation complete',
+      keyActivities: [
+        'Ingest 10-50 unit production batch',
+        'Conduct full QA testing and hardware validation',
+        'Complete pre-installation site inspections',
+        'Clear logistics and regulatory requirements'
+      ]
+    },
+    {
+      id: 5,
+      month: 'November',
+      tag: 'Phase 5',
+      title: 'Field Deployment',
+      lead: 'Field Deployment & Active Data Acquisition',
+      outcome: 'Deploy live installation',
+      weeks: ['Week 18', 'Week 19', 'Week 20', 'Week 21'],
+      weekRange: '18-21',
+      deliverables: [
+        'Live telemetry stream active',
+        'Deployed and commissioned installation',
+        'Pricing locked for 100-500+ units',
+        'Field operations documentation'
+      ],
+      criticalMilestone: 'Week 19: Live installation deployed',
+      keyActivities: [
+        'Deploy live field installation at pilot site',
+        'Activate telemetry and data acquisition systems',
+        'Lock pricing for next production scale (100-500+ units)',
+        'Monitor live performance and collect initial data'
+      ]
+    },
+    {
+      id: 6,
+      month: 'December',
+      tag: 'Phase 6',
+      title: 'Scale & Graduation',
+      lead: 'Pipeline Expansion & Strategic Hand-Off',
+      outcome: 'Secure 2 additional Q1 2027 pilots',
+      weeks: ['Week 22', 'Week 23', 'Week 24', 'Week 25', 'Week 26'],
+      weekRange: '22-26',
+      deliverables: [
+        'Launch readiness certified',
+        'Frozen production playbook',
+        '2 additional Q1 2027 pilot commitments',
+        'PnP Demo Day presentation'
+      ],
+      criticalMilestone: 'Week 24: Demo Day presentation',
+      keyActivities: [
+        'Secure 2 additional Q1 2027 pilot agreements',
+        'Freeze and document production playbook',
+        'Present at PnP Demo Day',
+        'Achieve launch readiness certification by Dec 31'
+      ]
+    }
+  ]
 };
 
 // Export for use in other files
