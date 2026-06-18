@@ -11,7 +11,11 @@ const state = {
     milestoneProgress: { q3: {}, q4: {} },
     currentMonth: 'July',
     currentFilter: 'all',
-    lastUpdated: null
+    lastUpdated: null,
+    // User edits
+    customWeekData: {},      // Store edited week content
+    customRelationships: {}, // Store edited relationship details
+    customTags: {}          // Store changed tag values
 };
 
 // ====================================
@@ -179,6 +183,13 @@ function renderTimeline() {
         const isCurrentWeek = week.weekNumber === currentWeek;
         const phaseClass = getPhaseClass(week.phase);
         
+        // Load custom values if they exist
+        const customPriority = state.customTags?.priority?.[`week-${week.weekNumber}`];
+        const priority = customPriority || week.priority;
+        
+        const customTopic = state.customWeekData?.['week-topic']?.[`week-${week.weekNumber}`];
+        const topic = customTopic || week.topic;
+        
         return `
             <div class="week-card ${isCurrentWeek ? 'current-week' : ''}" data-week="${week.weekNumber}">
                 <div class="week-header phase-${phaseClass}">
@@ -186,9 +197,15 @@ function renderTimeline() {
                     <div class="week-dates">${week.dates}</div>
                 </div>
                 <div class="week-body">
-                    <div class="week-topic">${week.topic}</div>
+                    <div class="week-topic" 
+                         data-editable-text="week-topic" 
+                         data-text-id="week-${week.weekNumber}"
+                         title="Double-click to edit">${topic}</div>
                     <div class="week-meta">
-                        <span class="badge badge-${week.priority.toLowerCase()}">${week.priority}</span>
+                        <span class="badge badge-${priority.toLowerCase()}" 
+                              data-editable-tag="priority" 
+                              data-tag-id="week-${week.weekNumber}"
+                              title="Click to change priority">${priority}</span>
                         <span class="badge" style="background: var(--phase-${week.month.toLowerCase()}); color: white;">${week.month}</span>
                     </div>
                     <div class="week-hours">
@@ -216,7 +233,14 @@ function showWeekModal(weekNumber) {
     const modalTitle = document.getElementById('modal-title');
     const modalBody = document.getElementById('modal-body');
     
-    modalTitle.textContent = `Week ${week.weekNumber}: ${week.topic}`;
+    // Load custom values
+    const customTopic = state.customWeekData?.['week-topic']?.[`week-${weekNumber}`] || week.topic;
+    const customPriority = state.customTags?.priority?.[`week-${weekNumber}`] || week.priority;
+    const customTechnical = state.customWeekData?.['technical-track']?.[`week-${weekNumber}`] || week.technicalTrack;
+    const customRelationship = state.customWeekData?.['relationship-track']?.[`week-${weekNumber}`] || week.relationshipTrack;
+    const customJordan = state.customWeekData?.['jordan-track']?.[`week-${weekNumber}`] || week.jordanTrack;
+    
+    modalTitle.textContent = `Week ${week.weekNumber}: ${customTopic}`;
     
     modalBody.innerHTML = `
         <div class="week-details">
@@ -227,7 +251,10 @@ function showWeekModal(weekNumber) {
             
             <div class="detail-section">
                 <div class="detail-title">🎯 Priority Level</div>
-                <span class="badge badge-${week.priority.toLowerCase()}">${week.priority}</span>
+                <span class="badge badge-${customPriority.toLowerCase()}"
+                      data-editable-tag="priority" 
+                      data-tag-id="week-${weekNumber}"
+                      title="Click to change priority">${customPriority}</span>
             </div>
             
             <div class="detail-section">
@@ -237,17 +264,26 @@ function showWeekModal(weekNumber) {
             
             <div class="detail-section">
                 <div class="detail-title">🔧 Technical Track</div>
-                <div class="detail-text">${week.technicalTrack}</div>
+                <div class="detail-text" 
+                     data-editable-text="technical-track" 
+                     data-text-id="week-${weekNumber}"
+                     title="Double-click to edit">${customTechnical}</div>
             </div>
             
             <div class="detail-section">
                 <div class="detail-title">🤝 Relationship Track</div>
-                <div class="detail-text">${week.relationshipTrack}</div>
+                <div class="detail-text" 
+                     data-editable-text="relationship-track" 
+                     data-text-id="week-${weekNumber}"
+                     title="Double-click to edit">${customRelationship}</div>
             </div>
             
             <div class="detail-section">
                 <div class="detail-title">👨‍💼 Jordan Track</div>
-                <div class="detail-text">${week.jordanTrack}</div>
+                <div class="detail-text" 
+                     data-editable-text="jordan-track" 
+                     data-text-id="week-${weekNumber}"
+                     title="Double-click to edit">${customJordan}</div>
             </div>
             
             <div class="detail-section">
@@ -392,16 +428,34 @@ function renderRelationshipCategory(category, containerId) {
     const container = document.getElementById(containerId);
     const relationships = executionPlan.relationships[category];
     
-    container.innerHTML = relationships.map(rel => {
-        const statusClass = rel.status.toLowerCase().replace(/\s+/g, '-');
+    container.innerHTML = relationships.map((rel, index) => {
+        const relId = `${category}-${index}`;
+        
+        // Load custom values
+        const customStatus = state.customTags?.status?.[relId] || rel.status;
+        const customName = state.customWeekData?.['relationship-name']?.[relId] || rel.name;
+        const customRole = state.customWeekData?.['relationship-role']?.[relId] || rel.role;
+        const customOrg = state.customWeekData?.['relationship-org']?.[relId] || rel.organization;
+        const customNextAction = state.customWeekData?.['relationship-action']?.[relId] || rel.nextAction;
+        
+        const statusClass = customStatus.toLowerCase().replace(/\s+/g, '-');
         
         return `
-            <div class="relationship-card" data-search="${rel.role} ${rel.name} ${rel.organization}">
+            <div class="relationship-card" data-search="${customRole} ${customName} ${customOrg}">
                 <div class="relationship-header">
-                    <div class="relationship-role">${rel.role}</div>
-                    <div class="relationship-name">${rel.name}</div>
+                    <div class="relationship-role" 
+                         data-editable-text="relationship-role" 
+                         data-text-id="${relId}"
+                         title="Double-click to edit">${customRole}</div>
+                    <div class="relationship-name" 
+                         data-editable-text="relationship-name" 
+                         data-text-id="${relId}"
+                         title="Double-click to edit">${customName}</div>
                 </div>
-                <div class="relationship-org">${rel.organization}</div>
+                <div class="relationship-org" 
+                     data-editable-text="relationship-org" 
+                     data-text-id="${relId}"
+                     title="Double-click to edit">${customOrg}</div>
                 <div class="relationship-detail">
                     <strong>Why it matters:</strong> ${rel.whyItMatters}
                 </div>
@@ -409,12 +463,17 @@ function renderRelationshipCategory(category, containerId) {
                     <strong>Sourcing path:</strong> ${rel.sourcingPath}
                 </div>
                 <div class="relationship-detail">
-                    <strong>Next action:</strong> ${rel.nextAction}
+                    <strong>Next action:</strong> <span data-editable-text="relationship-action" 
+                         data-text-id="${relId}"
+                         title="Double-click to edit">${customNextAction}</span>
                 </div>
                 <div class="relationship-detail">
                     <strong>First ask:</strong> "${rel.firstAsk}"
                 </div>
-                <span class="status-badge status-${statusClass}">${rel.status}</span>
+                <span class="status-badge status-${statusClass}"
+                      data-editable-tag="status" 
+                      data-tag-id="${relId}"
+                      title="Click to change status">${customStatus}</span>
             </div>
         `;
     }).join('');
@@ -590,15 +649,26 @@ function renderKeyDates() {
     const container = document.getElementById('dates-list');
     const today = new Date();
     
-    container.innerHTML = executionPlan.keyDates.map(dateObj => {
+    container.innerHTML = executionPlan.keyDates.map((dateObj, index) => {
         const dateStart = parseDate(dateObj.date);
         const daysUntil = getDaysBetween(today, dateStart);
+        const dateId = `date-${index}`;
+        
+        // Load custom values
+        const customType = state.customTags?.type?.[dateId] || dateObj.type;
+        const customEvent = state.customWeekData?.['date-event']?.[dateId] || dateObj.event;
         
         return `
-            <div class="date-card" data-type="${dateObj.type}">
+            <div class="date-card" data-type="${customType}">
                 <div class="date-date">${dateObj.date}</div>
-                <div class="date-event">${dateObj.event}</div>
-                <span class="date-type type-${dateObj.type}">${dateObj.type}</span>
+                <div class="date-event" 
+                     data-editable-text="date-event" 
+                     data-text-id="${dateId}"
+                     title="Double-click to edit">${customEvent}</div>
+                <span class="date-type type-${customType}"
+                      data-editable-tag="type" 
+                      data-tag-id="${dateId}"
+                      title="Click to change type">${customType}</span>
                 <div class="date-location">📍 ${dateObj.location}</div>
             </div>
         `;
@@ -785,6 +855,14 @@ function init() {
     setupNavigation();
     setupModal();
     setupFooterActions();
+    
+    // Initialize editing features
+    if (typeof initTagEditing === 'function') {
+        initTagEditing();
+    }
+    if (typeof initTextEditing === 'function') {
+        initTextEditing();
+    }
     
     // Render all sections
     updateOverview();

@@ -2546,3 +2546,144 @@ a:hover {
         width: 100%;
     }
 }
+
+/* ====================================
+   Inline Editing Styles
+   ==================================== */
+
+/* Editable tag indicators */
+[data-editable-tag] {
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.1s ease, box-shadow 0.2s ease;
+    position: relative;
+}
+
+[data-editable-tag]:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(196, 163, 90, 0.3);
+}
+
+[data-editable-tag]:hover::after {
+    content: 'Click to change';
+    position: absolute;
+    bottom: calc(100% + 4px);
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 8px;
+    background: rgba(0, 0, 0, 0.9);
+    color: #c4a35a;
+    font-size: 11px;
+    border-radius: 4px;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    animation: fadeInTooltip 0.2s ease forwards;
+    z-index: 1000;
+}
+
+@keyframes fadeInTooltip {
+    to { opacity: 1; }
+}
+
+/* Editable text indicators */
+[data-editable-text] {
+    cursor: text;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 4px;
+    padding: 2px 4px;
+    margin: -2px -4px;
+}
+
+[data-editable-text]:hover {
+    background-color: rgba(196, 163, 90, 0.08);
+}
+
+[data-editable-text].editing {
+    background-color: rgba(196, 163, 90, 0.15);
+    box-shadow: 0 0 0 2px rgba(196, 163, 90, 0.4);
+    outline: none;
+}
+
+[data-editable-text]:focus {
+    outline: none;
+}
+
+/* Priority badge variants */
+.badge-low {
+    background-color: #6b7280;
+    color: white;
+}
+
+.badge-medium {
+    background-color: #f59e0b;
+    color: white;
+}
+
+.badge-high {
+    background-color: #ef4444;
+    color: white;
+}
+
+.badge-critical {
+    background-color: #dc2626;
+    color: white;
+    font-weight: 700;
+}
+
+/* Status badge variants */
+.status-badge.status-intro-pending {
+    background-color: #6b7280;
+    color: white;
+}
+
+.status-badge.status-in-progress {
+    background-color: #f59e0b;
+    color: white;
+}
+
+.status-badge.status-active {
+    background-color: #10b981;
+    color: white;
+}
+
+.status-badge.status-completed {
+    background-color: #059669;
+    color: white;
+}
+
+.status-badge.status-unknown {
+    background-color: #4b5563;
+    color: white;
+}
+
+/* Type badge variants for key dates */
+.date-type.type-program {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.date-type.type-travel {
+    background-color: #8b5cf6;
+    color: white;
+}
+
+.date-type.type-manufacturing {
+    background-color: #f59e0b;
+    color: white;
+}
+
+.date-type.type-deployment {
+    background-color: #10b981;
+    color: white;
+}
+
+.date-type.type-milestone {
+    background-color: #dc2626;
+    color: white;
+}
+
+.date-type.type-holiday {
+    background-color: #6b7280;
+    color: white;
+}
