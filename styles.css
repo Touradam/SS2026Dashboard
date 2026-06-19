@@ -1743,7 +1743,7 @@ a:hover {
 /* Hero Section - Minimal & Elegant */
 .hero-section {
     position: relative;
-    padding: clamp(8rem, 15vh, 12rem) 0 clamp(6rem, 12vh, 10rem);
+    padding: clamp(8rem, 15vh, 12rem) 0 clamp(3rem, 6vh, 5rem);
     background: transparent;
     text-align: center;
     overflow: hidden;
