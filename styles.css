@@ -1866,7 +1866,7 @@ a:hover {
     font-size: var(--font-size-base);
     color: var(--text-tertiary);
     max-width: 600px;
-    margin: 0 auto;
+    margin: 0 auto var(--space-6);
     font-weight: 400;
 }
 
