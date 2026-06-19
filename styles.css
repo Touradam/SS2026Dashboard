@@ -1842,7 +1842,7 @@ a:hover {
 /* Section Headers - More Spacious */
 .section-header {
     text-align: center;
-    margin-bottom: clamp(var(--space-7), 8vw, var(--space-8));
+    margin-bottom: clamp(var(--space-9), 10vw, var(--space-10));
     position: relative;
     padding-top: 60px;
 }
