@@ -1,11 +1,12 @@
-// Solar Sense Pro - China Launch Execution Plan Data
+// Solar Sense Research Edition - China Launch Execution Plan Data
 // Extracted from china-launch-execution-plan.md
+// Focus: Research institutions, universities, and academic partnerships
 
 const executionPlan = {
   timeline: {
     startDate: '2026-07-01',
     endDate: '2026-12-31',
-    totalWeeks: 26,
+    totalWeeks: 24,
     totalMonths: 6,
     totalPhases: 6
   },
@@ -13,418 +14,390 @@ const executionPlan = {
   monthlyObjectives: [
     {
       month: 'July',
-      focus: 'Commercial Pipeline Seeding & Baseline Sourcing',
-      pilotGoal: 'Build pipeline of 15 target partners',
-      manufacturingGoal: 'Source pool of 5 EMS partners',
-      criticalDeliverable: 'Operational Notion workspace'
+      focus: 'China Entry & Research Market Mapping',
+      pilotGoal: 'Identify 100 target organizations (universities, research labs)',
+      manufacturingGoal: 'Initial manufacturing prospect list (15-20 partners)',
+      criticalDeliverable: 'China Market Opportunity Map completed'
     },
     {
       month: 'August',
-      focus: 'On-Site Manufacturing Audits & Pilot Commitment Closure',
-      pilotGoal: 'Secure 3 formal pilot agreements',
-      manufacturingGoal: 'Narrow to 2 top candidates, conduct audits',
-      criticalDeliverable: 'Signed pilot deployment contract'
+      focus: 'POC Development & Research Partnerships',
+      pilotGoal: 'Secure 2-3 pilot agreements with research institutions',
+      manufacturingGoal: 'Manufacturing shortlist (3-5 partners evaluated)',
+      criticalDeliverable: 'Signed pilot deployment contracts'
     },
     {
       month: 'September',
-      focus: 'Low-Volume Production Run & Site Readiness',
-      pilotGoal: 'Finalize site preparation parameters',
-      manufacturingGoal: 'Kick off 10-50 unit production run',
-      criticalDeliverable: 'Hardware bring-up guide'
+      focus: 'Validation & Localization',
+      pilotGoal: '2-3 pilots operational at research sites',
+      manufacturingGoal: 'Manufacturing feasibility assessment completed',
+      criticalDeliverable: 'China Market Validation Report'
     },
     {
       month: 'October',
-      focus: 'Hardware Ingestion, Testing & Logistics Clearance',
-      pilotGoal: 'Pre-installation inspections',
-      manufacturingGoal: 'Ingest and validate 10-50 unit batch',
-      criticalDeliverable: 'Production batch validated'
+      focus: 'Investor Readiness & Fundraising Preparation',
+      pilotGoal: 'Pilot validation data documented and analyzed',
+      manufacturingGoal: 'Manufacturing partnership roadmap completed',
+      criticalDeliverable: 'Investor pitch deck and financial model'
     },
     {
       month: 'November',
-      focus: 'Field Deployment & Active Data Acquisition',
-      pilotGoal: 'Deploy live installation',
-      manufacturingGoal: 'Lock pricing for 100-500+ units',
-      criticalDeliverable: 'Live telemetry stream active'
+      focus: 'Fundraising Acceleration & Strategic Engagement',
+      pilotGoal: 'Research collaborations formalized (3-5 partnerships)',
+      manufacturingGoal: 'Manufacturing partner finalization underway',
+      criticalDeliverable: '15-20 investor meetings completed'
     },
     {
       month: 'December',
-      focus: 'Pipeline Expansion & Strategic Hand-Off',
-      pilotGoal: 'Secure 2 additional Q1 2027 pilots',
-      manufacturingGoal: 'Freeze production playbook',
-      criticalDeliverable: 'Launch readiness certified'
+      focus: 'Demo Day & Strategic Partnerships',
+      pilotGoal: 'University partnerships established (3-5 institutions)',
+      manufacturingGoal: 'Manufacturing partner finalized',
+      criticalDeliverable: 'Demo Day presentation and 12-month growth plan'
     }
   ],
 
   weeks: [
-    // July 2026
+    // Phase 1: Land & Launch (July 2026, Weeks 1-4)
     {
       weekNumber: 1,
       dates: 'July 1-10, 2026',
       month: 'July',
-      phase: 'Pipeline Seeding',
-      topic: 'China Entry & Founder Orientation',
+      phase: 'Land & Launch',
+      topic: 'China Entry & Market Mapping',
       priority: 'Critical',
-      hours: { adama: 32, jordan: 4 },
-      technicalTrack: 'Stand up the streamlined Notion workspace. Index all hardware schematics, pin configurations, and firmware boundaries for the current Solar Sense Pro design.',
-      relationshipTrack: 'Onboard with Aboli and the PnP Program Lead. Pitch the Solar Sense Pro target profile to the PnP team during 1-on-1 sessions to seed the upcoming matching pipeline. Attend the Kickoff Roadshow to connect with NETDA, NID, and NHIZ officials.',
-      jordanTrack: 'Weekly alignment check: baseline the Notion task parameters, confirm communication windows, and finalize document handling rules.',
-      deliverables: ['Operational Notion workspace layout', 'Completed PnP onboarding profiling sheets'],
-      successMetrics: ['100% of core technical baseline documents indexed', 'Early target requirements delivered to the PnP program lead']
+      hours: { adama: 40, jordan: 4 },
+      technicalTrack: 'Establish SEPT operational presence in Nantong. Build first version of China Market Opportunity Map focused on universities, research institutes, testing laboratories, and engineering programs.',
+      relationshipTrack: 'Complete relocation, office setup, and founder onboarding. Attend PnP orientation sessions, 1-on-1 mentor meetings, and kickoff roadshow networking. Connect with NETDA, NID, and NHIZ officials.',
+      jordanTrack: 'Weekly alignment: Review market opportunity map structure, target organization criteria, and communication protocols.',
+      deliverables: ['SEPT fully operational in Nantong', 'WFOE registration initiated', 'Initial China Market Opportunity Map', 'First 30 target organizations identified'],
+      successMetrics: ['100% operational setup complete', 'Initial contact database of professors and lab directors established']
     },
     {
       weekNumber: 2,
       dates: 'July 13-17, 2026',
       month: 'July',
-      phase: 'Pipeline Seeding',
-      topic: 'Legal, Financial & Operational Setup',
+      phase: 'Land & Launch',
+      topic: 'Shanghai Ecosystem & Customer Discovery',
       priority: 'High',
       hours: { adama: 40, jordan: 3 },
-      technicalTrack: 'Map the hardware Bill of Materials (BOM) to cross-reference component availability via local distributors. Highlight parts vulnerable to localized lead times.',
-      relationshipTrack: 'Attend banking and taxation workshops to clear regulatory operational steps. Participate in Shanghai Business Trip to network with Yangtze River Delta innovation stakeholders and source early manufacturing leads.',
-      jordanTrack: 'Asynchronous review: check localized component recommendations and sign off on alternative part tolerances via Notion.',
-      deliverables: ['Preliminary localized component tracking database', 'Local bank setup documents'],
-      successMetrics: ['Corporate banking infrastructure activated', 'Initial list of 3 potential regional component distributors established']
+      technicalTrack: 'Begin localization of marketing materials, website content, and product positioning for Chinese academic audiences. Draft Chinese company introduction and product one-pager.',
+      relationshipTrack: 'Participate in banking and taxation workshops. Attend Shanghai ecosystem trip to meet universities, innovation centers, and research organizations. Conduct customer discovery interviews with researchers and professors.',
+      jordanTrack: 'Asynchronous review: Check Chinese product materials for technical accuracy and appropriate academic positioning.',
+      deliverables: ['China banking setup roadmap completed', '15-20 customer discovery conversations conducted', 'Chinese company introduction drafted', 'Target organization database expanded to 60 organizations'],
+      successMetrics: ['Banking infrastructure path clear', 'Initial research-sector value proposition validated']
     },
     {
       weekNumber: 3,
       dates: 'July 20-24, 2026',
       month: 'July',
-      phase: 'Pipeline Seeding',
-      topic: 'Talent Access & Government Incentives',
+      phase: 'Land & Launch',
+      topic: 'Government Incentives & Manufacturing Scouting',
       priority: 'Critical',
-      hours: { adama: 30, jordan: 5 },
-      technicalTrack: 'Group the localized BOM components into specific sourcing packages (PCBA, mechanical enclosure, terminal connectors). Prepare clean RFQ templates.',
-      relationshipTrack: 'Interface with Technology Department officials during PnP grant workshops to assess regional test-bed availability. Ask the PnP Corporate BD Lead for a list of 5 small-to-mid-scale turnkey EMS providers located in the Jiangsu/Yangtze River Delta region.',
-      jordanTrack: 'Design review: check connector footprints and mechanical tolerances to ensure compatibility with standard Chinese laboratory and industrial solar infrastructure.',
-      deliverables: ['Production-ready RFQ package drafted in English and Chinese', 'Policy-matching log in Notion'],
-      successMetrics: ['5 regional EMS manufacturing targets identified and logged with clear warm-introduction paths via PnP']
+      hours: { adama: 35, jordan: 5 },
+      technicalTrack: 'Prepare technical documentation and product specifications for manufacturing partner discussions. Identify Chinese manufacturers capable of producing Solar Sense Research Edition hardware.',
+      relationshipTrack: 'Attend government grants, subsidies, and talent program workshops. Meet district officials from NETDA, NID, and NHIZ to understand funding opportunities. Continue outreach to universities and national laboratories.',
+      jordanTrack: 'Design review: Confirm product specifications are suitable for Chinese manufacturing and research institution requirements.',
+      deliverables: ['Government incentive strategy developed', 'Manufacturing partner long list (15-20 companies)', '80 target organizations identified', '5+ qualified partnership discussions initiated'],
+      successMetrics: ['Government funding opportunities mapped', 'Manufacturing feasibility confirmed']
     },
     {
       weekNumber: 4,
       dates: 'July 27-31, 2026',
       month: 'July',
-      phase: 'Pipeline Seeding',
-      topic: 'Ecosystem Integration & POC Preparation',
+      phase: 'Land & Launch',
+      topic: 'Ecosystem Integration & Pipeline Development',
       priority: 'High',
       hours: { adama: 42, jordan: 4 },
-      technicalTrack: 'Configure firmware data-handling parameters to allow for complete offline operation or direct local server communication. Bypass external cloud dependencies for operation inside the Great Firewall.',
-      relationshipTrack: 'Use the guided city tour and Wenzhou Business Trip to engage local business stakeholders. Work with PnP advisors and bilingual cohort members to adapt the Solar Sense Pro presentation deck for Chinese commercial buyers (EPCs, developers, and operators).',
-      jordanTrack: 'Code review: verify the firmware\'s offline telemetry storage buffer sizes to prevent data loss inside the Great Firewall.',
-      deliverables: ['Localized dual-language pitch deck focused on commercial validation', 'Updated offline firmware branch'],
-      successMetrics: ['Commercial pitch presentation vetted by at least one native-speaking PnP advisor or cohort peer']
+      technicalTrack: 'Adapt SEPT pitch deck, pricing assumptions, and market messaging for Chinese academic and research customers. Complete Chinese-language marketing materials.',
+      relationshipTrack: 'Participate in Nantong ecosystem integration activities. Conduct follow-up meetings with high-priority universities and research institutes. Participate in Wenzhou business trip to expand partnership opportunities.',
+      jordanTrack: 'Review Chinese pitch deck and validate technical claims for research audience.',
+      deliverables: ['China Market Opportunity Map completed', 'Database of 100 target organizations finalized', 'Chinese pitch deck completed', 'Manufacturing partner prospect list completed', '10+ qualified partnership discussions active'],
+      successMetrics: ['Phase 1 complete', 'Initial university pipeline established', 'Phase 2 POC plan prepared']
     },
-    // August 2026
+    // Phase 2: Market Entry (August 2026, Weeks 5-8)
     {
       weekNumber: 5,
       dates: 'August 3-7, 2026',
       month: 'August',
-      phase: 'Audits & Commitments',
-      topic: 'From Technology to Real Use Cases',
+      phase: 'Market Entry',
+      topic: 'Pilot Partner Qualification & Market Entry Strategy',
       priority: 'Critical',
-      hours: { adama: 34, jordan: 4 },
-      technicalTrack: 'Standardize an engineering evaluation matrix in Notion to grade potential manufacturing partners across quality, scale flexibility, and component access.',
-      relationshipTrack: 'Attend the Market Entry and IP Workshops. Present the finalized RFQ package to the PnP Corporate BD team to initiate warm supplier introductions. Screen the PnP network for local solar EPC firms, commercial operators, and research labs.',
-      jordanTrack: 'Monthly review: evaluate July\'s pipeline progress, adjust target timelines, and approve the initial hardware fabrication budget.',
-      deliverables: ['Finalized EMS Evaluation Rubric', 'Active Pilot Target Pipeline tracking sheet populated with 10+ entry rows in Notion'],
-      successMetrics: ['3 target EMS partners engaged with active RFQs', '5 qualified pilot target organizations entered into the CRM funnel']
+      hours: { adama: 38, jordan: 4 },
+      technicalTrack: 'Develop pilot program packages, pilot objectives, evaluation metrics, and draft collaboration proposals. Prioritize top 15-20 organizations from Phase 1 pipeline.',
+      relationshipTrack: 'Participate in Market Entry Workshop and refine China go-to-market strategy. Attend IP, patent, and data compliance workshops. Begin structured pilot discussions with top research institutions.',
+      jordanTrack: 'Monthly review: Evaluate July progress, refine pilot technical requirements, and approve collaboration frameworks.',
+      deliverables: ['China market-entry strategy completed', 'China IP and patent strategy documented', 'Pilot partner shortlist finalized', '5-8 active pilot discussions underway'],
+      successMetrics: ['Market entry framework validated', 'Pilot proposal package ready']
     },
     {
       weekNumber: 6,
       dates: 'August 10-14, 2026',
       month: 'August',
-      phase: 'Audits & Commitments',
-      topic: 'POC Kickoff & Corporate Matchmaking',
+      phase: 'Market Entry',
+      topic: 'POC Kickoff & Research Partner Matchmaking',
       priority: 'Critical',
       hours: { adama: 45, jordan: 5 },
-      technicalTrack: 'Consolidate initial quotation responses, lead-time estimates, and component flags returned by the engaged manufacturing suppliers.',
-      relationshipTrack: 'Pitch Solar Sense Pro at the flagship matchmaking event to corporate energy partners, industrial park representatives, and regional developers. Conduct private, 1-on-1 closed-door matchmaking sessions to source pilot sites.',
-      jordanTrack: 'Asynchronous technical feedback: review manufacturing feedback and address vendor component substitution concerns via Notion.',
-      deliverables: ['Matchmaking interaction summary', 'Initial manufacturing quotation comparison ledger in Notion'],
-      successMetrics: ['At least 3 face-to-face pilot site leads advanced to formal proposal stages', '2 target EMS partners shortlisted for physical site audits']
+      technicalTrack: 'Prepare Solar Sense Research Edition technical demonstrations. Conduct technical meetings with prospective pilot partners to define pilot scope and research objectives.',
+      relationshipTrack: 'Present Solar Sense Research Edition during POC Kickoff Event. Participate in closed-door matchmaking sessions with universities, laboratories, and innovation centers. Initiate discussions with manufacturers identified through PnP network.',
+      jordanTrack: 'Asynchronous technical support: Review pilot technical requirements and provide guidance on research use cases.',
+      deliverables: ['10-15 strategic matchmaking meetings completed', '2-4 pilot candidates formally shortlisted', 'Initial MOUs or letters of intent signed', 'Manufacturing partner evaluation initiated'],
+      successMetrics: ['Strong pilot candidate pipeline established', 'First LOIs signed']
     },
     {
       weekNumber: 7,
       dates: 'August 17-21, 2026',
       month: 'August',
-      phase: 'Audits & Commitments',
-      topic: 'Negotiations, Go-to-Market & Pilot Testing',
+      phase: 'Market Entry',
+      topic: 'Pilot Negotiations & Product Validation',
       priority: 'High',
-      hours: { adama: 38, jordan: 3 },
-      technicalTrack: 'Prepare a localized field testing protocol document mapping out safety parameters, mounting constraints, and grounding verifications for pilot installations.',
-      relationshipTrack: 'Run active negotiations with shortlisted pilot partners, utilizing PnP bilingual support to define the scope of the field deployment. Join the regional industrial business trip to explore broader commercial solar operator networks.',
-      jordanTrack: 'Asynchronous review: check safety and shutdown response parameters against regional electrical standards.',
-      deliverables: ['Standardized Field Pilot Agreement template', 'Localized Installation Safety Checklist'],
-      successMetrics: ['2 formal pilot deployment agreements advanced to the final signature phase with regional commercial or academic partners']
+      hours: { adama: 40, jordan: 3 },
+      technicalTrack: 'Launch initial pilot testing activities with selected research partners. Define pilot deployment requirements and success criteria.',
+      relationshipTrack: 'Negotiate pilot terms, deployment scope, data-sharing protocols, and success metrics. Participate in China market case-study sessions. Conduct supplier and manufacturing assessments.',
+      jordanTrack: 'Asynchronous review: Check pilot deployment parameters and validate technical approach.',
+      deliverables: ['2-3 pilot agreements in final negotiation', 'At least one pilot deployment initiated', 'Product performance feedback process established', 'Preliminary manufacturing shortlist'],
+      successMetrics: ['Pilot agreements advancing to signature', 'Manufacturing options validated']
     },
     {
       weekNumber: 8,
       dates: 'August 24-28, 2026',
       month: 'August',
-      phase: 'Audits & Commitments',
-      topic: 'Business Model Validation & Deal Closing',
+      phase: 'Market Entry',
+      topic: 'Business Model Validation & Commercial Readiness',
       priority: 'Critical',
       hours: { adama: 46, jordan: 6 },
-      technicalTrack: 'Finalize structural layout optimizations for Solar Sense Pro based on the physical terminal box parameters observed in regional corporate partner data sheets.',
-      relationshipTrack: 'Attend business model validation sessions to refine localized pricing structures. Finalize partnership terms and secure signed deployment contracts with primary pilot hosts. Run an on-site factory audit at the highest-rated EMS candidate facility (Full-Day Site Visit).',
-      jordanTrack: 'Technical sign-off: execute the definitive design freeze for the 10 to 50 unit low-volume production batch.',
-      deliverables: ['Signed Pilot Deployment Contract (Minimum of 1, Target of 2+)', 'Completed EMS Site Audit Report'],
-      successMetrics: ['At least 1 binding pilot agreement signed with an operator, EPC, or lab', 'EMS partner validated and cleared for assembly']
+      technicalTrack: 'Continue product testing and collect structured feedback from pilot participants. Complete supplier matching and develop China manufacturing roadmap.',
+      relationshipTrack: 'Participate in Business Model Validation Workshop. Finalize pilot agreements and formal research collaborations. Refine pricing, customer acquisition, and partnership models for Chinese market.',
+      jordanTrack: 'Technical sign-off: Validate business model assumptions and pilot technical configurations.',
+      deliverables: ['2-3 pilot agreements signed', '1-2 active pilot deployments initiated', 'China business model validated', 'Manufacturing partner shortlist completed', 'Product localization roadmap created'],
+      successMetrics: ['Phase 2 complete: Pilots secured', 'Business model validated for research sector']
     },
-    // September 2026
+    // Phase 3: Validation & Localization (September 2026, Weeks 9-12)
     {
       weekNumber: 9,
       dates: 'August 31 - September 4, 2026',
       month: 'September',
-      phase: 'Production Kickoff',
-      topic: 'Month 3 Transition — Localization & Validation',
+      phase: 'Validation & Localization',
+      topic: 'Pilot Execution & Customer Feedback Framework',
       priority: 'Critical',
-      hours: { adama: 35, jordan: 5 },
-      technicalTrack: 'Deliver production Gerber files, localized BOM components, and assembly specifications to the contracted EMS partner. Kick off the 10 to 50 unit manufacturing run.',
-      relationshipTrack: 'Coordinate with the signed pilot host\'s engineering point person to map out physical mounting constraints and data-access parameters at the deployment site.',
-      jordanTrack: 'Asynchronous tracking: monitor the factory floor\'s incoming component quality logs and design-for-assembly (DFA) inquiries.',
-      deliverables: ['Open purchase order for the 10 to 50 unit production batch', 'Site Readiness Log in Notion'],
-      successMetrics: ['Manufacturing run approved and scheduled by the EMS partner', 'Site parameters mapped']
+      hours: { adama: 40, jordan: 5 },
+      technicalTrack: 'Install and commission Solar Sense Research Edition at pilot partner sites. Train researchers and laboratory staff on system operation and dashboard usage. Establish pilot success metrics and reporting protocols.',
+      relationshipTrack: 'Coordinate with pilot site teams to ensure successful deployments. Begin Chinese IP and patent filing assessment based on technology deployment strategy.',
+      jordanTrack: 'Asynchronous support: Monitor pilot installations and provide remote technical guidance.',
+      deliverables: ['1-2 pilot sites fully operational', 'Pilot monitoring framework established', 'Customer feedback process documented', 'Initial China IP strategy update'],
+      successMetrics: ['Pilots operational and collecting data', 'Feedback collection process active']
     },
     {
       weekNumber: 10,
       dates: 'September 7-11, 2026',
       month: 'September',
-      phase: 'Production Kickoff',
-      topic: 'Deep POC Execution — Supply Chain Integration',
+      phase: 'Validation & Localization',
+      topic: 'Product Localization & Manufacturing Assessment',
       priority: 'Medium',
-      hours: { adama: 28, jordan: 8 },
-      technicalTrack: 'Build a localized hardware bring-up and calibration checklist in Notion covering power rail verification, sensor gain adjustment, and flashing routines.',
-      relationshipTrack: 'Maintain regular contact with the EMS facility production manager to monitor progress and build a long-term supply relationship.',
-      jordanTrack: 'Hardware bring-up documentation: create a step-by-step video guide showing how to flash, calibrate, and test the platform using basic bench gear.',
-      deliverables: ['Localized Hardware Bring-up & Verification Guide logged in Notion'],
-      successMetrics: ['100% of the validation procedures documented, allowing Adama to execute testing independently at the PnP hub']
+      hours: { adama: 35, jordan: 8 },
+      technicalTrack: 'Translate dashboard interface, reports, alerts, and user documentation into Chinese. Conduct user experience interviews with pilot participants. Assess certification and sourcing requirements for China production.',
+      relationshipTrack: 'Visit and evaluate shortlisted manufacturing partners. Build relationships with potential Chinese manufacturing facilities.',
+      jordanTrack: 'Localization review: Validate Chinese interface translations and technical documentation for accuracy.',
+      deliverables: ['Chinese dashboard beta version completed', 'Chinese user documentation drafted', 'Manufacturing evaluation report completed', 'Product localization requirements identified'],
+      successMetrics: ['Chinese product experience validated by pilot users', 'Manufacturing feasibility confirmed']
     },
     {
       weekNumber: 11,
       dates: 'September 14-18, 2026',
       month: 'September',
-      phase: 'Production Kickoff',
-      topic: 'Localized Software & Integration Validation',
+      phase: 'Validation & Localization',
+      topic: 'Research Partnerships & Ecosystem Expansion',
       priority: 'High',
-      hours: { adama: 32, jordan: 4 },
-      technicalTrack: 'Configure localized user interface dashboards and test data telemetry pipelines inside the Great Firewall. Verify error-free communication with local receivers.',
-      relationshipTrack: 'Update the PnP program lead on manufacturing progress to clear space within the hub\'s lab testing benches for incoming hardware.',
-      jordanTrack: 'Firmware review: check the integration of localized data telemetry profiles and calibration math variables.',
-      deliverables: ['Validated local UI dashboard', 'Active data ingestion channel on a local server instance'],
-      successMetrics: ['Software telemetry verified to transmit data points within local network environments without dropped packets']
+      hours: { adama: 38, jordan: 4 },
+      technicalTrack: 'Expand pilot network and explore opportunities for joint publications, student projects, and grant collaborations. Develop academic collaboration framework.',
+      relationshipTrack: 'Present pilot progress to universities, laboratories, and renewable energy research centers. Conduct site visits with prospective research collaborators. Engage faculty members and graduate researchers.',
+      jordanTrack: 'Review academic collaboration proposals and validate technical approach for research applications.',
+      deliverables: ['3-5 new research partnership opportunities identified', 'Additional pilot candidates added to pipeline', 'Academic collaboration framework developed', 'Expanded university engagement network'],
+      successMetrics: ['Research ecosystem presence growing', 'Academic interest validated']
     },
     {
       weekNumber: 12,
       dates: 'September 21-25, 2026',
       month: 'September',
-      phase: 'Production Kickoff',
-      topic: 'Pre-Installation Site Preparation',
+      phase: 'Validation & Localization',
+      topic: 'Market Validation & Commercialization Assessment',
       priority: 'High',
-      hours: { adama: 36, jordan: 5 },
-      technicalTrack: 'Formulate the physical installation kit list (enclosures, outdoor-rated cable extensions, quick-disconnect couplings, terminal blocks) to match the selected pilot site.',
-      relationshipTrack: 'Execute a physical walk-through and site parameter check at the confirmed pilot installation yard (Full-Day Site Visit). Coordinate directly with the site team to finalize the deployment window.',
-      jordanTrack: 'Monthly review: evaluate September\'s low-volume production metrics, check the Q3 milestone completion state, and authorize October field integration assets.',
-      deliverables: ['Q3 Strategic Milestone Performance Report', 'Signed Site Readiness Sign-off Sheet'],
-      successMetrics: ['Physical pilot installation site verified as structurally and electrically ready for hardware integration']
+      hours: { adama: 40, jordan: 5 },
+      technicalTrack: 'Collect and analyze pilot performance data and customer feedback. Evaluate pricing assumptions, deployment models, and support requirements.',
+      relationshipTrack: 'Conduct structured interviews with pilot stakeholders and decision-makers. Prepare China market validation report and commercialization recommendations.',
+      jordanTrack: 'Monthly review: Evaluate Q3 progress, validate market assumptions, and prepare Q4 fundraising strategy.',
+      deliverables: ['China Market Validation Report completed', 'Product-market fit assessment documented', 'Commercialization assumptions validated', 'Priority market segments ranked', 'Q3 milestone report completed'],
+      successMetrics: ['Phase 3 complete: Market demand validated', 'Product localized for Chinese market']
     },
-    // October 2026
+    // Phase 4: Investor Readiness & Fundraising Preparation (October 2026, Weeks 13-16)
     {
       weekNumber: 13,
       dates: 'September 28 - October 2, 2026',
       month: 'October',
-      phase: 'Hardware Validation',
-      topic: 'Month 4 Transition — Investor Readiness',
+      phase: 'Investor Readiness',
+      topic: 'Fundraising Strategy & Investment Narrative',
       priority: 'Critical',
-      hours: { adama: 40, jordan: 4 },
-      technicalTrack: 'Ingest the physical 10 to 50 unit production batch from the EMS partner. Unbox, catalog, and log the physical condition of all boards within the central Notion inventory module.',
-      relationshipTrack: 'Invite the EMS production manager and senior engineers for a feedback review to debrief on assembly challenges. Discuss upcoming 100 to 500 unit scaling dynamics.',
-      jordanTrack: 'Asynchronous support: review initial unboxing photography and stand by to cross-check any manufacturing quality anomalies.',
-      deliverables: ['Production Batch Ingestion Log', 'Initial Manufacturing Yield Summary'],
-      successMetrics: ['100% of manufactured units cataloged with serial numbers', 'Manufacturing yield metrics documented in Notion']
+      hours: { adama: 38, jordan: 4 },
+      technicalTrack: 'Build comprehensive investor pipeline and outreach strategy. Develop SEPT China growth story using pilot results, research partnerships, and manufacturing strategy.',
+      relationshipTrack: 'Define fundraising objectives, target round size, and capital allocation. Identify target investor profiles including climate-tech VCs, strategic corporate investors, government funds, and family offices.',
+      jordanTrack: 'Strategy review: Validate fundraising approach and investment narrative from technical perspective.',
+      deliverables: ['Fundraising strategy completed', 'Investment thesis finalized', 'Target investor database (75-100 investors)', 'China growth narrative documented'],
+      successMetrics: ['Clear fundraising roadmap established', 'Investor targeting strategy validated']
     },
     {
       weekNumber: 14,
       dates: 'October 5-9, 2026',
       month: 'October',
-      phase: 'Hardware Validation',
-      topic: 'National Holiday Week (Golden Week) — Internal Validation & Bench Burn-In',
+      phase: 'Investor Readiness',
+      topic: 'Financial Model & Business Case Development',
       priority: 'Critical',
-      hours: { adama: 30, jordan: 8 },
-      technicalTrack: 'Set up a multi-unit testing array at the PnP hub workspace. Execute the localized bring-up checklist across the batch: flash firmware, check power rails, and verify base current/voltage sensing operation.',
-      relationshipTrack: 'None (National Holiday closures across external offices and factories). Focus entirely on internal technical execution.',
-      jordanTrack: 'Active asynchronous engineering support: audit early telemetry calibration logs uploaded by Adama. Provide remote debugging instructions for outlier boards.',
-      deliverables: ['Batch Functional Testing Database', 'Serialized calibration logs'],
-      successMetrics: ['At least 10 individual hardware units fully flashed, calibrated, and functionally validated on the test bench']
+      hours: { adama: 35, jordan: 8 },
+      technicalTrack: 'Validate pricing assumptions using pilot feedback and market interviews. Calculate customer acquisition cost, lifetime value, and unit economics.',
+      relationshipTrack: 'Build scenario analyses for Research Edition, Enterprise Edition, and Manufacturing Licensing opportunities. Work with financial advisors to refine model.',
+      jordanTrack: 'Financial model review: Validate technical assumptions, cost structures, and revenue projections.',
+      deliverables: ['Five-year financial model completed', 'Revenue scenarios documented', 'Unit economics validated', 'Capital deployment plan finalized'],
+      successMetrics: ['Financial model demonstrates clear path to profitability', 'Unit economics validated']
     },
     {
       weekNumber: 15,
       dates: 'October 12-16, 2026',
       month: 'October',
-      phase: 'Hardware Validation',
-      topic: 'Investor Materials & Growth Narrative Refinement',
+      phase: 'Investor Readiness',
+      topic: 'Investor Materials & Data Room Development',
       priority: 'High',
-      hours: { adama: 34, jordan: 4 },
-      technicalTrack: 'Subject the verified hardware batch to a continuous 72-hour automated load burn-in run to trigger and filter out infant mortality failures before field deployment.',
-      relationshipTrack: 'Meet with PnP financial advisors to structure a multi-tier manufacturing economic roadmap tailored for commercial investors.',
-      jordanTrack: 'Asynchronous review: analyze continuous long-run sensor data streams to identify parametric drift or thermal performance issues under load.',
-      deliverables: ['Multi-Tier Economic Strategy Model (covering cost metrics across 10, 100, and 1,000+ unit runs)', 'Hardware Burn-In Stability Report'],
-      successMetrics: ['At least 5 units completely clear the continuous stress testing run with zero component failures, certified ready for deployment']
+      hours: { adama: 40, jordan: 4 },
+      technicalTrack: 'Organize secure data room containing financials, pilot reports, IP documentation, market research, and technical materials. Develop standardized due diligence responses.',
+      relationshipTrack: 'Design bilingual (English/Chinese) investor pitch deck. Prepare executive summary, one-page investment memo, and technology overview with translation support.',
+      jordanTrack: 'Data room review: Ensure technical documentation is investor-ready and accurately represents capabilities.',
+      deliverables: ['Investor deck completed', 'Executive summary completed', 'Data room fully organized', 'Bilingual investor materials finalized'],
+      successMetrics: ['Professional investor package ready', 'Due diligence materials organized']
     },
     {
       weekNumber: 16,
       dates: 'October 19-23, 2026',
       month: 'October',
-      phase: 'Hardware Validation',
-      topic: 'Bilateral Presentation Tuning',
+      phase: 'Investor Readiness',
+      topic: 'Investor Readiness & China Growth Strategy',
       priority: 'High',
-      hours: { adama: 32, jordan: 3 },
-      technicalTrack: 'Assemble complete, outdoor-rated Pilot Installation Kits, enclosing verified boards into protective housings paired with matched terminal cabling.',
-      relationshipTrack: 'Work alongside native-speaking cohort partners and PnP advisors to adapt the commercial growth narrative into a clear, data-backed pitch presentation.',
-      jordanTrack: 'Narrative alignment: confirm that the technical performance boundaries, safety ratings, and diagnostic accuracy values shown in the deck match verified laboratory test logs.',
-      deliverables: ['Finalized Dual-Language Commercial Pitch Presentation', 'Complete Pilot Installation Kits staged for transit'],
-      successMetrics: ['Pitch presentation cleared of language anomalies by native-speaking industry peers', 'Kits packed']
+      hours: { adama: 36, jordan: 3 },
+      technicalTrack: 'Finalize China expansion strategy including commercialization roadmap, manufacturing partnerships, and research ecosystem growth.',
+      relationshipTrack: 'Conduct mock investor presentations with PnP mentors and industry advisors. Begin warm introductions to PnP investors, strategic partners, and government investment funds.',
+      jordanTrack: 'Presentation review: Validate technical claims and ensure investor messaging is accurate and compelling.',
+      deliverables: ['Investor presentation validated', 'China Growth Strategy completed', 'Investor outreach pipeline activated', 'Due diligence package finalized'],
+      successMetrics: ['Phase 4 complete: Ready for active fundraising', 'Investor meetings scheduled for November']
     },
+    // Phase 5: Fundraising Acceleration (November 2026, Weeks 17-20)
     {
       weekNumber: 17,
       dates: 'October 26-30, 2026',
-      month: 'October',
-      phase: 'Hardware Validation',
-      topic: 'Regional Ecosystem Structuring',
+      month: 'November',
+      phase: 'Fundraising Acceleration',
+      topic: 'Investor Roadshow & Market Positioning',
       priority: 'Critical',
-      hours: { adama: 35, jordan: 5 },
-      technicalTrack: 'Run a pre-deployment loop check on the kitted pilot hardware to confirm the firmware\'s offline data-logging fail-safes are active.',
-      relationshipTrack: 'Connect with local incubator or industrial park managers via PnP introductions to evaluate post-program landing opportunities. Present the economic roadmap to the PnP Investor Lead for feedback.',
-      jordanTrack: 'Monthly review: evaluate October\'s hardware validation runs, finalize November\'s installation scheduling, and approve on-site integration configurations.',
-      deliverables: ['Monthly Performance Variance Audit', 'Finalized Field Deployment Work Plan'],
-      successMetrics: ['Final approval secured from the pilot site team for the upcoming field installation window']
+      hours: { adama: 40, jordan: 4 },
+      technicalTrack: 'Present SEPT China commercialization strategy and pilot validation results. Qualify investors based on sector focus, investment stage, strategic value, and geographic interests.',
+      relationshipTrack: 'Participate in PnP investor roundtables and climate-tech networking events. Conduct targeted investor outreach to venture funds, corporate investors, and strategic partners.',
+      jordanTrack: 'Investor support: Provide technical answers to investor due diligence questions.',
+      deliverables: ['5-7 investor meetings completed', 'Investor qualification matrix created', 'Initial investor feedback report', 'High-priority investor pipeline established'],
+      successMetrics: ['Strong investor engagement', 'Multiple follow-up meetings scheduled']
     },
-    // November 2026
     {
       weekNumber: 18,
       dates: 'November 2-6, 2026',
       month: 'November',
-      phase: 'Field Deployment',
-      topic: 'Month 5 Transition — Fundraising Acceleration',
-      priority: 'Critical',
-      hours: { adama: 45, jordan: 6 },
-      technicalTrack: 'Transport hardware kits to the primary deployment yard. Install Solar Sense Pro onto the active photovoltaic infrastructure following the localized installation checklist (Full-Day On-Site Deployment).',
-      relationshipTrack: 'Execute the physical installation in cooperation with the host site\'s operations staff, building deep rapport with the field engineering crew. Participate in initial PnP investor roundtable events.',
-      jordanTrack: 'Standby remote technical coverage: remain online during the installation window to review early over-the-air parameter checks.',
-      deliverables: ['Field Installation Log', 'Active live site monitoring stream initialized in Notion'],
-      successMetrics: ['At least 1 Solar Sense Pro monitoring node physically mounted, electrically integrated, and actively running on a live system in China']
+      phase: 'Fundraising Acceleration',
+      topic: 'Strategic VC Meetings & Due Diligence Preparation',
+      priority: 'High',
+      hours: { adama: 38, jordan: 5 },
+      technicalTrack: 'Address investor questions regarding technology, manufacturing, commercialization, and China expansion. Organize and validate all due diligence documentation.',
+      relationshipTrack: 'Conduct one-on-one meetings with climate-tech VCs, strategic corporate investors, and government-backed funds. Customize investment presentations based on investor interests.',
+      jordanTrack: 'Due diligence support: Provide technical validation and documentation for investor inquiries.',
+      deliverables: ['5-6 additional investor meetings completed', 'Due diligence checklist finalized', 'Investor-specific follow-up materials prepared', '2-3 investors express strong interest'],
+      successMetrics: ['Deep investor engagement', 'Due diligence processes beginning']
     },
     {
       weekNumber: 19,
       dates: 'November 9-13, 2026',
       month: 'November',
-      phase: 'Field Deployment',
-      topic: 'Closed-Door Investor Roundtables & Field Validation',
+      phase: 'Fundraising Acceleration',
+      topic: 'Government Funds & Strategic Capital',
       priority: 'High',
-      hours: { adama: 34, jordan: 5 },
-      technicalTrack: 'Monitor incoming telemetry streams from the live site (current, voltage, temperature, diagnostic flags). Cross-reference the data points against local weather and system tracking metrics.',
-      relationshipTrack: 'Pitch Solar Sense Pro\'s real-world field validation metrics to venture capital partners and investment representatives during private PnP roundtables.',
-      jordanTrack: 'Asynchronous telemetry audit: run performance evaluations on the live field data to verify current/voltage tracking precision under variable environmental conditions.',
-      deliverables: ['Initial Field Telemetry Analysis Report', 'Localized investment interest tracker'],
-      successMetrics: ['5 continuous days of clean data ingestion captured and archived inside the Notion platform']
+      hours: { adama: 36, jordan: 4 },
+      technicalTrack: 'Explore non-dilutive funding opportunities, grants, and joint development agreements. Document partnership investment opportunities.',
+      relationshipTrack: 'Meet government investment agencies and innovation funds supporting climate technology. Present SEPT alignment with China renewable energy, AI, and smart infrastructure priorities. Engage solar manufacturers and energy companies for strategic investment.',
+      jordanTrack: 'Strategic review: Evaluate different funding options and provide technical perspective.',
+      deliverables: ['Government funding opportunities identified', 'Strategic investor discussions initiated', 'Partnership investment opportunities documented', 'Non-dilutive funding roadmap completed'],
+      successMetrics: ['Diverse funding pipeline established', 'Strategic partnerships progressing']
     },
     {
       weekNumber: 20,
       dates: 'November 16-20, 2026',
       month: 'November',
-      phase: 'Field Deployment',
-      topic: 'Commercial Pipeline Scaling',
+      phase: 'Fundraising Acceleration',
+      topic: 'Investor Follow-Up & Fundraising Pipeline Development',
       priority: 'Critical',
-      hours: { adama: 36, jordan: 4 },
-      technicalTrack: 'Implement localized dashboard interface refinements based on direct feedback and visibility choices requested by the active pilot host\'s engineering team.',
-      relationshipTrack: 'Leverage the active, data-producing China site installation as live leverage. Invite secondary pipeline prospects (EPCs, developers) to review the live dashboard data during follow-up meetings.',
-      jordanTrack: 'Software optimization: refine analytics data parsing algorithms to optimize memory consumption on the local server container.',
-      deliverables: ['Refined User Dashboard (v1.1)', 'Secondary pilot proposal letters dispatched'],
-      successMetrics: ['Telemetry data successfully packaged into active sales collateral to drive pipeline conversions']
+      hours: { adama: 40, jordan: 3 },
+      technicalTrack: 'Respond to due diligence requests and provide additional technical and financial information. Refine fundraising strategy based on investor insights.',
+      relationshipTrack: 'Conduct second-round investor meetings and follow-up discussions. Update fundraising CRM with investor feedback, timelines, and next steps.',
+      jordanTrack: 'Monthly review: Evaluate fundraising progress, validate technical responses to investors, and prepare for Demo Day.',
+      deliverables: ['Fundraising pipeline actively managed', 'Second-round meetings completed', 'Due diligence processes initiated', 'Next-stage fundraising strategy finalized'],
+      successMetrics: ['Phase 5 complete: Active fundraising underway', '15-20 investor meetings total', 'Multiple due diligence processes active']
     },
+    // Phase 6: Demo Day & Strategic Partnerships (December 2026, Weeks 21-24)
     {
       weekNumber: 21,
       dates: 'November 23-27, 2026',
-      month: 'November',
-      phase: 'Field Deployment',
-      topic: 'Supply Chain Hardening & Scale Contract Optimization',
-      priority: 'High',
-      hours: { adama: 38, jordan: 6 },
-      technicalTrack: 'Refine the hardware design documentation to incorporate assembly insights from October\'s run. Create a finalized package optimized for larger-scale production.',
-      relationshipTrack: 'Convene with the primary EMS provider to negotiate structured pricing, lead-time guarantees, and component buffers across 100 to 500 unit and 1,000+ unit commercial scales.',
-      jordanTrack: 'Monthly review: evaluate live system data, analyze EMS scale pricing tiers, and sign off on the definitive production design files.',
-      deliverables: ['Finalized High-Volume Production Design Archive', 'Validated Scale Pricing Contract Agreement draft'],
-      successMetrics: ['Written manufacturing pricing structures locked and documented for multi-tier scaling paths']
+      month: 'December',
+      phase: 'Demo Day & Partnerships',
+      topic: 'Demo Day Storytelling & Strategic Positioning',
+      priority: 'Critical',
+      hours: { adama: 38, jordan: 4 },
+      technicalTrack: 'Update pitch with pilot performance metrics, customer testimonials, and commercialization milestones. Develop tailored messaging for investors, universities, manufacturers, and government stakeholders.',
+      relationshipTrack: 'Refine Demo Day presentation using investor and mentor feedback. Schedule Demo Day meetings with priority investors and strategic partners.',
+      jordanTrack: 'Presentation review: Final validation of technical claims and performance metrics for Demo Day.',
+      deliverables: ['Demo Day presentation finalized', 'Executive presentation script completed', 'Priority meeting schedule confirmed', 'Strategic messaging aligned'],
+      successMetrics: ['Demo Day presentation ready', 'Key stakeholder meetings scheduled']
     },
-    // December 2026
     {
       weekNumber: 22,
       dates: 'November 30 - December 4, 2026',
       month: 'December',
-      phase: 'Scale & Graduation',
-      topic: 'Month 6 Transition — Demo Day & Graduation Prep',
+      phase: 'Demo Day & Partnerships',
+      topic: 'Partnership Expansion & Talent Development',
       priority: 'High',
-      hours: { adama: 35, jordan: 4 },
-      technicalTrack: 'Compile a comprehensive field performance report covering the first 3 weeks of active live-site operations. Detail energy safety, diagnostic accuracy, and hardware reliability.',
-      relationshipTrack: 'Work alongside PnP presentation advisors to integrate the live field data and multi-tier manufacturing agreements into a high-impact Demo Day pitch.',
-      jordanTrack: 'Data verification: audit the cumulative field telemetry records to verify the platform\'s diagnostic performance claims.',
-      deliverables: ['Solar Sense Pro Field Performance Report', 'Finalized Demo Day presentation asset files'],
-      successMetrics: ['21 days of continuous, uninterrupted field monitoring data captured and compiled into the commercial presentation']
+      hours: { adama: 36, jordan: 3 },
+      technicalTrack: 'Identify internship and graduate research opportunities supporting product development. Establish local talent pipeline.',
+      relationshipTrack: 'Finalize collaboration agreements with universities and renewable energy research centers. Conduct meetings with shortlisted manufacturing and supply chain partners. Participate in university recruitment and talent networking.',
+      jordanTrack: 'Partnership review: Validate technical aspects of university and manufacturing partnerships.',
+      deliverables: ['University collaboration framework established', 'Manufacturing partnership roadmap finalized', 'Local talent pipeline identified', 'Research collaboration opportunities expanded'],
+      successMetrics: ['Partnership foundation strengthened', 'Long-term ecosystem relationships established']
     },
     {
       weekNumber: 23,
       dates: 'December 7-11, 2026',
       month: 'December',
-      phase: 'Scale & Graduation',
-      topic: 'Pilot Pipeline Expansion Sprints',
-      priority: 'High',
-      hours: { adama: 38, jordan: 3 },
-      technicalTrack: 'Maintain data monitoring on the primary pilot node while packaging a second hardware kit for a secondary expansion deployment.',
-      relationshipTrack: 'Execute follow-up verification pitches to secondary pipeline candidates. Use the field performance report to convert leads into committed Q1 2027 pilot sites.',
-      jordanTrack: 'Asynchronous technical oversight: review secondary site installation layouts and confirm system parameter limits.',
-      deliverables: ['Pipeline Conversion Dashboard', 'Updated Q1 2027 Deployment Strategy roadmap'],
-      successMetrics: ['At least 2 additional qualified pilot organizations committed to hardware integration for Q1 2027']
+      phase: 'Demo Day & Partnerships',
+      topic: 'Demo Day Execution & Investor Engagement',
+      priority: 'Critical',
+      hours: { adama: 45, jordan: 4 },
+      technicalTrack: 'Showcase pilot results, localization progress, and manufacturing strategy. Collect investor feedback and identify next-step actions.',
+      relationshipTrack: 'Present SEPT to investors, corporates, government representatives, and PnP partners. Conduct one-on-one meetings with interested investors immediately following presentations.',
+      jordanTrack: 'Demo Day support: Available for technical questions and investor discussions.',
+      deliverables: ['Successful Demo Day presentation delivered', '8-10 investor and strategic partner follow-up meetings completed', 'New partnership opportunities identified', 'Investor interest documented'],
+      successMetrics: ['Phase 6 milestone: Compelling Demo Day performance', 'Strong investor and partner response']
     },
     {
       weekNumber: 24,
       dates: 'December 14-18, 2026',
       month: 'December',
-      phase: 'Scale & Graduation',
-      topic: 'Flagship Demo Day Showcase',
+      phase: 'Demo Day & Partnerships',
+      topic: 'Graduation & Post-Program Growth Planning',
       priority: 'Critical',
-      hours: { adama: 40, jordan: 4 },
-      technicalTrack: 'Ensure stable, live, real-time data connectivity between the active field installation site and the presentation screens at the PnP graduation venue.',
-      relationshipTrack: 'Present Solar Sense Pro at the final PnP Demo Day to cross-border investors, corporate energy partners, and government leaders. Collect and organize follow-up contacts during post-presentation networking sessions.',
-      jordanTrack: 'Asynchronous infrastructure support: monitor server performance during live demo presentation windows.',
-      deliverables: ['Executed Demo Day Presentation', 'Centralized Lead Tracking Database populated with graduation contacts'],
-      successMetrics: ['High-impact pitch delivery', 'At least 3 high-value investor or corporate follow-up requests secured and logged']
-    },
-    {
-      weekNumber: 25,
-      dates: 'December 21-25, 2026',
-      month: 'December',
-      phase: 'Scale & Graduation',
-      topic: 'Post-Camp Ecosystem Integration & Operational Hand-off',
-      priority: 'High',
-      hours: { adama: 30, jordan: 5 },
-      technicalTrack: 'Package all regional component supply logs, factory test parameters, and firmware deployment steps into a repeatable localized manufacturing playbook in Notion.',
-      relationshipTrack: 'Distribute formal follow-up messages and thank-you notes to all key program contacts, advisors, the EMS team, and pilot hosts to cement the local support network.',
-      jordanTrack: 'Technical handover review: audit the completed manufacturing playbook to ensure clear documentation of all specialized production knowledge.',
-      deliverables: ['Localized Manufacturing Playbook', 'Post-Camp Ecosystem Network Register'],
-      successMetrics: ['100% of the active supplier and ecosystem paths documented with role-based responsibilities in Notion']
-    },
-    {
-      weekNumber: 26,
-      dates: 'December 28 - January 1, 2027',
-      month: 'December',
-      phase: 'Scale & Graduation',
-      topic: 'Definitive Launch Readiness Audit & Sign-Off',
-      priority: 'Critical',
-      hours: { adama: 24, jordan: 4 },
-      technicalTrack: 'Run a comprehensive performance check across the live pilot system to verify steady-state sensor metrics and safe operation under load.',
-      relationshipTrack: 'Confirm post-program communication cadences with local pilot hosts, EMS partners, and advisory contacts to maintain momentum into Q1 2027.',
-      jordanTrack: 'Definitive Launch Readiness Sign-off: run a final evaluation of the Notion workspace, review manufacturing economics, and transition day-to-day project execution entirely to Adama\'s localized framework.',
-      deliverables: ['Completed Solar Sense Pro Launch Readiness Checklist', 'Signed Q4 Milestone Performance Document'],
-      successMetrics: ['100% completion across all operational tracks, establishing a credible, validated market-ready position']
+      hours: { adama: 40, jordan: 6 },
+      technicalTrack: 'Define fundraising milestones, pilot expansion targets, hiring priorities, and manufacturing objectives for the next 12 months.',
+      relationshipTrack: 'Complete structured follow-up with all investors, partners, universities, and government contacts. Finalize SEPT 12-month China operating plan and commercialization roadmap. Join PnP alumni network.',
+      jordanTrack: 'Strategic planning: Review 12-month roadmap, validate technical milestones, and establish post-program operating priorities.',
+      deliverables: ['Post-program operating plan completed', 'Investor follow-up system implemented', 'China growth roadmap finalized', 'Alumni engagement plan established', '12-month operating plan completed'],
+      successMetrics: ['Program complete', 'Clear path forward established', 'Launch readiness achieved']
     }
   ],
 
@@ -434,207 +407,219 @@ const executionPlan = {
         role: 'Program Lead',
         name: 'TBD',
         organization: 'Plug and Play China (Nantong Hub)',
-        whyItMatters: 'Connects the team to regional industrial parks, handles program evaluations, and acts as the primary link for ecosystem introductions',
+        whyItMatters: 'Connects SEPT to universities, research institutions, and government innovation programs; manages ecosystem introductions',
         sourcingPath: 'PnP intro',
-        nextAction: 'Execute 1-on-1 alignment session in Week 1 to detail pilot pipeline criteria',
-        firstAsk: 'Connect us with the corporate partnerships team to pinpoint regional solar EPCs and developers',
+        nextAction: 'Execute 1-on-1 alignment session in Week 1 to detail research partnership criteria',
+        firstAsk: 'Connect us with universities, national laboratories, and renewable energy research centers',
         status: 'Intro pending'
       },
       {
         role: 'Operations Lead',
         name: 'Aboli',
         organization: 'Plug and Play China',
-        whyItMatters: 'Manages local onboarding logistics, housing arrangements, local payment setups, and hub resource access',
+        whyItMatters: 'Manages local onboarding logistics, housing, local payment setups, and hub resource access',
         sourcingPath: 'Named in inputs',
-        nextAction: 'Connect via WeChat to finalize apartment contracts and secure desk space allocations at the hub',
-        firstAsk: 'Help identify a bilingual cohort member or local intern to assist with translation during early supplier outreach',
+        nextAction: 'Connect via WeChat to finalize apartment contracts and secure desk space allocations',
+        firstAsk: 'Help identify bilingual cohort members to assist with university outreach and translation',
         status: 'Named in inputs'
       },
       {
         role: 'Corporate BD Lead',
         name: 'TBD',
         organization: 'Plug and Play China Partners Network',
-        whyItMatters: 'Direct broker for matchmaking tracks; provides access to utility operators, commercial solar entities, and industrial parks',
+        whyItMatters: 'Direct broker for matchmaking with research institutions, universities, and strategic partners',
         sourcingPath: 'PnP intro',
-        nextAction: 'Deliver the dual-language presentation pack in Week 4 ahead of matching sessions',
-        firstAsk: 'Introduce us to the operations managers of signed industrial parks and utility developers for potential field testing',
+        nextAction: 'Deliver research-focused presentation in Week 4 ahead of matching sessions',
+        firstAsk: 'Introduce us to professors, lab directors, and research institute administrators',
         status: 'Intro pending'
       },
       {
         role: 'Venture & Investor Lead',
         name: 'TBD',
         organization: 'Plug and Play China Venture Team',
-        whyItMatters: 'Evaluates performance for seed funding considerations and coordinates closed-door roundtable matching sessions',
+        whyItMatters: 'Coordinates investor roundtables, evaluates fundraising readiness, and facilitates warm introductions',
         sourcingPath: 'PnP intro',
-        nextAction: 'Present the localized multi-tier economic strategy model during Month 4 reviews',
-        firstAsk: 'Identify regional angel networks or energy-focused funds participating in the Month 5 roundtables',
+        nextAction: 'Present investor materials during Month 4 to prepare for Month 5 fundraising acceleration',
+        firstAsk: 'Identify climate-tech VCs, strategic corporate investors, and government innovation funds',
         status: 'Intro pending'
+      }
+    ],
+    researchPartners: [
+      {
+        role: 'University Research Laboratory Director',
+        name: 'TBD',
+        organization: 'Leading Chinese University - Renewable Energy Lab',
+        whyItMatters: 'Provides research validation, academic credibility, and potential pilot deployment site',
+        sourcingPath: 'PnP university network',
+        nextAction: 'Present Solar Sense Research Edition during Week 6 matchmaking sessions',
+        firstAsk: 'Deploy pilot installation on your outdoor test array for comparative research data',
+        status: 'Unknown'
+      },
+      {
+        role: 'National Laboratory Principal Investigator',
+        name: 'TBD',
+        organization: 'National Renewable Energy Research Institute',
+        whyItMatters: 'Gateway to government-funded research programs and joint publication opportunities',
+        sourcingPath: 'Government research network',
+        nextAction: 'Conduct technical presentation during Week 11 research partnership expansion',
+        firstAsk: 'Explore collaboration on photovoltaic monitoring research and joint grant applications',
+        status: 'Unknown'
+      },
+      {
+        role: 'Solar Testing Laboratory Manager',
+        name: 'TBD',
+        organization: 'Regional PV Testing and Certification Center',
+        whyItMatters: 'Provides testing infrastructure, certification support, and industry connections',
+        sourcingPath: 'Industry referral',
+        nextAction: 'Schedule facility visit during Week 7 to explore pilot opportunities',
+        firstAsk: 'Integrate Solar Sense into your testing protocols for performance validation',
+        status: 'Unknown'
       }
     ],
     manufacturing: [
       {
-        role: 'Tier 1 Turnkey EMS Factory Manager',
+        role: 'Electronics Manufacturing Partner',
         name: 'TBD',
-        organization: 'Small-to-Mid Scale Electronics Assembly Provider (Yangtze River Delta)',
-        whyItMatters: 'Handles low-volume assembly (10 to 50 units) and manages components sourcing and pricing scaling for high-volume commercial production',
+        organization: 'Yangtze River Delta EMS Provider',
+        whyItMatters: 'Handles localized production, component sourcing, and manufacturing scale-up',
         sourcingPath: 'PnP intro',
-        nextAction: 'Run an on-site factory floor audit in Week 8 prior to contracting the low-volume run',
-        firstAsk: 'Provide a detailed manufacturing quote broken down by 50, 500, and 1,000+ unit runs, along with component substitution suggestions',
+        nextAction: 'Conduct manufacturing evaluation during Week 10',
+        firstAsk: 'Provide manufacturing feasibility assessment and preliminary pricing for pilot-scale production',
         status: 'Unknown'
       },
       {
-        role: 'Quick-Turn PCB Fabrication Specialist',
+        role: 'Component Supply Chain Partner',
         name: 'TBD',
-        organization: 'Regional Prototype Circuit Board Manufacturer',
-        whyItMatters: 'Delivers bare board fabrication for initial low-volume prototyping loops and engineering changes',
-        sourcingPath: 'Supplier visit',
-        nextAction: 'Upload Gerber engineering files to the local digital interface in Week 3 to verify manufacturing tolerances',
-        firstAsk: 'Run an immediate DFM trace check to confirm component layout spacing matches your automated pick-and-place lines',
-        status: 'Unknown'
-      }
-    ],
-    pilotChampions: [
-      {
-        role: 'Commercial Solar EPC Director',
-        name: 'TBD',
-        organization: 'Regional Photovoltaic Systems Integration Firm',
-        whyItMatters: 'Acts as a gatekeeper for large-scale rooftops; possesses authority to deploy monitoring tech onto active customer arrays',
-        sourcingPath: 'PnP matchmaking event',
-        nextAction: 'Pitch the high-resolution diagnostic value proposition during Week 6 matching panels',
-        firstAsk: 'Authorize a zero-cost pilot installation of 5 units on an active commercial rooftop project to run field performance tracking',
-        status: 'Unknown'
-      },
-      {
-        role: 'Industrial Park Microgrid Operations Manager',
-        name: 'TBD',
-        organization: 'Local High-Tech Zone Clean Energy Demonstration Project (NETDA, NID, or NHIZ District)',
-        whyItMatters: 'Controls regional distributed energy resources and testing beds; provides direct access to high-visibility hardware deployment sites',
-        sourcingPath: 'PnP government relations track',
-        nextAction: 'Deliver a localized field pilot proposal during Week 7 regional industrial park tours',
-        firstAsk: 'Provide data-sharing access to integrate 3 monitoring nodes onto the park\'s solar array',
-        status: 'Unknown'
-      },
-      {
-        role: 'Photovoltaic Research Laboratory PI',
-        name: 'TBD',
-        organization: 'Regional Engineering University Power Electronics Lab',
-        whyItMatters: 'Delivers baseline validation data, technical feedback, and research exposure within the local solar ecosystem',
-        sourcingPath: 'Cohort referral',
-        nextAction: 'Present the academic version of the technical presentation deck during Week 6 closed-door sessions',
-        firstAsk: 'Deploy our data acquisition platform onto your outdoor test array to collect comparative tracking logs',
+        organization: 'Regional Electronics Distributor',
+        whyItMatters: 'Ensures local component availability and reduces cross-border logistics dependencies',
+        sourcingPath: 'Supplier network',
+        nextAction: 'Map BOM components during Week 3',
+        firstAsk: 'Validate component availability and provide localized part numbers',
         status: 'Unknown'
       }
     ]
   },
 
   readinessChecklist: {
-    pilot: [
+    marketDevelopment: [
+      {
+        id: 'market-1',
+        description: '100+ Target Organizations Identified: Complete database of universities, research institutes, testing laboratories segmented with decision-makers',
+        verification: 'China Market Opportunity Map with contacts and categorization',
+        targetDate: 'Week 4 (July 27-31, 2026)',
+        owner: 'Adama',
+        completed: false
+      },
+      {
+        id: 'market-2',
+        description: 'Customer Discovery Complete: 20+ structured customer interviews with researchers, professors, and solar testing professionals',
+        verification: 'Interview summaries and value proposition validation documentation',
+        targetDate: 'Week 4 (July 27-31, 2026)',
+        owner: 'Adama',
+        completed: false
+      },
+      {
+        id: 'market-3',
+        description: 'Chinese Localization Complete: Chinese pitch deck, marketing materials, website content, and product documentation',
+        verification: 'Complete Chinese-language collateral package',
+        targetDate: 'Week 8 (August 24-28, 2026)',
+        owner: 'Adama with translation support',
+        completed: false
+      }
+    ],
+    pilotDevelopment: [
       {
         id: 'pilot-1',
-        description: 'Live Installation Active: At least 1 Solar Sense Pro hardware node is physically mounted and operating on a live photovoltaic array in China',
-        verification: 'Physical installation log with geo-tagged photos, site contact confirmation',
-        targetDate: 'Week 18 (November 2-6, 2026)',
+        description: '2-3 Pilot Agreements Signed: Formal agreements with universities or research institutions for Solar Sense deployment',
+        verification: 'Signed pilot agreements with research partners',
+        targetDate: 'Week 8 (August 24-28, 2026)',
         owner: 'Adama',
         completed: false
       },
       {
         id: 'pilot-2',
-        description: 'Telemetry Pipeline Verified: Live data streams (voltage, current, temperature, diagnostic flags) are successfully transmitting to local servers inside the Great Firewall',
-        verification: 'Continuous 24-hour data log showing successful packet transmission',
-        targetDate: 'Week 18 (November 2-6, 2026)',
+        description: 'Active Pilot Deployments: 1-2 pilot installations operational at research sites collecting data',
+        verification: 'Pilot site operational logs and data streams',
+        targetDate: 'Week 9 (August 31 - September 4, 2026)',
         owner: 'Adama with Jordan review',
         completed: false
       },
       {
         id: 'pilot-3',
-        description: 'Data Validation Compiled: A performance report capturing at least 21 days of continuous field operation data is indexed in Notion to serve as active sales collateral',
-        verification: 'Comprehensive field performance report with graphs and analysis',
-        targetDate: 'Week 22 (November 30 - December 4, 2026)',
-        owner: 'Adama with Jordan data verification',
+        description: 'Pilot Validation Report: Comprehensive performance report from pilot sites with user feedback',
+        verification: 'China Market Validation Report with pilot data',
+        targetDate: 'Week 12 (September 21-25, 2026)',
+        owner: 'Adama with Jordan analysis',
         completed: false
       },
       {
         id: 'pilot-4',
-        description: 'Expansion Pipeline Secured: At least 2 additional qualified pilot organizations are locked in writing via executed agreements for Q1 2027 installations',
-        verification: 'Signed agreements or formal commitment letters',
-        targetDate: 'Week 23 (December 7-11, 2026)',
+        description: 'Research Partnerships Established: 3-5 university or lab collaborations for ongoing research',
+        verification: 'Partnership agreements or collaboration frameworks',
+        targetDate: 'Week 11 (September 14-18, 2026)',
         owner: 'Adama',
+        completed: false
+      }
+    ],
+    fundraising: [
+      {
+        id: 'fund-1',
+        description: 'Investor Materials Complete: Bilingual pitch deck, executive summary, financial model, and data room',
+        verification: 'Complete investor package with all required materials',
+        targetDate: 'Week 16 (October 19-23, 2026)',
+        owner: 'Adama with Jordan input',
+        completed: false
+      },
+      {
+        id: 'fund-2',
+        description: 'Investor Pipeline Active: 75-100 target investors identified and 15-20 meetings completed',
+        verification: 'Investor CRM with meeting logs and follow-up status',
+        targetDate: 'Week 20 (November 16-20, 2026)',
+        owner: 'Adama',
+        completed: false
+      },
+      {
+        id: 'fund-3',
+        description: 'Due Diligence Processes: 2-3 active investor due diligence processes underway',
+        verification: 'Due diligence request logs and responses documented',
+        targetDate: 'Week 20 (November 16-20, 2026)',
+        owner: 'Adama with Jordan support',
         completed: false
       }
     ],
     manufacturing: [
       {
         id: 'mfg-1',
-        description: 'EMS Partner Contracted: A long-term manufacturing agreement is executed with a verified Yangtze River Delta turnkey EMS partner',
-        verification: 'Signed manufacturing services agreement',
-        targetDate: 'Week 9 (August 31 - September 4, 2026)',
+        description: 'Manufacturing Partner Shortlist: 3-5 qualified Chinese manufacturing partners evaluated',
+        verification: 'Manufacturing evaluation report with assessments',
+        targetDate: 'Week 10 (September 7-11, 2026)',
         owner: 'Adama with Jordan technical review',
         completed: false
       },
       {
         id: 'mfg-2',
-        description: '10-50 units (Prototyping/Pilot baseline tier)',
-        verification: 'Written quotation with line-item breakdown',
-        targetDate: 'Week 8 (August 24-28, 2026)',
+        description: 'Manufacturing Feasibility Confirmed: Technical and economic feasibility assessment completed',
+        verification: 'Manufacturing feasibility report with pricing estimates',
+        targetDate: 'Week 12 (September 21-25, 2026)',
         owner: 'Adama',
         completed: false
       },
       {
         id: 'mfg-3',
-        description: '100-500 units (Commercial beta validation tier)',
-        verification: 'Written quotation with volume discount structure',
-        targetDate: 'Week 21 (November 23-27, 2026)',
-        owner: 'Adama',
-        completed: false
-      },
-      {
-        id: 'mfg-4',
-        description: '1,000+ units (Full market launch tier)',
-        verification: 'Written quotation with scaled manufacturing plan',
-        targetDate: 'Week 21 (November 23-27, 2026)',
-        owner: 'Adama',
-        completed: false
-      },
-      {
-        id: 'mfg-5',
-        description: 'Sourcing Risks Mapped: 100% of the active BOM components are mapped to localized part numbers available via regional electronics distributors, eliminating cross-border logistics blockers',
-        verification: 'Complete BOM with local supplier part numbers and lead times',
-        targetDate: 'Week 3 (July 20-24, 2026)',
-        owner: 'Adama with Jordan technical approval',
-        completed: false
-      },
-      {
-        id: 'mfg-6',
-        description: 'Secure Factory Flashing Active: Production floor firmware flashing protocols are verified, ensuring code is loaded securely via encrypted binaries at the factory line',
-        verification: 'Factory floor flashing procedure documentation with test results',
-        targetDate: 'Week 13 (September 28 - October 2, 2026)',
-        owner: 'Adama with Jordan firmware review',
+        description: 'Product Localization Complete: Chinese dashboard, documentation, and user interface validated',
+        verification: 'Localized product tested with Chinese research users',
+        targetDate: 'Week 10 (September 7-11, 2026)',
+        owner: 'Adama with Jordan validation',
         completed: false
       }
     ],
-    network: [
+    strategic: [
       {
-        id: 'net-1',
-        description: 'Notion Operating System Finalized: All relationship logs, factory test parameters, calibration records, and site integration steps are documented within the workspace',
-        verification: 'Complete Notion workspace audit showing all documentation indexed',
-        targetDate: 'Week 25 (December 21-25, 2026)',
+        id: 'strat-1',
+        description: 'Demo Day Success: Compelling Demo Day presentation delivered to investors and partners',
+        verification: 'Demo Day completion with investor meeting logs',
+        targetDate: 'Week 23 (December 7-11, 2026)',
         owner: 'Adama',
-        completed: false
-      },
-      {
-        id: 'net-2',
-        description: 'Ecosystem Network Anchored: Active post-program communication loops are established with PnP advisors, factory managers, and pilot site coordinators to sustain independent operations',
-        verification: 'Contact registry with confirmed communication cadences',
-        targetDate: 'Week 26 (December 28 - January 1, 2027)',
-        owner: 'Adama',
-        completed: false
-      },
-      {
-        id: 'net-3',
-        description: 'Jordan Technical Hand-off Complete: Asynchronous verification playbooks are locked, allowing Adama to execute daily commercial and manufacturing tasks on the ground with minimal interactive technical support from Jordan',
-        verification: 'Complete manufacturing playbook reviewed and signed off by Jordan',
-        targetDate: 'Week 26 (December 28 - January 1, 2027)',
-        owner: 'Jordan with Adama confirmation',
         completed: false
       }
     ]
@@ -643,78 +628,78 @@ const executionPlan = {
   milestones: {
     q3: {
       date: 'September 30, 2026',
-      title: 'Q3 2026 - Commercial Commitments & Production Kickoff',
+      title: 'Q3 2026 - Market Validation & Research Partnerships',
       criteria: [
         {
-          category: 'Pilot Pipeline',
-          target: '15+ target partners',
-          successCriteria: 'Diverse mix of EPCs, operators, and labs',
+          category: 'Market Development',
+          target: '100+ target organizations',
+          successCriteria: 'Complete database of universities, research institutes, and laboratories',
           completed: false
         },
         {
-          category: 'Signed Agreements',
-          target: '3+ pilot deployments',
-          successCriteria: 'At least 3 formal, zero-cost installation agreements with data-sharing rights',
+          category: 'Pilot Agreements',
+          target: '2-3 pilot deployments',
+          successCriteria: 'Signed agreements with research institutions for pilot installations',
           completed: false
         },
         {
-          category: 'Manufacturing Partner',
-          target: '1 audited EMS provider',
-          successCriteria: 'Primary Yangtze River Delta EMS partner audited, selected, and contracted',
+          category: 'Product Localization',
+          target: 'Chinese product ready',
+          successCriteria: 'Dashboard, documentation, and marketing materials localized and validated',
           completed: false
         },
         {
-          category: 'Production Run',
-          target: '10-50 units initiated',
-          successCriteria: 'Components cleared for regional sourcing',
+          category: 'Manufacturing Strategy',
+          target: 'Manufacturing feasibility confirmed',
+          successCriteria: '3-5 manufacturing partners evaluated and shortlisted',
           completed: false
         },
         {
-          category: 'Technical Infrastructure',
-          target: 'Notion workspace operational',
-          successCriteria: 'All hardware documentation indexed and accessible',
+          category: 'Market Validation',
+          target: 'Product-market fit validated',
+          successCriteria: 'China Market Validation Report completed with pilot feedback',
           completed: false
         }
       ]
     },
     q4: {
       date: 'December 31, 2026',
-      title: 'Q4 2026 - Live Field Operations & Scale Readiness',
+      title: 'Q4 2026 - Fundraising Success & Strategic Partnerships',
       criteria: [
         {
-          category: 'Live Installation',
-          target: '1+ active deployment',
-          successCriteria: 'Solar Sense Pro fully operational in China, capturing high-resolution telemetry inside the Great Firewall',
+          category: 'Fundraising',
+          target: '15-20 investor meetings',
+          successCriteria: 'Active investor pipeline with multiple due diligence processes underway',
           completed: false
         },
         {
-          category: 'Field Data',
-          target: '21+ days continuous',
-          successCriteria: 'Validated performance data compiled into commercial sales collateral',
+          category: 'Investor Readiness',
+          target: 'Complete investor package',
+          successCriteria: 'Bilingual pitch deck, financial model, data room, and China growth strategy',
           completed: false
         },
         {
-          category: 'Manufacturing Economics',
-          target: 'Multi-tier pricing locked',
-          successCriteria: 'Verified pricing matrix for 10, 100, and 1,000+ unit scales signed by EMS partner',
+          category: 'Research Partnerships',
+          target: '3-5 university collaborations',
+          successCriteria: 'Formal partnerships with leading Chinese research institutions',
           completed: false
         },
         {
-          category: 'Pipeline Expansion',
-          target: '2+ Q1 2027 pilots secured',
-          successCriteria: 'Additional committed pilot organizations for Q1 2027 deployment',
+          category: 'Manufacturing Partnership',
+          target: 'Manufacturing roadmap finalized',
+          successCriteria: 'Clear manufacturing strategy with partner relationships established',
           completed: false
         },
         {
-          category: 'Post-Program Network',
-          target: 'Ecosystem established',
-          successCriteria: 'Active relationships with PnP advisors, factory managers, and pilot coordinators',
+          category: 'Demo Day',
+          target: 'Successful Demo Day presentation',
+          successCriteria: 'Compelling presentation delivered with strong investor and partner response',
           completed: false
         },
         {
-          category: 'Launch Readiness',
-          target: '100% certification',
-          successCriteria: 'All readiness checklist items complete, positioning Adama to scale independently',
+          category: 'Post-Program Readiness',
+          target: '12-month growth plan',
+          successCriteria: 'Clear commercialization roadmap and operating plan for 2027',
           completed: false
         }
       ]
@@ -723,17 +708,19 @@ const executionPlan = {
 
   keyDates: [
     { date: '2026-07-01', dateEnd: '2026-07-10', event: 'China Entry & Founder Orientation', type: 'Program', priority: 'Critical', location: 'Nantong' },
-    { date: '2026-07-13', dateEnd: '2026-07-17', event: 'Shanghai Business Trip', type: 'Travel', priority: 'High', location: 'Shanghai' },
+    { date: '2026-07-13', dateEnd: '2026-07-17', event: 'Shanghai Ecosystem Trip', type: 'Travel', priority: 'High', location: 'Shanghai' },
     { date: '2026-07-27', dateEnd: '2026-07-31', event: 'Wenzhou Business Trip', type: 'Travel', priority: 'High', location: 'Wenzhou' },
-    { date: '2026-08-10', dateEnd: '2026-08-14', event: 'POC Kickoff & Corporate Matchmaking', type: 'Program', priority: 'Critical', location: 'Nantong' },
-    { date: '2026-08-24', dateEnd: '2026-08-28', event: 'Factory Site Audit (Full-Day)', type: 'Manufacturing', priority: 'Critical', location: 'Yangtze River Delta' },
-    { date: '2026-09-21', dateEnd: '2026-09-25', event: 'Pilot Site Walk-Through (Full-Day)', type: 'Deployment', priority: 'High', location: 'Pilot Site Location' },
+    { date: '2026-08-03', dateEnd: '2026-08-07', event: 'Market Entry & IP Workshop', type: 'Program', priority: 'Critical', location: 'Nantong' },
+    { date: '2026-08-10', dateEnd: '2026-08-14', event: 'POC Kickoff & Research Partner Matchmaking', type: 'Program', priority: 'Critical', location: 'Nantong' },
+    { date: '2026-08-24', dateEnd: '2026-08-28', event: 'Business Model Validation Workshop', type: 'Program', priority: 'Critical', location: 'Nantong' },
     { date: '2026-09-30', dateEnd: '2026-09-30', event: 'Q3 Milestone Deadline', type: 'Milestone', priority: 'Critical', location: '—' },
     { date: '2026-10-05', dateEnd: '2026-10-09', event: 'Golden Week (National Holiday)', type: 'Holiday', priority: '—', location: 'China (Nationwide)' },
-    { date: '2026-11-02', dateEnd: '2026-11-06', event: 'Field Installation Deployment (Full-Day)', type: 'Deployment', priority: 'Critical', location: 'Pilot Site Location' },
-    { date: '2026-12-14', dateEnd: '2026-12-18', event: 'PnP Demo Day', type: 'Program', priority: 'Critical', location: 'Nantong' },
-    { date: '2026-12-31', dateEnd: '2026-12-31', event: 'Q4 Milestone Deadline', type: 'Milestone', priority: 'Critical', location: '—' },
-    { date: '2027-01-01', dateEnd: '2027-01-01', event: 'Launch Readiness Certification Deadline', type: 'Milestone', priority: 'Critical', location: '—' }
+    { date: '2026-10-19', dateEnd: '2026-10-23', event: 'Mock Investor Presentations', type: 'Fundraising', priority: 'High', location: 'Nantong' },
+    { date: '2026-11-02', dateEnd: '2026-11-06', event: 'Investor Roundtable Events', type: 'Fundraising', priority: 'Critical', location: 'Nantong' },
+    { date: '2026-11-09', dateEnd: '2026-11-13', event: 'Government Investment Fund Meetings', type: 'Fundraising', priority: 'High', location: 'Nantong' },
+    { date: '2026-12-07', dateEnd: '2026-12-11', event: 'PnP Demo Day', type: 'Program', priority: 'Critical', location: 'Nantong' },
+    { date: '2026-12-14', dateEnd: '2026-12-18', event: 'Program Graduation & Alumni Integration', type: 'Program', priority: 'High', location: 'Nantong' },
+    { date: '2026-12-31', dateEnd: '2026-12-31', event: 'Q4 Milestone Deadline', type: 'Milestone', priority: 'Critical', location: '—' }
   ],
 
   glossary: {
@@ -779,138 +766,150 @@ const executionPlan = {
       id: 1,
       month: 'July',
       tag: 'Phase 1',
-      title: 'Pipeline Seeding',
-      lead: 'Commercial Pipeline Seeding & Baseline Sourcing',
-      outcome: 'Build pipeline of 15 target partners',
+      title: 'Land & Launch',
+      lead: 'Establish SEPT China Presence & Research Market Mapping',
+      outcome: 'Identify 100 target organizations (universities, research labs)',
       weeks: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
       weekRange: '1-4',
       deliverables: [
-        'Operational Notion workspace',
-        'EMS partner list (5 targets)',
-        'RFQ packages in English and Chinese',
-        'Localized component tracking database'
+        'SEPT operational in Nantong with WFOE registration',
+        'China Market Opportunity Map completed',
+        '100 target organizations identified',
+        'Chinese marketing materials and pitch deck',
+        'Initial manufacturing prospect list (15-20 partners)'
       ],
-      criticalMilestone: 'Week 3: 5 EMS partners identified',
+      criticalMilestone: 'Week 4: Market opportunity map & university pipeline established',
       keyActivities: [
-        'Stand up Notion workspace with technical baseline',
-        'Onboard with PnP and seed matching pipeline',
-        'Map hardware BOM to local component availability',
-        'Source 5 regional EMS manufacturing targets'
+        'Complete operational setup and PnP onboarding',
+        'Build market opportunity map targeting research institutions',
+        'Conduct 15-20 customer discovery interviews',
+        'Localize product positioning for academic market',
+        'Identify initial manufacturing partners'
       ]
     },
     {
       id: 2,
       month: 'August',
       tag: 'Phase 2',
-      title: 'Audits & Commitments',
-      lead: 'On-Site Manufacturing Audits & Pilot Commitment Closure',
-      outcome: 'Secure 3 formal pilot agreements',
+      title: 'Market Entry',
+      lead: 'POC Development & Research Partnerships',
+      outcome: 'Secure 2-3 pilot agreements with research institutions',
       weeks: ['Week 5', 'Week 6', 'Week 7', 'Week 8'],
       weekRange: '5-8',
       deliverables: [
-        'Signed pilot deployment contract',
-        'On-site EMS audit reports (2 facilities)',
-        'Gerber files and production documentation package',
-        'Finalized manufacturing partner selection'
+        '2-3 signed pilot agreements',
+        '1-2 active pilot deployments initiated',
+        'China business model validated',
+        'Manufacturing partner shortlist (3-5 partners)',
+        'Product localization roadmap'
       ],
-      criticalMilestone: 'Week 6: First pilot commitment secured',
+      criticalMilestone: 'Week 6: First pilot LOIs signed during POC Kickoff',
       keyActivities: [
-        'Narrow EMS candidates to 2 top choices',
-        'Conduct on-site manufacturing audits',
-        'Close 3 pilot agreement commitments',
-        'Deliver complete production documentation to EMS partner'
+        'Present at POC Kickoff and matchmaking events',
+        'Negotiate pilot terms with research partners',
+        'Validate business model for Chinese market',
+        'Assess manufacturing feasibility',
+        'Launch initial pilot testing'
       ]
     },
     {
       id: 3,
       month: 'September',
       tag: 'Phase 3',
-      title: 'Production Kickoff',
-      lead: 'Low-Volume Production Run & Site Readiness',
-      outcome: 'Kick off 10-50 unit production run',
+      title: 'Validation & Localization',
+      lead: 'Execute Pilots & Validate Product-Market Fit',
+      outcome: '2-3 pilots operational collecting validation data',
       weeks: ['Week 9', 'Week 10', 'Week 11', 'Week 12'],
       weekRange: '9-12',
       deliverables: [
-        'Hardware bring-up guide',
-        'Production batch initiated (10-50 units)',
-        'Site preparation parameters finalized',
-        'Installation and commissioning roadmap'
+        'China Market Validation Report',
+        'Chinese dashboard and documentation',
+        'Manufacturing evaluation completed',
+        '3-5 new research partnership opportunities',
+        'Product-market fit documented'
       ],
-      criticalMilestone: 'Week 10: Production run officially started',
+      criticalMilestone: 'Week 12: Market validation report demonstrates research demand',
       keyActivities: [
-        'Officially kick off 10-50 unit production batch',
-        'Finalize site preparation and installation parameters',
-        'Conduct hardware bring-up validation',
-        'Weekly Jordan sync on production milestones'
+        'Execute pilot installations at research sites',
+        'Translate dashboard and materials to Chinese',
+        'Evaluate manufacturing partners',
+        'Expand research partnership network',
+        'Collect structured customer feedback'
       ]
     },
     {
       id: 4,
       month: 'October',
       tag: 'Phase 4',
-      title: 'Hardware Validation',
-      lead: 'Hardware Ingestion, Testing & Logistics Clearance',
-      outcome: 'Ingest and validate 10-50 unit batch',
-      weeks: ['Week 13', 'Week 14', 'Week 15', 'Week 16', 'Week 17'],
-      weekRange: '13-17',
+      title: 'Investor Readiness',
+      lead: 'Fundraising Preparation & Investment Materials',
+      outcome: 'Complete investor package and prepare for fundraising',
+      weeks: ['Week 13', 'Week 14', 'Week 15', 'Week 16'],
+      weekRange: '13-16',
       deliverables: [
-        'Production batch validated',
-        'QA test reports (100% batch coverage)',
-        'Pre-installation inspection completed',
-        'Deployment logistics plan finalized'
+        'Bilingual investor pitch deck (EN/CN)',
+        'Five-year financial model',
+        'Executive summary and data room',
+        'Target investor database (75-100 investors)',
+        'China growth strategy'
       ],
-      criticalMilestone: 'Week 15: Full batch validation complete',
+      criticalMilestone: 'Week 16: Investor materials validated and outreach initiated',
       keyActivities: [
-        'Ingest 10-50 unit production batch',
-        'Conduct full QA testing and hardware validation',
-        'Complete pre-installation site inspections',
-        'Clear logistics and regulatory requirements'
+        'Develop fundraising strategy and investment thesis',
+        'Build financial model with unit economics',
+        'Create bilingual investor materials',
+        'Organize secure due diligence data room',
+        'Conduct mock presentations with mentors'
       ]
     },
     {
       id: 5,
       month: 'November',
       tag: 'Phase 5',
-      title: 'Field Deployment',
-      lead: 'Field Deployment & Active Data Acquisition',
-      outcome: 'Deploy live installation',
-      weeks: ['Week 18', 'Week 19', 'Week 20', 'Week 21'],
-      weekRange: '18-21',
+      title: 'Fundraising Acceleration',
+      lead: 'Active Investor Engagement & Strategic Capital',
+      outcome: '15-20 investor meetings with active pipeline',
+      weeks: ['Week 17', 'Week 18', 'Week 19', 'Week 20'],
+      weekRange: '17-20',
       deliverables: [
-        'Live telemetry stream active',
-        'Deployed and commissioned installation',
-        'Pricing locked for 100-500+ units',
-        'Field operations documentation'
+        '15-20 investor meetings completed',
+        'Active fundraising pipeline managed',
+        'Multiple due diligence processes initiated',
+        'Government funding opportunities identified',
+        'Strategic investor relationships established'
       ],
-      criticalMilestone: 'Week 19: Live installation deployed',
+      criticalMilestone: 'Week 20: Multiple investors in active due diligence',
       keyActivities: [
-        'Deploy live field installation at pilot site',
-        'Activate telemetry and data acquisition systems',
-        'Lock pricing for next production scale (100-500+ units)',
-        'Monitor live performance and collect initial data'
+        'Participate in investor roundtables',
+        'Conduct one-on-one VC meetings',
+        'Engage government investment funds',
+        'Respond to due diligence requests',
+        'Refine fundraising strategy based on feedback'
       ]
     },
     {
       id: 6,
       month: 'December',
       tag: 'Phase 6',
-      title: 'Scale & Graduation',
-      lead: 'Pipeline Expansion & Strategic Hand-Off',
-      outcome: 'Secure 2 additional Q1 2027 pilots',
-      weeks: ['Week 22', 'Week 23', 'Week 24', 'Week 25', 'Week 26'],
-      weekRange: '22-26',
+      title: 'Demo Day & Partnerships',
+      lead: 'Demo Day Execution & Post-Program Planning',
+      outcome: 'Successful graduation with clear growth roadmap',
+      weeks: ['Week 21', 'Week 22', 'Week 23', 'Week 24'],
+      weekRange: '21-24',
       deliverables: [
-        'Launch readiness certified',
-        'Frozen production playbook',
-        '2 additional Q1 2027 pilot commitments',
-        'PnP Demo Day presentation'
+        'Successful Demo Day presentation',
+        '3-5 university partnerships formalized',
+        'Manufacturing partner finalized',
+        '12-month growth plan',
+        'Alumni network integration'
       ],
-      criticalMilestone: 'Week 24: Demo Day presentation',
+      criticalMilestone: 'Week 23: Demo Day presentation to investors and partners',
       keyActivities: [
-        'Secure 2 additional Q1 2027 pilot agreements',
-        'Freeze and document production playbook',
-        'Present at PnP Demo Day',
-        'Achieve launch readiness certification by Dec 31'
+        'Finalize Demo Day presentation and messaging',
+        'Establish university collaboration frameworks',
+        'Complete manufacturing partnerships',
+        'Deliver Demo Day pitch',
+        'Build 12-month commercialization roadmap'
       ]
     }
   ]
