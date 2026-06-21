@@ -6,9 +6,9 @@
 // ====================================
 
 const TAG_CYCLES = {
-    priority: ['Critical', 'High', 'Medium', 'Low'],
+    activity: ['Plan', 'Execution', 'Archived'],
     status: ['Intro pending', 'In Progress', 'Active', 'Completed', 'Unknown'],
-    type: ['Program', 'Travel', 'Manufacturing', 'Deployment', 'Milestone', 'Holiday']
+    type: ['Program', 'Travel', 'Manufacturing', 'Deployment', 'Milestone', 'Holiday', 'Fundraising']
 };
 
 // ====================================
@@ -34,7 +34,7 @@ function handleTagClick(e) {
     // Prevent triggering parent click handlers
     e.stopPropagation();
     
-    const tagType = badge.dataset.editableTag; // 'priority', 'status', 'type'
+    const tagType = badge.dataset.editableTag; // 'activity', 'status', 'type'
     const tagId = badge.dataset.tagId;
     const currentValue = badge.textContent.trim();
     const newValue = cycleTag(currentValue, tagType);

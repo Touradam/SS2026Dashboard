@@ -184,8 +184,8 @@ function renderTimeline() {
         const phaseClass = getPhaseClass(week.phase);
         
         // Load custom values if they exist
-        const customPriority = state.customTags?.priority?.[`week-${week.weekNumber}`];
-        const priority = customPriority || week.priority;
+        const customActivity = state.customTags?.activity?.[`week-${week.weekNumber}`];
+        const activity = customActivity || 'Plan';
         
         const customTopic = state.customWeekData?.['week-topic']?.[`week-${week.weekNumber}`];
         const topic = customTopic || week.topic;
@@ -202,10 +202,10 @@ function renderTimeline() {
                          data-text-id="week-${week.weekNumber}"
                          title="Double-click to edit">${topic}</div>
                     <div class="week-meta">
-                        <span class="badge badge-${priority.toLowerCase()}" 
-                              data-editable-tag="priority" 
+                        <span class="badge badge-${activity.toLowerCase()}" 
+                              data-editable-tag="activity" 
                               data-tag-id="week-${week.weekNumber}"
-                              title="Click to change priority">${priority}</span>
+                              title="Click to change activity status">${activity}</span>
                         <span class="badge" style="background: var(--phase-${week.month.toLowerCase()}); color: white;">${week.month}</span>
                     </div>
                     <div class="week-hours">
@@ -235,7 +235,7 @@ function showWeekModal(weekNumber) {
     
     // Load custom values
     const customTopic = state.customWeekData?.['week-topic']?.[`week-${weekNumber}`] || week.topic;
-    const customPriority = state.customTags?.priority?.[`week-${weekNumber}`] || week.priority;
+    const customActivity = state.customTags?.activity?.[`week-${weekNumber}`] || 'Plan';
     const customTechnical = state.customWeekData?.['technical-track']?.[`week-${weekNumber}`] || week.technicalTrack;
     const customRelationship = state.customWeekData?.['relationship-track']?.[`week-${weekNumber}`] || week.relationshipTrack;
     const customJordan = state.customWeekData?.['jordan-track']?.[`week-${weekNumber}`] || week.jordanTrack;
@@ -250,11 +250,11 @@ function showWeekModal(weekNumber) {
             </div>
             
             <div class="detail-section">
-                <div class="detail-title">🎯 Priority Level</div>
-                <span class="badge badge-${customPriority.toLowerCase()}"
-                      data-editable-tag="priority" 
+                <div class="detail-title">🎯 Activity Status</div>
+                <span class="badge badge-${customActivity.toLowerCase()}"
+                      data-editable-tag="activity" 
                       data-tag-id="week-${weekNumber}"
-                      title="Click to change priority">${customPriority}</span>
+                      title="Click to change activity status">${customActivity}</span>
             </div>
             
             <div class="detail-section">
@@ -781,6 +781,14 @@ function setupNavigation() {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const targetId = link.getAttribute('href');
+            const isInPageAnchor = typeof targetId === 'string' && targetId.startsWith('#');
+
+            // Let normal page navigation happen for non-anchor links
+            if (!isInPageAnchor) {
+                window.location.href = targetId;
+                return;
+            }
+
             const targetSection = document.querySelector(targetId);
             
             if (targetSection) {

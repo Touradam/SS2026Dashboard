@@ -316,6 +316,68 @@ a:hover {
     margin-bottom: var(--space-xl);
 }
 
+/* Execution page - align visual language with landing */
+.execution-page .overview-section {
+    position: relative;
+    padding-top: clamp(6rem, 11vh, 8rem);
+    overflow: hidden;
+}
+
+.execution-floating-logo {
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: clamp(42px, 6vw, 56px);
+    height: clamp(42px, 6vw, 56px);
+    opacity: 0.85;
+    pointer-events: none;
+    filter: drop-shadow(0 0 28px rgba(196, 163, 90, 0.22));
+}
+
+.execution-hero {
+    max-width: 760px;
+    margin: 0 auto var(--space-2xl);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.execution-hero-title {
+    font-size: clamp(2rem, 4.6vw, 3.25rem);
+}
+
+.execution-page .timeline-badge {
+    margin-top: var(--space-2);
+}
+
+.execution-page .section:not(.overview-section) {
+    border-top: 1px solid rgba(196, 163, 90, 0.12);
+}
+
+.execution-page .stat-card {
+    border-radius: var(--radius-lg);
+    background: linear-gradient(180deg, rgba(23, 23, 29, 0.95) 0%, rgba(18, 18, 22, 0.95) 100%);
+}
+
+.execution-page .stat-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    background: rgba(196, 163, 90, 0.14);
+    border: 1px solid rgba(196, 163, 90, 0.35);
+}
+
+.execution-page .section-description {
+    color: var(--text-secondary);
+}
+
 .timeline-badge {
     display: inline-flex;
     flex-direction: column;
@@ -475,7 +537,7 @@ a:hover {
     font-weight: 700;
 }
 
-.week-header.phase-Pipeline { background: var(--phase-july); }
+.week-header.phase-Pipeline { background: var(--gold); }
 .week-header.phase-Audits { background: var(--phase-august); }
 .week-header.phase-Production { background: var(--phase-september); }
 .week-header.phase-Hardware { background: var(--phase-october); }
@@ -537,6 +599,24 @@ a:hover {
     background: var(--status-plan-bg);
     color: var(--status-plan);
     border: 1px solid var(--status-plan-border);
+}
+
+.badge-plan {
+    background: var(--status-plan-bg);
+    color: var(--status-plan);
+    border: 1px solid var(--status-plan-border);
+}
+
+.badge-execution {
+    background: var(--status-exec-bg);
+    color: var(--status-exec);
+    border: 1px solid var(--status-exec-border);
+}
+
+.badge-archived {
+    background: #6b7280;
+    color: #ffffff;
+    border: 1px solid #6b7280;
 }
 
 .week-hours {
