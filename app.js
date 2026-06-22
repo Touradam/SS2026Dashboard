@@ -187,10 +187,6 @@ function getStatusBadgeClass(status) {
     return `badge-${status.toLowerCase().replace(/\s+/g, '-')}`;
 }
 
-function getPriorityBadgeClass(priority) {
-    return `badge-${priority.toLowerCase()}`;
-}
-
 function buildWeekMetaTags(week, options = {}) {
     const { editable = true, showMonth = true } = options;
     const status = getWeekStatus(week.weekNumber);
@@ -200,21 +196,8 @@ function buildWeekMetaTags(week, options = {}) {
 
     return `
         <span class="badge badge-phase">${week.phase}</span>
-        <span class="badge ${getPriorityBadgeClass(week.priority)}">${week.priority}</span>
         <span class="badge ${getStatusBadgeClass(status)}" ${statusAttrs}>${status}</span>
         ${showMonth ? `<span class="badge badge-month">${week.month}</span>` : ''}
-    `;
-}
-
-function buildWeekTeamHtml(week) {
-    return `
-        <div class="week-team">
-            <span class="team-member"><strong>Adama</strong> ${week.hours.adama}h</span>
-            <span class="team-separator">|</span>
-            <span class="team-member"><strong>Jordan</strong> ${week.hours.jordan}h</span>
-            <span class="team-separator">|</span>
-            <span class="team-total">${week.hours.adama + week.hours.jordan}h total</span>
-        </div>
     `;
 }
 
@@ -490,7 +473,6 @@ function buildWeekDetailCard(week, currentWeek) {
                 data-editable-text="week-topic"
                 data-text-id="week-${week.weekNumber}"
                 title="Double-click to edit">${topic}</h4>
-            ${buildWeekTeamHtml(week)}
             ${buildWeekProgressBarHtml(week.weekNumber)}
             ${buildWeekObjectiveHtml(week)}
             ${buildWeekKeyActivitiesHtml(week)}
@@ -541,7 +523,6 @@ function renderTimeline() {
                     <div class="week-meta">
                         ${buildWeekMetaTags(week)}
                     </div>
-                    ${buildWeekTeamHtml(week)}
                     ${buildWeekProgressBarHtml(week.weekNumber, true)}
                     ${buildWeekActivityPreview(week)}
                 </div>
@@ -633,11 +614,6 @@ function showWeekModal(weekNumber) {
                       data-tag-id="week-${weekNumber}"
                       title="Click to change status">${status}</span>
             </div>
-
-            <div class="detail-section">
-                <div class="detail-title">Team</div>
-                ${buildWeekTeamHtml(week)}
-            </div>
             
             ${buildWeekObjectiveHtml(week)}
             ${buildWeekKeyActivitiesHtml(week)}
@@ -705,7 +681,6 @@ function renderMonthContent(month) {
                             <div class="week-meta week-meta--compact">
                                 ${buildWeekMetaTags(week, { showMonth: false })}
                             </div>
-                            ${buildWeekTeamHtml(week)}
                             ${buildWeekProgressBarHtml(week.weekNumber, true)}
                         </div>
                         <div class="week-accordion-icon">▼</div>

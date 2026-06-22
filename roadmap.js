@@ -133,7 +133,6 @@ function createBackFace(phase) {
       <div class="flip-week-item">
         <div class="flip-week-header">
           <span class="flip-week-badge">Week ${week.weekNumber}</span>
-          <span class="flip-week-priority ${week.priority.toLowerCase()}">${week.priority}</span>
         </div>
         <p class="flip-week-topic">${week.topic}</p>
         <span class="flip-week-dates">${week.dates}</span>
