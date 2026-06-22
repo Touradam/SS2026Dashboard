@@ -216,6 +216,52 @@ function buildWeekTeamHtml(week) {
     `;
 }
 
+function buildWeekObjectiveHtml(week) {
+    if (!week.objective) return '';
+    return `
+        <div class="week-objective">
+            <span class="track-label">Objective</span>
+            <p class="track-content">${week.objective}</p>
+        </div>
+    `;
+}
+
+function buildWeekKeyActivitiesHtml(week) {
+    if (!week.keyActivities?.length) return '';
+    return `
+        <div class="week-key-activities">
+            <span class="track-label">Key Activities</span>
+            <ul class="deliverables-list">
+                ${week.keyActivities.map(a => `<li>${a}</li>`).join('')}
+            </ul>
+        </div>
+    `;
+}
+
+function buildWeekResourcesHtml(week) {
+    if (!week.resourcesRequired?.length) return '';
+    return `
+        <div class="week-resources">
+            <span class="track-label">Resources Required</span>
+            <ul class="resources-list">
+                ${week.resourcesRequired.map(r => `<li>${r}</li>`).join('')}
+            </ul>
+        </div>
+    `;
+}
+
+function buildWeekSuccessMetricsHtml(week) {
+    if (!week.successMetrics?.length) return '';
+    return `
+        <div class="week-success-metrics">
+            <span class="track-label">Success Metrics</span>
+            <ul class="metric-list">
+                ${week.successMetrics.map(m => `<li class="metric-item">${m}</li>`).join('')}
+            </ul>
+        </div>
+    `;
+}
+
 function buildWeekTracksHtml(week, editable = false) {
     const weekId = week.weekNumber;
     const customTechnical = state.customWeekData?.['technical-track']?.[`week-${weekId}`] || week.technicalTrack;
@@ -254,7 +300,7 @@ function buildWeekDeliverablesHtml(week) {
 }
 
 function buildWeekActivityPreview(week) {
-    const preview = week.deliverables?.slice(0, 2) || [];
+    const preview = week.keyActivities?.slice(0, 2) || week.deliverables?.slice(0, 2) || [];
     if (!preview.length) return '';
     return `
         <ul class="week-activities-preview">
@@ -270,6 +316,7 @@ function buildWeekDetailCard(week, currentWeek) {
 
     return `
         <article class="week-detail-card ${isCurrentWeek ? 'current-week' : ''}"
+                 data-reveal
                  data-week="${week.weekNumber}"
                  data-status="${status.toLowerCase()}"
                  data-phase="${week.phase}">
@@ -287,8 +334,11 @@ function buildWeekDetailCard(week, currentWeek) {
                 data-text-id="week-${week.weekNumber}"
                 title="Double-click to edit">${topic}</h4>
             ${buildWeekTeamHtml(week)}
-            ${buildWeekTracksHtml(week, true)}
+            ${buildWeekObjectiveHtml(week)}
+            ${buildWeekKeyActivitiesHtml(week)}
+            ${buildWeekResourcesHtml(week)}
             ${buildWeekDeliverablesHtml(week)}
+            ${buildWeekSuccessMetricsHtml(week)}
             <button type="button" class="week-detail-expand-btn" data-week="${week.weekNumber}">
                 View full details
             </button>
@@ -318,7 +368,7 @@ function renderTimeline() {
         const topic = getWeekTopic(week);
         
         return `
-            <div class="week-card ${isCurrentWeek ? 'current-week' : ''}" data-week="${week.weekNumber}">
+            <div class="week-card ${isCurrentWeek ? 'current-week' : ''}" data-reveal data-week="${week.weekNumber}">
                 <div class="week-header phase-${phaseClass}">
                     <div class="week-number">Week ${week.weekNumber}</div>
                     <div class="week-dates">${week.dates}</div>
@@ -426,7 +476,9 @@ function showWeekModal(weekNumber) {
                 ${buildWeekTeamHtml(week)}
             </div>
             
-            ${buildWeekTracksHtml(week, true)}
+            ${buildWeekObjectiveHtml(week)}
+            ${buildWeekKeyActivitiesHtml(week)}
+            ${buildWeekResourcesHtml(week)}
             
             <div class="detail-section">
                 <div class="detail-title">Deliverables</div>
@@ -435,12 +487,7 @@ function showWeekModal(weekNumber) {
                 </ul>
             </div>
             
-            <div class="detail-section">
-                <div class="detail-title">Success Metrics</div>
-                <ul class="metric-list">
-                    ${week.successMetrics.map(m => `<li class="metric-item">${m}</li>`).join('')}
-                </ul>
-            </div>
+            ${buildWeekSuccessMetricsHtml(week)}
         </div>
     `;
     
@@ -508,14 +555,11 @@ function renderMonthContent(month) {
                     </div>
                     <div class="week-accordion-content">
                         <div class="week-details">
-                            ${buildWeekTracksHtml(week)}
+                            ${buildWeekObjectiveHtml(week)}
+                            ${buildWeekKeyActivitiesHtml(week)}
+                            ${buildWeekResourcesHtml(week)}
                             ${buildWeekDeliverablesHtml(week)}
-                            <div class="detail-section">
-                                <div class="detail-title">Success Metrics</div>
-                                <ul class="metric-list">
-                                    ${week.successMetrics.map(m => `<li class="metric-item">${m}</li>`).join('')}
-                                </ul>
-                            </div>
+                            ${buildWeekSuccessMetricsHtml(week)}
                         </div>
                     </div>
                 </div>
@@ -1029,6 +1073,13 @@ function init() {
     setupDateFilters();
     renderGlossary();
     setupGlossarySearch();
+
+    // Re-bind scroll reveal for dynamically rendered cards
+    requestAnimationFrame(() => {
+        if (window.MidnightMotion?.refreshScrollReveal) {
+            window.MidnightMotion.refreshScrollReveal();
+        }
+    });
     
     console.log('Solar Sense Dashboard initialized successfully');
 }

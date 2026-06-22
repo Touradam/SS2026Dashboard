@@ -56,348 +56,906 @@ const executionPlan = {
   ],
 
   weeks: [
-    // Phase 1: Land & Launch (July 2026, Weeks 1-4)
-    {
-      weekNumber: 1,
-      dates: 'July 1-10, 2026',
-      month: 'July',
-      phase: 'Land & Launch',
-      topic: 'China Entry & Founder Orientation',
-      priority: 'Critical',
-      hours: { adama: 40, jordan: 4 },
-      technicalTrack: 'Create Solar Sense Pro China Market Opportunity Framework and define customer segmentation. Review SEPT product documentation and value proposition materials for research market entry.',
-      relationshipTrack: 'Complete Plug and Play founder onboarding sessions and cohort introductions. Participate in Shanghai ecosystem visits and map key solar industry stakeholders. Conduct preliminary market research on Chinese universities, research institutes, and solar testing facilities.',
-      jordanTrack: 'Weekly alignment: Review market opportunity framework structure, target organization criteria, and communication protocols.',
-      deliverables: ['China market opportunity framework completed', 'Initial list of 30-40 target organizations identified', 'Stakeholder map of key solar ecosystem players developed', 'Solar Sense Pro China market-entry assumptions documented'],
-      successMetrics: ['100% operational setup complete', 'Initial contact database of professors and lab directors established']
-    },
-    {
-      weekNumber: 2,
-      dates: 'July 13-17, 2026',
-      month: 'July',
-      phase: 'Land & Launch',
-      topic: 'Legal, Financial & Operational Setup',
-      priority: 'High',
-      hours: { adama: 40, jordan: 3 },
-      technicalTrack: 'Begin localization of marketing materials, website content, and product positioning for Chinese academic audiences. Draft Chinese company introduction and product one-pager.',
-      relationshipTrack: 'Participate in banking, taxation, and financial workshops to establish China operating structure. Attend Shanghai ecosystem trip to meet universities, innovation centers, solar companies, and research organizations. Conduct customer discovery interviews with researchers, professors, and solar testing professionals.',
-      jordanTrack: 'Asynchronous review: Check Chinese product materials for technical accuracy and appropriate academic positioning.',
-      deliverables: ['China banking and financial setup roadmap completed', '15-20 customer discovery conversations conducted', 'Chinese company introduction and product one-pager drafted', 'Target organization database expanded to 60 organizations'],
-      successMetrics: ['Banking infrastructure path clear', 'Initial research-sector value proposition validated']
-    },
-    {
-      weekNumber: 3,
-      dates: 'July 20-24, 2026',
-      month: 'July',
-      phase: 'Land & Launch',
-      topic: 'Talent Access & Government Incentives',
-      priority: 'Critical',
-      hours: { adama: 35, jordan: 5 },
-      technicalTrack: 'Prepare technical documentation and product specifications for manufacturing partner discussions. Identify Chinese manufacturers capable of producing Solar Sense Pro hardware.',
-      relationshipTrack: 'Attend government grants, subsidies, talent program, and visa workshops. Meet district officials from NETDA, NID, and NHIZ to understand funding opportunities for foreign technology companies. Continue outreach to universities, national laboratories, renewable energy research centers, and testing facilities.',
-      jordanTrack: 'Design review: Confirm product specifications are suitable for Chinese manufacturing and research institution requirements.',
-      deliverables: ['Government incentive strategy developed', 'Manufacturing partner long list of 15-20 companies created', '80 target organizations identified and prioritized', 'At least 5 qualified partnership discussions initiated', 'Research collaboration opportunity report completed'],
-      successMetrics: ['Government funding opportunities mapped', 'Manufacturing feasibility confirmed']
-    },
-    {
-      weekNumber: 4,
-      dates: 'July 27-31, 2026',
-      month: 'July',
-      phase: 'Land & Launch',
-      topic: 'Ecosystem Integration & POC Preparation',
-      priority: 'High',
-      hours: { adama: 42, jordan: 4 },
-      technicalTrack: 'Adapt Solar Sense Pro pitch deck, pricing assumptions, and market messaging for Chinese academic and research customers. Complete Chinese-language marketing materials.',
-      relationshipTrack: 'Participate in Nantong ecosystem integration activities and business community introductions. Conduct follow-up meetings with high-priority universities, laboratories, and research institutes. Participate in Wenzhou business trip to expand partnership and manufacturing opportunities.',
-      jordanTrack: 'Review Chinese pitch deck and validate technical claims for research audience.',
-      deliverables: ['China Market Opportunity Map completed', 'Database of 100 target organizations finalized', 'Chinese pitch deck, company profile, and product materials completed', 'Manufacturing partner prospect list completed', 'Minimum 10 qualified partnership discussions underway', 'Phase 2 customer validation and POC engagement plan prepared'],
-      successMetrics: ['Phase 1 complete', 'Initial university pipeline established', 'Phase 2 POC plan prepared']
-    },
-    // Phase 2: Market Entry (August 2026, Weeks 5-8)
-    {
-      weekNumber: 5,
-      dates: 'August 3-7, 2026',
-      month: 'August',
-      phase: 'Market Entry',
-      topic: 'From Technology to Real Use Cases',
-      priority: 'Critical',
-      hours: { adama: 38, jordan: 4 },
-      technicalTrack: 'Develop pilot program packages, pilot objectives, evaluation metrics, and draft collaboration proposals. Prioritize top 15-20 organizations from Phase 1 pipeline.',
-      relationshipTrack: 'Participate in Market Entry Workshop and refine China go-to-market strategy focused on universities and research institutions. Attend IP, patent, and data compliance workshops and develop a China IP protection roadmap. Begin structured pilot discussions with top research institutions.',
-      jordanTrack: 'Monthly review: Evaluate July progress, refine pilot technical requirements, and approve collaboration frameworks.',
-      deliverables: ['China market-entry strategy completed', 'China IP and patent strategy documented', 'Pilot partner shortlist finalized', '5-8 active pilot discussions underway', 'Draft pilot agreement package created'],
-      successMetrics: ['Market entry framework validated', 'Pilot proposal package ready']
-    },
-    {
-      weekNumber: 6,
-      dates: 'August 10-14, 2026',
-      month: 'August',
-      phase: 'Market Entry',
-      topic: 'POC Kickoff & Corporate Matchmaking',
-      priority: 'Critical',
-      hours: { adama: 45, jordan: 5 },
-      technicalTrack: 'Prepare Solar Sense Pro technical demonstrations. Conduct technical meetings with prospective pilot partners to define pilot scope and research objectives. Document pilot deployment requirements.',
-      relationshipTrack: 'Present Solar Sense Pro during POC Kickoff Event and showcase research use cases. Participate in closed-door matchmaking sessions with universities, laboratories, and innovation centers. Initiate discussions with manufacturers and electronics suppliers identified through Plug and Play network.',
-      jordanTrack: 'Asynchronous technical support: Review pilot technical requirements and provide guidance on research use cases.',
-      deliverables: ['10-15 strategic matchmaking meetings completed', '2-4 pilot candidates formally shortlisted', 'Initial MOUs or letters of intent signed', 'Manufacturing partner evaluation process initiated', 'Pilot deployment requirements documented'],
-      successMetrics: ['Strong pilot candidate pipeline established', 'First LOIs signed']
-    },
-    {
-      weekNumber: 7,
-      dates: 'August 17-21, 2026',
-      month: 'August',
-      phase: 'Market Entry',
-      topic: 'Negotiations, Go-to-Market & Pilot Testing',
-      priority: 'High',
-      hours: { adama: 40, jordan: 3 },
-      technicalTrack: 'Launch initial pilot testing activities with selected research partners. Define pilot deployment requirements and success criteria. Establish product performance feedback process.',
-      relationshipTrack: 'Negotiate pilot terms, deployment scope, data-sharing protocols, and success metrics. Participate in China market case-study sessions and incorporate localization lessons into the product roadmap. Conduct supplier and manufacturing assessments for pilot-scale production.',
-      jordanTrack: 'Asynchronous review: Check pilot deployment parameters and validate technical approach.',
-      deliverables: ['2-3 pilot agreements in final negotiation', 'At least one pilot deployment initiated', 'Product performance feedback process established', 'Preliminary manufacturing shortlist created', 'China-specific localization requirements identified'],
-      successMetrics: ['Pilot agreements advancing to signature', 'Manufacturing options validated']
-    },
-    {
-      weekNumber: 8,
-      dates: 'August 24-28, 2026',
-      month: 'August',
-      phase: 'Market Entry',
-      topic: 'Business Model Validation & Deal Closing',
-      priority: 'Critical',
-      hours: { adama: 46, jordan: 6 },
-      technicalTrack: 'Continue product testing and collect structured feedback from pilot participants. Complete supplier matching and develop a China manufacturing and localization roadmap.',
-      relationshipTrack: 'Participate in Business Model Validation Workshop and refine pricing, customer acquisition, and partnership models. Finalize pilot agreements and formal research collaborations.',
-      jordanTrack: 'Technical sign-off: Validate business model assumptions and pilot technical configurations.',
-      deliverables: ['2-3 pilot agreements signed', '1-2 active pilot deployments initiated', 'China business model validated', 'Manufacturing partner shortlist completed', 'Product localization roadmap created', 'Commercialization plan prepared for Phase 3 execution'],
-      successMetrics: ['Phase 2 complete: Pilots secured', 'Business model validated for research sector']
-    },
-    // Phase 3: Manufacturing Kickoff (September 2026, Weeks 9-12)
-    {
-      weekNumber: 9,
-      dates: 'August 31 - September 4, 2026',
-      month: 'September',
-      phase: 'Manufacturing Kickoff',
-      topic: 'Month 3 Transition — Localization & Validation',
-      priority: 'Critical',
-      hours: { adama: 40, jordan: 5 },
-      technicalTrack: 'Install and commission Solar Sense Pro at pilot partner sites. Train researchers, professors, and laboratory staff on system operation and dashboard usage. Establish pilot success metrics, reporting protocols, and feedback collection processes.',
-      relationshipTrack: 'Coordinate with pilot site teams to ensure successful deployments. Begin Chinese IP and patent filing assessment based on technology deployment strategy.',
-      jordanTrack: 'Asynchronous support: Monitor pilot installations and provide remote technical guidance.',
-      deliverables: ['1-2 pilot sites fully operational', 'Pilot monitoring and reporting framework established', 'Customer feedback process documented', 'Initial China IP strategy update completed'],
-      successMetrics: ['Pilots operational and collecting data', 'Feedback collection process active']
-    },
-    {
-      weekNumber: 10,
-      dates: 'September 7-11, 2026',
-      month: 'September',
-      phase: 'Manufacturing Kickoff',
-      topic: 'Deep POC Execution — Supply Chain Integration',
-      priority: 'Medium',
-      hours: { adama: 35, jordan: 8 },
-      technicalTrack: 'Translate dashboard interface, reports, alerts, and user documentation into Chinese. Conduct user experience interviews with pilot participants. Assess certification, sourcing, and assembly requirements for China-based production.',
-      relationshipTrack: 'Visit and evaluate shortlisted manufacturing partners. Assess certification, sourcing, and assembly requirements for China-based production.',
-      jordanTrack: 'Localization review: Validate Chinese interface translations and technical documentation for accuracy.',
-      deliverables: ['Chinese dashboard beta version completed', 'Chinese user documentation drafted', 'Manufacturing evaluation report completed', 'Product localization requirements identified'],
-      successMetrics: ['Chinese product experience validated by pilot users', 'Manufacturing feasibility confirmed']
-    },
-    {
-      weekNumber: 11,
-      dates: 'September 14-18, 2026',
-      month: 'September',
-      phase: 'Manufacturing Kickoff',
-      topic: 'Localized Software & Integration Validation',
-      priority: 'High',
-      hours: { adama: 38, jordan: 4 },
-      technicalTrack: 'Validate localized dashboard, reports, and integration workflows with pilot participants. Expand pilot network and explore opportunities for joint publications, student projects, and grant collaborations.',
-      relationshipTrack: 'Present pilot progress to universities, laboratories, and renewable energy research centers. Conduct site visits with prospective research collaborators. Engage faculty members and graduate researchers interested in using Solar Sense Pro for research projects.',
-      jordanTrack: 'Review academic collaboration proposals and validate technical approach for research applications.',
-      deliverables: ['3-5 new research partnership opportunities identified', 'Additional pilot candidates added to pipeline', 'Academic collaboration framework developed', 'Expanded university engagement network established', 'Localized software integration validated'],
-      successMetrics: ['Research ecosystem presence growing', 'Academic interest validated', 'Chinese dashboard validated in field use']
-    },
-    {
-      weekNumber: 12,
-      dates: 'September 21-25, 2026',
-      month: 'September',
-      phase: 'Manufacturing Kickoff',
-      topic: 'Pre-Installation Site Preparation',
-      priority: 'High',
-      hours: { adama: 40, jordan: 5 },
-      technicalTrack: 'Prepare additional pilot sites for installation. Collect and analyze pilot performance data and customer feedback. Evaluate pricing assumptions, deployment models, and support requirements.',
-      relationshipTrack: 'Conduct structured interviews with pilot stakeholders and decision-makers. Prepare China market validation report and commercialization recommendations. Complete pre-installation site assessments for pipeline expansion.',
-      jordanTrack: 'Monthly review: Evaluate Q3 progress, validate market assumptions, and prepare Q4 fundraising strategy.',
-      deliverables: ['China Market Validation Report completed', 'Product-market fit assessment documented', 'Commercialization assumptions validated or revised', 'Priority market segments ranked for future expansion', 'Pre-installation site readiness assessments completed'],
-      successMetrics: ['Phase 3 complete: Market demand validated', 'Product localized for Chinese market', 'Pipeline sites prepared for expansion']
-    },
-    // Phase 4: Hardware Ingestion (October 2026, Weeks 13-16)
-    {
-      weekNumber: 13,
-      dates: 'September 28 - October 2, 2026',
-      month: 'October',
-      phase: 'Hardware Ingestion',
-      topic: 'Month 4 Transition — Investor Readiness',
-      priority: 'Critical',
-      hours: { adama: 38, jordan: 4 },
-      technicalTrack: 'Build comprehensive investor pipeline and outreach strategy. Develop Solar Sense Pro China growth story using pilot results, research partnerships, and manufacturing strategy.',
-      relationshipTrack: 'Define fundraising objectives, target round size, capital allocation, and 24-month milestones. Identify target investor profiles including climate-tech VCs, strategic corporate investors, government funds, and family offices.',
-      jordanTrack: 'Strategy review: Validate fundraising approach and investment narrative from technical perspective.',
-      deliverables: ['Fundraising strategy completed', 'Investment thesis finalized', 'Target investor database containing 75-100 investors', 'China growth narrative documented'],
-      successMetrics: ['Clear fundraising roadmap established', 'Investor targeting strategy validated']
-    },
-    {
-      weekNumber: 14,
-      dates: 'October 5-9, 2026',
-      month: 'October',
-      phase: 'Hardware Ingestion',
-      topic: 'Golden Week — Internal Validation & Bench Burn-In',
-      priority: 'Critical',
-      hours: { adama: 35, jordan: 8 },
-      technicalTrack: 'Conduct internal product validation and bench burn-in testing during Golden Week. Develop five-year financial model including revenue, gross margin, operating expenses, and cash flow. Validate pricing assumptions using pilot feedback and market interviews.',
-      relationshipTrack: 'Build scenario analyses for Research Edition, Enterprise Edition, and Manufacturing Licensing opportunities. Calculate customer acquisition cost, lifetime value, and unit economics with financial advisors.',
-      jordanTrack: 'Financial model review: Validate technical assumptions, cost structures, and revenue projections during internal validation period.',
-      deliverables: ['Five-year financial model completed', 'Revenue scenarios documented', 'Unit economics validated', 'Capital deployment plan finalized', 'Internal validation and bench burn-in report completed'],
-      successMetrics: ['Financial model demonstrates clear path to profitability', 'Unit economics validated', 'Product performance validated under extended testing']
-    },
-    {
-      weekNumber: 15,
-      dates: 'October 12-16, 2026',
-      month: 'October',
-      phase: 'Hardware Ingestion',
-      topic: 'Investor Materials & Growth Narrative Refinement',
-      priority: 'High',
-      hours: { adama: 40, jordan: 4 },
-      technicalTrack: 'Organize secure data room containing financials, pilot reports, IP documentation, market research, and technical materials. Develop standardized due diligence responses.',
-      relationshipTrack: 'Design bilingual (English/Chinese) investor pitch deck. Prepare executive summary, one-page investment memo, and technology overview with translation support. Refine China growth narrative for investor audiences.',
-      jordanTrack: 'Data room review: Ensure technical documentation is investor-ready and accurately represents capabilities.',
-      deliverables: ['Investor deck completed', 'Executive summary completed', 'Data room fully organized', 'Bilingual investor materials finalized', 'China growth narrative refined for investor outreach'],
-      successMetrics: ['Professional investor package ready', 'Due diligence materials organized']
-    },
-    {
-      weekNumber: 16,
-      dates: 'October 19-23, 2026',
-      month: 'October',
-      phase: 'Hardware Ingestion',
-      topic: 'Bilateral Presentation Tuning',
-      priority: 'High',
-      hours: { adama: 36, jordan: 3 },
-      technicalTrack: 'Finalize China expansion strategy including commercialization roadmap, manufacturing partnerships, and research ecosystem growth. Tune presentations for both Chinese and international investor audiences.',
-      relationshipTrack: 'Conduct mock investor presentations with Plug and Play mentors and industry advisors. Refine investment messaging based on mentor feedback. Begin warm introductions to Plug and Play investors, strategic partners, and government investment funds.',
-      jordanTrack: 'Presentation review: Validate technical claims and ensure investor messaging is accurate and compelling.',
-      deliverables: ['Investor presentation validated', 'China Growth Strategy completed', 'Investor outreach pipeline activated', 'Due diligence package finalized'],
-      successMetrics: ['Phase 4 complete: Ready for active fundraising', 'Investor meetings scheduled for November']
-    },
-    // Phase 5: Field Deployment (November 2026, Weeks 17-20)
-    {
-      weekNumber: 17,
-      dates: 'October 26-30, 2026',
-      month: 'November',
-      phase: 'Field Deployment',
-      topic: 'Regional Ecosystem Structuring',
-      priority: 'Critical',
-      hours: { adama: 40, jordan: 4 },
-      technicalTrack: 'Present Solar Sense Pro China commercialization strategy and pilot validation results. Qualify investors based on sector focus, investment stage, strategic value, and geographic interests.',
-      relationshipTrack: 'Participate in Plug and Play investor roundtables and climate-tech networking events. Conduct targeted investor outreach to venture funds, corporate investors, and strategic partners. Structure regional ecosystem relationships for scale.',
-      jordanTrack: 'Investor support: Provide technical answers to investor due diligence questions.',
-      deliverables: ['5-7 investor meetings completed', 'Investor qualification matrix created', 'Initial investor feedback report completed', 'High-priority investor pipeline established'],
-      successMetrics: ['Strong investor engagement', 'Multiple follow-up meetings scheduled']
-    },
-    {
-      weekNumber: 18,
-      dates: 'November 2-6, 2026',
-      month: 'November',
-      phase: 'Field Deployment',
-      topic: 'Month 5 Transition — Fundraising Acceleration',
-      priority: 'High',
-      hours: { adama: 38, jordan: 5 },
-      technicalTrack: 'Address investor questions regarding technology, manufacturing, commercialization, and China expansion. Organize and validate all due diligence documentation.',
-      relationshipTrack: 'Conduct one-on-one meetings with climate-tech VCs, strategic corporate investors, and government-backed funds. Customize investment presentations based on investor interests.',
-      jordanTrack: 'Due diligence support: Provide technical validation and documentation for investor inquiries.',
-      deliverables: ['5-6 additional investor meetings completed', 'Due diligence checklist finalized', 'Investor-specific follow-up materials prepared', '2-3 investors express strong interest'],
-      successMetrics: ['Deep investor engagement', 'Due diligence processes beginning']
-    },
-    {
-      weekNumber: 19,
-      dates: 'November 9-13, 2026',
-      month: 'November',
-      phase: 'Field Deployment',
-      topic: 'Closed-Door Investor Roundtables & Field Validation',
-      priority: 'High',
-      hours: { adama: 36, jordan: 4 },
-      technicalTrack: 'Explore non-dilutive funding opportunities, grants, and joint development agreements. Document partnership investment opportunities. Validate field deployment data for investor presentations.',
-      relationshipTrack: 'Meet government investment agencies and innovation funds supporting climate technology and advanced manufacturing. Present Solar Sense Pro alignment with China renewable energy, AI, and smart infrastructure priorities. Engage solar manufacturers, research organizations, and energy companies for potential strategic investment.',
-      jordanTrack: 'Strategic review: Evaluate different funding options and provide technical perspective.',
-      deliverables: ['Government funding opportunities identified', 'Strategic investor discussions initiated', 'Partnership investment opportunities documented', 'Non-dilutive funding roadmap completed'],
-      successMetrics: ['Diverse funding pipeline established', 'Strategic partnerships progressing']
-    },
-    {
-      weekNumber: 20,
-      dates: 'November 16-20, 2026',
-      month: 'November',
-      phase: 'Field Deployment',
-      topic: 'Commercial Pipeline Scaling',
-      priority: 'Critical',
-      hours: { adama: 40, jordan: 3 },
-      technicalTrack: 'Respond to due diligence requests and provide additional technical and financial information. Refine fundraising strategy based on investor insights and market response.',
-      relationshipTrack: 'Conduct second-round investor meetings and follow-up discussions. Update fundraising CRM with investor feedback, timelines, and next steps. Scale commercial pipeline based on validated demand.',
-      jordanTrack: 'Monthly review: Evaluate fundraising progress, validate technical responses to investors, and prepare for Demo Day.',
-      deliverables: ['Fundraising pipeline actively managed', 'Second-round meetings completed', 'Due diligence processes initiated', 'Next-stage fundraising strategy finalized', 'Research customer pipeline expanded and documented'],
-      successMetrics: ['Phase 5 complete: Active fundraising underway', '15-20 investor meetings total', 'Multiple due diligence processes active']
-    },
-    // Phase 6: Scale, Showcase & Graduation (December 2026, Weeks 21-24)
-    {
-      weekNumber: 21,
-      dates: 'November 23-27, 2026',
-      month: 'December',
-      phase: 'Scale, Showcase & Graduation',
-      topic: 'Supply Chain Hardening & Scale Contract Optimization',
-      priority: 'Critical',
-      hours: { adama: 38, jordan: 4 },
-      technicalTrack: 'Update pitch with pilot performance metrics, customer testimonials, and commercialization milestones. Develop tailored messaging for investors, universities, manufacturers, and government stakeholders. Harden supply chain for scale production.',
-      relationshipTrack: 'Refine Demo Day presentation using investor and mentor feedback. Schedule Demo Day meetings with priority investors and strategic partners. Optimize scale contract terms with manufacturing partners.',
-      jordanTrack: 'Presentation review: Final validation of technical claims and performance metrics for Demo Day.',
-      deliverables: ['Demo Day presentation finalized', 'Executive presentation script completed', 'Priority meeting schedule confirmed', 'Strategic messaging aligned across all audiences', 'Supply chain hardening plan completed'],
-      successMetrics: ['Demo Day presentation ready', 'Key stakeholder meetings scheduled', 'Scale contracts under negotiation']
-    },
-    {
-      weekNumber: 22,
-      dates: 'November 30 - December 4, 2026',
-      month: 'December',
-      phase: 'Scale, Showcase & Graduation',
-      topic: 'Month 6 Transition — Demo Day & Graduation Prep',
-      priority: 'High',
-      hours: { adama: 36, jordan: 3 },
-      technicalTrack: 'Identify internship and graduate research opportunities supporting product development. Establish local talent pipeline.',
-      relationshipTrack: 'Finalize collaboration agreements with universities and renewable energy research centers. Conduct meetings with shortlisted manufacturing and supply chain partners. Participate in university recruitment and talent networking activities.',
-      jordanTrack: 'Partnership review: Validate technical aspects of university and manufacturing partnerships.',
-      deliverables: ['University collaboration framework established', 'Manufacturing partnership roadmap finalized', 'Local talent pipeline identified', 'Research collaboration opportunities expanded'],
-      successMetrics: ['Partnership foundation strengthened', 'Long-term ecosystem relationships established', 'Demo Day prep complete']
-    },
-    {
-      weekNumber: 23,
-      dates: 'December 7-11, 2026',
-      month: 'December',
-      phase: 'Scale, Showcase & Graduation',
-      topic: 'Pilot Pipeline Expansion Sprints & Demo Day',
-      priority: 'Critical',
-      hours: { adama: 45, jordan: 4 },
-      technicalTrack: 'Showcase pilot results, localization progress, and manufacturing strategy. Collect investor feedback and identify next-step actions. Execute pilot pipeline expansion sprints.',
-      relationshipTrack: 'Present Solar Sense Pro to investors, corporates, government representatives, and Plug and Play partners at Demo Day. Conduct one-on-one meetings with interested investors immediately following presentations.',
-      jordanTrack: 'Demo Day support: Available for technical questions and investor discussions.',
-      deliverables: ['Successful Demo Day presentation delivered', '8-10 investor and strategic partner follow-up meetings completed', 'New partnership opportunities identified', 'Investor interest and feedback documented', 'Pilot pipeline expansion targets advanced'],
-      successMetrics: ['Demo Day milestone: Compelling presentation delivered', 'Strong investor and partner response']
-    },
-    {
-      weekNumber: 24,
-      dates: 'December 14-18, 2026',
-      month: 'December',
-      phase: 'Scale, Showcase & Graduation',
-      topic: 'Flagship Demo Day Showcase & Graduation',
-      priority: 'Critical',
-      hours: { adama: 40, jordan: 6 },
-      technicalTrack: 'Define fundraising milestones, pilot expansion targets, hiring priorities, and manufacturing objectives for the next 12 months.',
-      relationshipTrack: 'Complete structured follow-up with all investors, partners, universities, and government contacts. Finalize Solar Sense Pro 12-month China operating plan and commercialization roadmap. Join Plug and Play alumni network and establish ongoing engagement with mentors and ecosystem partners.',
-      jordanTrack: 'Strategic planning: Review 12-month roadmap, validate technical milestones, and establish post-program operating priorities.',
-      deliverables: ['Post-program operating plan completed', 'Investor follow-up system implemented', 'China growth roadmap finalized', 'Alumni engagement plan established', '12-month operating plan completed'],
-      successMetrics: ['Program complete', 'Clear path forward established', 'Launch readiness achieved']
-    }
+      {
+          "weekNumber": 1,
+          "dates": "July 1-10, 2026",
+          "month": "July",
+          "phase": "Land & Launch",
+          "topic": "China Entry & Founder Orientation",
+          "priority": "Critical",
+          "hours": {
+              "adama": 40,
+              "jordan": 4
+          },
+          "objective": "Build a strong understanding of the Chinese solar ecosystem, Plug and Play resources, and the research and education market opportunity for Solar Sense Research Edition.",
+          "keyActivities": [
+              "Complete Plug and Play founder onboarding sessions and cohort introductions.",
+              "Participate in Shanghai ecosystem visits and map key solar industry stakeholders.",
+              "Conduct preliminary market research on Chinese universities, research institutes, and solar testing facilities.",
+              "Create SEPT China Market Opportunity Framework and define customer segmentation."
+          ],
+          "resourcesRequired": [
+              "Plug and Play mentor network",
+              "Industry reports and China solar market data",
+              "SEPT product documentation and value proposition materials"
+          ],
+          "deliverables": [
+              "China market opportunity framework completed",
+              "Initial list of 30-40 target organizations identified",
+              "Stakeholder map of key solar ecosystem players developed",
+              "SEPT China market-entry assumptions documented"
+          ],
+          "successMetrics": [
+              "Operational presence established in Nantong",
+              "Initial target organization pipeline created"
+          ],
+          "technicalTrack": "Complete Plug and Play founder onboarding sessions and cohort introductions. Participate in Shanghai ecosystem visits and map key solar industry stakeholders.",
+          "relationshipTrack": "Conduct preliminary market research on Chinese universities, research institutes, and solar testing facilities. Create SEPT China Market Opportunity Framework and define customer segmentation.",
+          "jordanTrack": "Weekly review and technical support aligned to: Build a strong understanding of the Chinese solar ecosystem, Plug and Play resources, and the research and education market opportunity for Solar Sense Research Edition."
+      },
+      {
+          "weekNumber": 2,
+          "dates": "July 13-17, 2026",
+          "month": "July",
+          "phase": "Land & Launch",
+          "topic": "Legal, Financial & Operational Setup",
+          "priority": "High",
+          "hours": {
+              "adama": 40,
+              "jordan": 3
+          },
+          "objective": "Develop a deeper understanding of China's business environment while validating demand within the research and education sector.",
+          "keyActivities": [
+              "Participate in banking, taxation, and financial workshops to establish SEPT's China operating structure.",
+              "Attend the Shanghai ecosystem trip and meet universities, innovation centers, solar companies, and research organizations.",
+              "Conduct customer discovery interviews with researchers, professors, and solar testing professionals.",
+              "Begin localization of marketing materials, website content, and product positioning for Chinese audiences."
+          ],
+          "resourcesRequired": [
+              "Plug and Play Shanghai partner network",
+              "Translation and localization support",
+              "Customer discovery interview templates"
+          ],
+          "deliverables": [
+              "China banking and financial setup roadmap completed",
+              "15-20 customer discovery conversations conducted",
+              "Chinese company introduction and product one-pager drafted",
+              "Target organization database expanded to 60 organizations",
+              "Initial research-sector value proposition validated"
+          ],
+          "successMetrics": [
+              "Banking and financial setup path defined",
+              "Research-sector demand signals captured"
+          ],
+          "technicalTrack": "Participate in banking, taxation, and financial workshops to establish SEPT's China operating structure. Attend the Shanghai ecosystem trip and meet universities, innovation centers, solar companies, and research organizations.",
+          "relationshipTrack": "Conduct customer discovery interviews with researchers, professors, and solar testing professionals. Begin localization of marketing materials, website content, and product positioning for Chinese audiences.",
+          "jordanTrack": "Weekly review and technical support aligned to: Develop a deeper understanding of China's business environment while validating demand within the research and education sector."
+      },
+      {
+          "weekNumber": 3,
+          "dates": "July 20-24, 2026",
+          "month": "July",
+          "phase": "Land & Launch",
+          "topic": "Talent Access & Government Incentives",
+          "priority": "Critical",
+          "hours": {
+              "adama": 35,
+              "jordan": 5
+          },
+          "objective": "Build strategic relationships with government stakeholders while identifying potential research collaborators and manufacturing partners.",
+          "keyActivities": [
+              "Attend government grants, subsidies, talent program, and visa workshops.",
+              "Meet district officials from NETDA, NID, and NHIZ to understand funding opportunities for foreign technology companies.",
+              "Identify Chinese manufacturers capable of producing Solar Sense Research Edition hardware.",
+              "Continue outreach to universities, national laboratories, renewable energy research centers, and testing facilities."
+          ],
+          "resourcesRequired": [
+              "Government program advisors",
+              "Manufacturing databases and supplier networks",
+              "Plug and Play introductions and mentor support"
+          ],
+          "deliverables": [
+              "Government incentive strategy developed",
+              "Manufacturing partner long list of 15-20 companies created",
+              "80 target organizations identified and prioritized",
+              "At least 5 qualified partnership discussions initiated",
+              "Research collaboration opportunity report completed"
+          ],
+          "successMetrics": [
+              "Government funding pathways mapped",
+              "Manufacturing long list established"
+          ],
+          "technicalTrack": "Attend government grants, subsidies, talent program, and visa workshops. Meet district officials from NETDA, NID, and NHIZ to understand funding opportunities for foreign technology companies.",
+          "relationshipTrack": "Identify Chinese manufacturers capable of producing Solar Sense Research Edition hardware. Continue outreach to universities, national laboratories, renewable energy research centers, and testing facilities.",
+          "jordanTrack": "Weekly review and technical support aligned to: Build strategic relationships with government stakeholders while identifying potential research collaborators and manufacturing partners."
+      },
+      {
+          "weekNumber": 4,
+          "dates": "July 27-31, 2026",
+          "month": "July",
+          "phase": "Land & Launch",
+          "topic": "Ecosystem Integration & POC Preparation",
+          "priority": "High",
+          "hours": {
+              "adama": 42,
+              "jordan": 4
+          },
+          "objective": "Convert market research and networking activities into a qualified partnership pipeline and prepare for customer validation activities.",
+          "keyActivities": [
+              "Participate in Nantong ecosystem integration activities and business community introductions.",
+              "Adapt SEPT pitch deck, pricing assumptions, and market messaging for Chinese academic and research customers.",
+              "Conduct follow-up meetings with high-priority universities, laboratories, and research institutes.",
+              "Participate in the Wenzhou business trip to expand partnership and manufacturing opportunities."
+          ],
+          "resourcesRequired": [
+              "Plug and Play ecosystem partners",
+              "Chinese-language marketing materials",
+              "CRM and partnership tracking system"
+          ],
+          "deliverables": [
+              "China Market Opportunity Map completed",
+              "Database of 100 target organizations finalized",
+              "Chinese pitch deck, company profile, and product materials completed",
+              "Manufacturing partner prospect list completed",
+              "Minimum 10 qualified partnership discussions underway",
+              "Initial university and research institute pipeline established",
+              "Phase 2 customer validation and POC engagement plan prepared"
+          ],
+          "successMetrics": [
+              "Phase 1 complete: 100+ organizations mapped",
+              "POC engagement plan ready for Phase 2"
+          ],
+          "technicalTrack": "Participate in Nantong ecosystem integration activities and business community introductions. Adapt SEPT pitch deck, pricing assumptions, and market messaging for Chinese academic and research customers.",
+          "relationshipTrack": "Conduct follow-up meetings with high-priority universities, laboratories, and research institutes. Participate in the Wenzhou business trip to expand partnership and manufacturing opportunities.",
+          "jordanTrack": "Weekly review and technical support aligned to: Convert market research and networking activities into a qualified partnership pipeline and prepare for customer validation activities."
+      },
+      {
+          "weekNumber": 5,
+          "dates": "August 3-7, 2026",
+          "month": "August",
+          "phase": "Market Entry",
+          "topic": "From Technology to Real Use Cases",
+          "priority": "Critical",
+          "hours": {
+              "adama": 38,
+              "jordan": 4
+          },
+          "objective": "Convert Phase 1 relationships into qualified pilot opportunities and establish Solar Sense's China market-entry strategy for the research sector.",
+          "keyActivities": [
+              "Participate in Market Entry Workshop and refine China go-to-market strategy focused on universities and research institutions.",
+              "Attend IP, patent, and data compliance workshops and develop a China IP protection roadmap.",
+              "Prioritize the top 15-20 organizations from the Phase 1 pipeline and begin structured pilot discussions.",
+              "Develop pilot program packages, pilot objectives, evaluation metrics, and draft collaboration proposals."
+          ],
+          "resourcesRequired": [
+              "Plug and Play market-entry mentors",
+              "China IP and legal advisors",
+              "Pilot proposal templates and technical documentation"
+          ],
+          "deliverables": [
+              "China market-entry strategy completed",
+              "China IP and patent strategy documented",
+              "Pilot partner shortlist finalized",
+              "5-8 active pilot discussions underway",
+              "Draft pilot agreement package created"
+          ],
+          "successMetrics": [
+              "Pilot shortlist finalized",
+              "IP and market-entry strategies documented"
+          ],
+          "technicalTrack": "Participate in Market Entry Workshop and refine China go-to-market strategy focused on universities and research institutions. Attend IP, patent, and data compliance workshops and develop a China IP protection roadmap.",
+          "relationshipTrack": "Prioritize the top 15-20 organizations from the Phase 1 pipeline and begin structured pilot discussions. Develop pilot program packages, pilot objectives, evaluation metrics, and draft collaboration proposals.",
+          "jordanTrack": "Weekly review and technical support aligned to: Convert Phase 1 relationships into qualified pilot opportunities and establish Solar Sense's China market-entry strategy for the research sector."
+      },
+      {
+          "weekNumber": 6,
+          "dates": "August 10-14, 2026",
+          "month": "August",
+          "phase": "Market Entry",
+          "topic": "POC Kickoff & Corporate Matchmaking",
+          "priority": "Critical",
+          "hours": {
+              "adama": 45,
+              "jordan": 5
+          },
+          "objective": "Secure commitments from high-priority research partners and establish the pilot deployment pipeline.",
+          "keyActivities": [
+              "Present Solar Sense Research Edition during the POC Kickoff Event and showcase research use cases.",
+              "Participate in closed-door matchmaking sessions with universities, laboratories, and innovation centers.",
+              "Conduct technical meetings with prospective pilot partners to define pilot scope and research objectives.",
+              "Initiate discussions with manufacturers and electronics suppliers identified through Plug and Play's network."
+          ],
+          "resourcesRequired": [
+              "Plug and Play matchmaking team",
+              "Technical demonstration materials",
+              "Pilot deployment framework and evaluation criteria"
+          ],
+          "deliverables": [
+              "10-15 strategic matchmaking meetings completed",
+              "2-4 pilot candidates formally shortlisted",
+              "Initial MOUs or letters of intent signed",
+              "Manufacturing partner evaluation process initiated",
+              "Pilot deployment requirements documented"
+          ],
+          "successMetrics": [
+              "Pilot candidates shortlisted",
+              "Initial LOIs or MOUs signed"
+          ],
+          "technicalTrack": "Present Solar Sense Research Edition during the POC Kickoff Event and showcase research use cases. Participate in closed-door matchmaking sessions with universities, laboratories, and innovation centers.",
+          "relationshipTrack": "Conduct technical meetings with prospective pilot partners to define pilot scope and research objectives. Initiate discussions with manufacturers and electronics suppliers identified through Plug and Play's network.",
+          "jordanTrack": "Weekly review and technical support aligned to: Secure commitments from high-priority research partners and establish the pilot deployment pipeline."
+      },
+      {
+          "weekNumber": 7,
+          "dates": "August 17-21, 2026",
+          "month": "August",
+          "phase": "Market Entry",
+          "topic": "Negotiations, Go-to-Market & Pilot Testing",
+          "priority": "High",
+          "hours": {
+              "adama": 40,
+              "jordan": 3
+          },
+          "objective": "Finalize pilot agreements and begin product validation with early research partners.",
+          "keyActivities": [
+              "Negotiate pilot terms, deployment scope, data-sharing protocols, and success metrics.",
+              "Participate in China market case-study sessions and incorporate localization lessons into the product roadmap.",
+              "Launch initial pilot testing activities with selected research partners.",
+              "Conduct supplier and manufacturing assessments for pilot-scale production."
+          ],
+          "resourcesRequired": [
+              "Pilot partners and technical teams",
+              "Product validation protocols",
+              "Manufacturing and supply chain advisors"
+          ],
+          "deliverables": [
+              "2-3 pilot agreements in final negotiation",
+              "At least one pilot deployment initiated",
+              "Product performance feedback process established",
+              "Preliminary manufacturing shortlist created",
+              "China-specific localization requirements identified"
+          ],
+          "successMetrics": [
+              "Pilot agreements advancing to signature",
+              "First pilot deployment initiated"
+          ],
+          "technicalTrack": "Negotiate pilot terms, deployment scope, data-sharing protocols, and success metrics. Participate in China market case-study sessions and incorporate localization lessons into the product roadmap.",
+          "relationshipTrack": "Launch initial pilot testing activities with selected research partners. Conduct supplier and manufacturing assessments for pilot-scale production.",
+          "jordanTrack": "Weekly review and technical support aligned to: Finalize pilot agreements and begin product validation with early research partners."
+      },
+      {
+          "weekNumber": 8,
+          "dates": "August 24-28, 2026",
+          "month": "August",
+          "phase": "Market Entry",
+          "topic": "Business Model Validation & Deal Closing",
+          "priority": "Critical",
+          "hours": {
+              "adama": 46,
+              "jordan": 6
+          },
+          "objective": "Validate Solar Sense's China business model using pilot feedback and prepare for commercialization and scaling.",
+          "keyActivities": [
+              "Participate in Business Model Validation Workshop and refine pricing, customer acquisition, and partnership models.",
+              "Finalize pilot agreements and formal research collaborations.",
+              "Continue product testing and collect structured feedback from pilot participants.",
+              "Complete supplier matching and develop a China manufacturing and localization roadmap."
+          ],
+          "resourcesRequired": [
+              "Plug and Play commercialization mentors",
+              "Pilot performance data",
+              "Manufacturing and localization partners"
+          ],
+          "deliverables": [
+              "2-3 pilot agreements signed",
+              "1-2 active pilot deployments initiated",
+              "China business model validated",
+              "Manufacturing partner shortlist completed",
+              "Product localization roadmap created",
+              "Research customer pipeline expanded and documented",
+              "Commercialization plan prepared for Phase 3 execution"
+          ],
+          "successMetrics": [
+              "Phase 2 complete: signed pilot agreements",
+              "Business model validated for research sector"
+          ],
+          "technicalTrack": "Participate in Business Model Validation Workshop and refine pricing, customer acquisition, and partnership models. Finalize pilot agreements and formal research collaborations.",
+          "relationshipTrack": "Continue product testing and collect structured feedback from pilot participants. Complete supplier matching and develop a China manufacturing and localization roadmap.",
+          "jordanTrack": "Weekly review and technical support aligned to: Validate Solar Sense's China business model using pilot feedback and prepare for commercialization and scaling."
+      },
+      {
+          "weekNumber": 9,
+          "dates": "August 31 - September 4, 2026",
+          "month": "September",
+          "phase": "Manufacturing Kickoff",
+          "topic": "Month 3 Transition — Localization & Validation",
+          "priority": "Critical",
+          "hours": {
+              "adama": 40,
+              "jordan": 5
+          },
+          "objective": "Launch and stabilize pilot deployments while establishing a structured process for collecting customer feedback and validation data.",
+          "keyActivities": [
+              "Install and commission Solar Sense Research Edition at pilot partner sites.",
+              "Train researchers, professors, and laboratory staff on system operation and dashboard usage.",
+              "Establish pilot success metrics, reporting protocols, and feedback collection processes.",
+              "Begin Chinese IP and patent filing assessment based on technology deployment strategy."
+          ],
+          "resourcesRequired": [
+              "Solar Sense team (Adama and Jordan)",
+              "Pilot partner technical staff",
+              "Product training materials and user guides"
+          ],
+          "deliverables": [
+              "1-2 pilot sites fully operational",
+              "Pilot monitoring and reporting framework established",
+              "Customer feedback process documented",
+              "Initial China IP strategy update completed"
+          ],
+          "successMetrics": [
+              "Pilot sites operational and collecting data",
+              "Feedback framework active"
+          ],
+          "technicalTrack": "Install and commission Solar Sense Research Edition at pilot partner sites. Train researchers, professors, and laboratory staff on system operation and dashboard usage.",
+          "relationshipTrack": "Establish pilot success metrics, reporting protocols, and feedback collection processes. Begin Chinese IP and patent filing assessment based on technology deployment strategy.",
+          "jordanTrack": "Weekly review and technical support aligned to: Launch and stabilize pilot deployments while establishing a structured process for collecting customer feedback and validation data."
+      },
+      {
+          "weekNumber": 10,
+          "dates": "September 7-11, 2026",
+          "month": "September",
+          "phase": "Manufacturing Kickoff",
+          "topic": "Deep POC Execution — Supply Chain Integration",
+          "priority": "Medium",
+          "hours": {
+              "adama": 35,
+              "jordan": 8
+          },
+          "objective": "Localize the product experience for Chinese users and evaluate manufacturing feasibility.",
+          "keyActivities": [
+              "Translate dashboard interface, reports, alerts, and user documentation into Chinese.",
+              "Conduct user experience interviews with pilot participants.",
+              "Visit and evaluate shortlisted manufacturing partners.",
+              "Assess certification, sourcing, and assembly requirements for China-based production."
+          ],
+          "resourcesRequired": [
+              "Translation and localization specialists",
+              "Manufacturing partners",
+              "Pilot user feedback data"
+          ],
+          "deliverables": [
+              "Chinese dashboard beta version completed",
+              "Chinese user documentation drafted",
+              "Manufacturing evaluation report completed",
+              "Product localization requirements identified"
+          ],
+          "successMetrics": [
+              "Chinese dashboard beta completed",
+              "Manufacturing feasibility assessed"
+          ],
+          "technicalTrack": "Translate dashboard interface, reports, alerts, and user documentation into Chinese. Conduct user experience interviews with pilot participants.",
+          "relationshipTrack": "Visit and evaluate shortlisted manufacturing partners. Assess certification, sourcing, and assembly requirements for China-based production.",
+          "jordanTrack": "Weekly review and technical support aligned to: Localize the product experience for Chinese users and evaluate manufacturing feasibility."
+      },
+      {
+          "weekNumber": 11,
+          "dates": "September 14-18, 2026",
+          "month": "September",
+          "phase": "Manufacturing Kickoff",
+          "topic": "Localized Software & Integration Validation",
+          "priority": "High",
+          "hours": {
+              "adama": 38,
+              "jordan": 4
+          },
+          "objective": "Expand Solar Sense's presence within China's research ecosystem and increase pilot opportunities.",
+          "keyActivities": [
+              "Present pilot progress to universities, laboratories, and renewable energy research centers.",
+              "Conduct site visits with prospective research collaborators.",
+              "Engage faculty members and graduate researchers interested in using Solar Sense for research projects.",
+              "Explore opportunities for joint publications, student projects, and grant collaborations."
+          ],
+          "resourcesRequired": [
+              "Plug and Play introductions",
+              "Academic partnership materials",
+              "Pilot performance summaries"
+          ],
+          "deliverables": [
+              "3-5 new research partnership opportunities identified",
+              "Additional pilot candidates added to pipeline",
+              "Academic collaboration framework developed",
+              "Expanded university engagement network established"
+          ],
+          "successMetrics": [
+              "Research partnership pipeline expanded",
+              "Academic collaboration framework in place"
+          ],
+          "technicalTrack": "Present pilot progress to universities, laboratories, and renewable energy research centers. Conduct site visits with prospective research collaborators.",
+          "relationshipTrack": "Engage faculty members and graduate researchers interested in using Solar Sense for research projects. Explore opportunities for joint publications, student projects, and grant collaborations.",
+          "jordanTrack": "Weekly review and technical support aligned to: Expand Solar Sense's presence within China's research ecosystem and increase pilot opportunities."
+      },
+      {
+          "weekNumber": 12,
+          "dates": "September 21-25, 2026",
+          "month": "September",
+          "phase": "Manufacturing Kickoff",
+          "topic": "Pre-Installation Site Preparation",
+          "priority": "High",
+          "hours": {
+              "adama": 40,
+              "jordan": 5
+          },
+          "objective": "Analyze pilot results, validate market demand, and prepare commercialization recommendations.",
+          "keyActivities": [
+              "Collect and analyze pilot performance data and customer feedback.",
+              "Conduct structured interviews with pilot stakeholders and decision-makers.",
+              "Evaluate pricing assumptions, deployment models, and support requirements.",
+              "Prepare China market validation report and commercialization recommendations."
+          ],
+          "resourcesRequired": [
+              "Pilot performance data",
+              "Customer interview results",
+              "Market analysis and commercialization framework"
+          ],
+          "deliverables": [
+              "China Market Validation Report completed",
+              "Product-market fit assessment documented",
+              "Commercialization assumptions validated or revised",
+              "Priority market segments ranked for future expansion"
+          ],
+          "successMetrics": [
+              "Phase 3 complete: market demand validated",
+              "China Market Validation Report delivered"
+          ],
+          "technicalTrack": "Collect and analyze pilot performance data and customer feedback. Conduct structured interviews with pilot stakeholders and decision-makers.",
+          "relationshipTrack": "Evaluate pricing assumptions, deployment models, and support requirements. Prepare China market validation report and commercialization recommendations.",
+          "jordanTrack": "Weekly review and technical support aligned to: Analyze pilot results, validate market demand, and prepare commercialization recommendations."
+      },
+      {
+          "weekNumber": 13,
+          "dates": "September 28 - October 2, 2026",
+          "month": "October",
+          "phase": "Hardware Ingestion",
+          "topic": "Month 4 Transition — Investor Readiness",
+          "priority": "Critical",
+          "hours": {
+              "adama": 38,
+              "jordan": 4
+          },
+          "objective": "Develop Solar Sense's fundraising strategy and establish a compelling investment narrative centered on China's rapidly growing solar infrastructure market.",
+          "keyActivities": [
+              "Define fundraising objectives, target round size, capital allocation, and 24-month milestones.",
+              "Develop Solar Sense's China growth story using pilot results, research partnerships, and manufacturing strategy.",
+              "Identify target investor profiles including climate-tech VCs, strategic corporate investors, government funds, and family offices.",
+              "Build a comprehensive investor pipeline and outreach strategy."
+          ],
+          "resourcesRequired": [
+              "Plug and Play venture mentors",
+              "Climate-tech investment benchmarks",
+              "Pilot validation metrics and market research"
+          ],
+          "deliverables": [
+              "Fundraising strategy completed",
+              "Investment thesis finalized",
+              "Target investor database containing 75-100 investors",
+              "China growth narrative documented"
+          ],
+          "successMetrics": [
+              "Fundraising strategy and investor database complete",
+              "Investment thesis finalized"
+          ],
+          "technicalTrack": "Define fundraising objectives, target round size, capital allocation, and 24-month milestones. Develop Solar Sense's China growth story using pilot results, research partnerships, and manufacturing strategy.",
+          "relationshipTrack": "Identify target investor profiles including climate-tech VCs, strategic corporate investors, government funds, and family offices. Build a comprehensive investor pipeline and outreach strategy.",
+          "jordanTrack": "Weekly review and technical support aligned to: Develop Solar Sense's fundraising strategy and establish a compelling investment narrative centered on China's rapidly growing solar infrastructure market."
+      },
+      {
+          "weekNumber": 14,
+          "dates": "October 5-9, 2026",
+          "month": "October",
+          "phase": "Hardware Ingestion",
+          "topic": "Golden Week — Internal Validation & Bench Burn-In",
+          "priority": "Critical",
+          "hours": {
+              "adama": 35,
+              "jordan": 8
+          },
+          "objective": "Build a scalable financial model demonstrating Solar Sense's commercialization potential in China and international markets.",
+          "keyActivities": [
+              "Develop a five-year financial model including revenue, gross margin, operating expenses, and cash flow.",
+              "Build scenario analyses for Research Edition, Enterprise Edition, and Manufacturing Licensing opportunities.",
+              "Validate pricing assumptions using pilot feedback and market interviews.",
+              "Calculate customer acquisition cost, lifetime value, and unit economics."
+          ],
+          "resourcesRequired": [
+              "Financial modeling templates",
+              "Market validation data",
+              "Manufacturing cost estimates"
+          ],
+          "deliverables": [
+              "Five-year financial model completed",
+              "Revenue scenarios documented",
+              "Unit economics validated",
+              "Capital deployment plan finalized"
+          ],
+          "successMetrics": [
+              "Financial model completed",
+              "Unit economics validated"
+          ],
+          "technicalTrack": "Develop a five-year financial model including revenue, gross margin, operating expenses, and cash flow. Build scenario analyses for Research Edition, Enterprise Edition, and Manufacturing Licensing opportunities.",
+          "relationshipTrack": "Validate pricing assumptions using pilot feedback and market interviews. Calculate customer acquisition cost, lifetime value, and unit economics.",
+          "jordanTrack": "Weekly review and technical support aligned to: Build a scalable financial model demonstrating Solar Sense's commercialization potential in China and international markets."
+      },
+      {
+          "weekNumber": 15,
+          "dates": "October 12-16, 2026",
+          "month": "October",
+          "phase": "Hardware Ingestion",
+          "topic": "Investor Materials & Growth Narrative Refinement",
+          "priority": "High",
+          "hours": {
+              "adama": 40,
+              "jordan": 4
+          },
+          "objective": "Prepare investor-ready materials and refine the China growth narrative for fundraising outreach.",
+          "keyActivities": [
+              "Design bilingual (English/Chinese) investor pitch deck and executive summary.",
+              "Organize secure data room containing financials, pilot reports, IP documentation, and market research.",
+              "Prepare one-page investment memo and technology overview with translation support.",
+              "Refine China growth narrative and standardize due diligence responses."
+          ],
+          "resourcesRequired": [
+              "Translation and localization support",
+              "Pilot validation reports",
+              "Financial model and market research"
+          ],
+          "deliverables": [
+              "Investor deck completed",
+              "Executive summary completed",
+              "Data room fully organized",
+              "Bilingual investor materials finalized",
+              "China growth narrative refined for investor outreach"
+          ],
+          "successMetrics": [
+              "Investor materials package complete",
+              "Data room organized and ready"
+          ],
+          "technicalTrack": "Design bilingual (English/Chinese) investor pitch deck and executive summary. Organize secure data room containing financials, pilot reports, IP documentation, and market research.",
+          "relationshipTrack": "Prepare one-page investment memo and technology overview with translation support. Refine China growth narrative and standardize due diligence responses.",
+          "jordanTrack": "Weekly review and technical support aligned to: Prepare investor-ready materials and refine the China growth narrative for fundraising outreach."
+      },
+      {
+          "weekNumber": 16,
+          "dates": "October 19-23, 2026",
+          "month": "October",
+          "phase": "Hardware Ingestion",
+          "topic": "Bilateral Presentation Tuning",
+          "priority": "High",
+          "hours": {
+              "adama": 36,
+              "jordan": 3
+          },
+          "objective": "Validate investor messaging and prepare Solar Sense for venture capital conversations and strategic fundraising.",
+          "keyActivities": [
+              "Conduct mock investor presentations with Plug and Play mentors and industry advisors.",
+              "Refine investment messaging based on mentor feedback.",
+              "Finalize China expansion strategy including commercialization roadmap, manufacturing partnerships, and research ecosystem growth.",
+              "Begin warm introductions to Plug and Play investors, strategic partners, and government investment funds."
+          ],
+          "resourcesRequired": [
+              "Plug and Play venture team",
+              "Industry mentors",
+              "Investor presentation materials"
+          ],
+          "deliverables": [
+              "Investor presentation validated",
+              "China Growth Strategy completed",
+              "Investor outreach pipeline activated",
+              "Due diligence package finalized"
+          ],
+          "successMetrics": [
+              "Phase 4 complete: investor-ready",
+              "Outreach pipeline activated"
+          ],
+          "technicalTrack": "Conduct mock investor presentations with Plug and Play mentors and industry advisors. Refine investment messaging based on mentor feedback.",
+          "relationshipTrack": "Finalize China expansion strategy including commercialization roadmap, manufacturing partnerships, and research ecosystem growth. Begin warm introductions to Plug and Play investors, strategic partners, and government investment funds.",
+          "jordanTrack": "Weekly review and technical support aligned to: Validate investor messaging and prepare Solar Sense for venture capital conversations and strategic fundraising."
+      },
+      {
+          "weekNumber": 17,
+          "dates": "October 26-30, 2026",
+          "month": "November",
+          "phase": "Field Deployment",
+          "topic": "Regional Ecosystem Structuring",
+          "priority": "Critical",
+          "hours": {
+              "adama": 40,
+              "jordan": 4
+          },
+          "objective": "Launch Solar Sense's fundraising campaign and establish strong relationships with strategic investors.",
+          "keyActivities": [
+              "Participate in Plug and Play investor roundtables and climate-tech networking events.",
+              "Conduct targeted investor outreach to venture funds, corporate investors, and strategic partners.",
+              "Present Solar Sense's China commercialization strategy and pilot validation results.",
+              "Qualify investors based on sector focus, investment stage, strategic value, and geographic interests."
+          ],
+          "resourcesRequired": [
+              "Investor pitch deck",
+              "Executive summary and investment memo",
+              "Plug and Play venture team introductions"
+          ],
+          "deliverables": [
+              "5-7 investor meetings completed",
+              "Investor qualification matrix created",
+              "Initial investor feedback report completed",
+              "High-priority investor pipeline established"
+          ],
+          "successMetrics": [
+              "Fundraising campaign launched",
+              "5-7 investor meetings completed"
+          ],
+          "technicalTrack": "Participate in Plug and Play investor roundtables and climate-tech networking events. Conduct targeted investor outreach to venture funds, corporate investors, and strategic partners.",
+          "relationshipTrack": "Present Solar Sense's China commercialization strategy and pilot validation results. Qualify investors based on sector focus, investment stage, strategic value, and geographic interests.",
+          "jordanTrack": "Weekly review and technical support aligned to: Launch Solar Sense's fundraising campaign and establish strong relationships with strategic investors."
+      },
+      {
+          "weekNumber": 18,
+          "dates": "November 2-6, 2026",
+          "month": "November",
+          "phase": "Field Deployment",
+          "topic": "Month 5 Transition — Fundraising Acceleration",
+          "priority": "High",
+          "hours": {
+              "adama": 38,
+              "jordan": 5
+          },
+          "objective": "Deepen investor engagement and prepare Solar Sense for formal due diligence.",
+          "keyActivities": [
+              "Conduct one-on-one meetings with climate-tech VCs, strategic corporate investors, and government-backed funds.",
+              "Customize investment presentations based on investor interests.",
+              "Organize and validate all due diligence documentation.",
+              "Address investor questions regarding technology, manufacturing, commercialization, and China expansion."
+          ],
+          "resourcesRequired": [
+              "Data room",
+              "Financial model and pilot reports",
+              "Legal and technical documentation"
+          ],
+          "deliverables": [
+              "5-6 additional investor meetings completed",
+              "Due diligence checklist finalized",
+              "Investor-specific follow-up materials prepared",
+              "2-3 investors express strong interest"
+          ],
+          "successMetrics": [
+              "Due diligence preparation complete",
+              "2-3 investors express strong interest"
+          ],
+          "technicalTrack": "Conduct one-on-one meetings with climate-tech VCs, strategic corporate investors, and government-backed funds. Customize investment presentations based on investor interests.",
+          "relationshipTrack": "Organize and validate all due diligence documentation. Address investor questions regarding technology, manufacturing, commercialization, and China expansion.",
+          "jordanTrack": "Weekly review and technical support aligned to: Deepen investor engagement and prepare Solar Sense for formal due diligence."
+      },
+      {
+          "weekNumber": 19,
+          "dates": "November 9-13, 2026",
+          "month": "November",
+          "phase": "Field Deployment",
+          "topic": "Closed-Door Investor Roundtables & Field Validation",
+          "priority": "High",
+          "hours": {
+              "adama": 36,
+              "jordan": 4
+          },
+          "objective": "Expand fundraising beyond venture capital by engaging government funds and strategic industry investors.",
+          "keyActivities": [
+              "Meet government investment agencies and innovation funds supporting climate technology and advanced manufacturing.",
+              "Present Solar Sense's alignment with China's renewable energy, AI, and smart infrastructure priorities.",
+              "Engage solar manufacturers, research organizations, and energy companies for potential strategic investment.",
+              "Explore non-dilutive funding opportunities, grants, and joint development agreements."
+          ],
+          "resourcesRequired": [
+              "Government funding guides",
+              "Strategic partnership proposals",
+              "China market validation report"
+          ],
+          "deliverables": [
+              "Government funding opportunities identified",
+              "Strategic investor discussions initiated",
+              "Partnership investment opportunities documented",
+              "Non-dilutive funding roadmap completed"
+          ],
+          "successMetrics": [
+              "Government and strategic investor pipeline established",
+              "Non-dilutive funding roadmap completed"
+          ],
+          "technicalTrack": "Meet government investment agencies and innovation funds supporting climate technology and advanced manufacturing. Present Solar Sense's alignment with China's renewable energy, AI, and smart infrastructure priorities.",
+          "relationshipTrack": "Engage solar manufacturers, research organizations, and energy companies for potential strategic investment. Explore non-dilutive funding opportunities, grants, and joint development agreements.",
+          "jordanTrack": "Weekly review and technical support aligned to: Expand fundraising beyond venture capital by engaging government funds and strategic industry investors."
+      },
+      {
+          "weekNumber": 20,
+          "dates": "November 16-20, 2026",
+          "month": "November",
+          "phase": "Field Deployment",
+          "topic": "Commercial Pipeline Scaling",
+          "priority": "Critical",
+          "hours": {
+              "adama": 40,
+              "jordan": 3
+          },
+          "objective": "Convert investor interest into structured fundraising opportunities and establish a repeatable fundraising process.",
+          "keyActivities": [
+              "Conduct second-round investor meetings and follow-up discussions.",
+              "Respond to due diligence requests and provide additional technical and financial information.",
+              "Update fundraising CRM with investor feedback, timelines, and next steps.",
+              "Refine fundraising strategy based on investor insights and market response."
+          ],
+          "resourcesRequired": [
+              "Investor CRM",
+              "Due diligence documentation",
+              "Plug and Play mentor support"
+          ],
+          "deliverables": [
+              "Fundraising pipeline actively managed",
+              "Second-round meetings completed",
+              "Due diligence processes initiated",
+              "Next-stage fundraising strategy finalized"
+          ],
+          "successMetrics": [
+              "Phase 5 complete: active fundraising pipeline",
+              "Due diligence processes initiated"
+          ],
+          "technicalTrack": "Conduct second-round investor meetings and follow-up discussions. Respond to due diligence requests and provide additional technical and financial information.",
+          "relationshipTrack": "Update fundraising CRM with investor feedback, timelines, and next steps. Refine fundraising strategy based on investor insights and market response.",
+          "jordanTrack": "Weekly review and technical support aligned to: Convert investor interest into structured fundraising opportunities and establish a repeatable fundraising process."
+      },
+      {
+          "weekNumber": 21,
+          "dates": "November 23-27, 2026",
+          "month": "December",
+          "phase": "Scale, Showcase & Graduation",
+          "topic": "Supply Chain Hardening & Scale Contract Optimization",
+          "priority": "Critical",
+          "hours": {
+              "adama": 38,
+              "jordan": 4
+          },
+          "objective": "Finalize Solar Sense's Demo Day presentation and communicate a compelling vision for becoming China's leading AI-powered solar research and safety platform.",
+          "keyActivities": [
+              "Refine Demo Day presentation using investor and mentor feedback.",
+              "Update pitch with pilot performance metrics, customer testimonials, and commercialization milestones.",
+              "Develop tailored messaging for investors, universities, manufacturers, and government stakeholders.",
+              "Schedule Demo Day meetings with priority investors and strategic partners."
+          ],
+          "resourcesRequired": [
+              "Plug and Play Demo Day coaches",
+              "Pilot validation reports",
+              "Investor presentation materials"
+          ],
+          "deliverables": [
+              "Demo Day presentation finalized",
+              "Executive presentation script completed",
+              "Priority meeting schedule confirmed",
+              "Strategic messaging aligned across all audiences"
+          ],
+          "successMetrics": [
+              "Demo Day presentation finalized",
+              "Priority stakeholder meetings scheduled"
+          ],
+          "technicalTrack": "Refine Demo Day presentation using investor and mentor feedback. Update pitch with pilot performance metrics, customer testimonials, and commercialization milestones.",
+          "relationshipTrack": "Develop tailored messaging for investors, universities, manufacturers, and government stakeholders. Schedule Demo Day meetings with priority investors and strategic partners.",
+          "jordanTrack": "Weekly review and technical support aligned to: Finalize Solar Sense's Demo Day presentation and communicate a compelling vision for becoming China's leading AI-powered solar research and safety platform."
+      },
+      {
+          "weekNumber": 22,
+          "dates": "November 30 - December 4, 2026",
+          "month": "December",
+          "phase": "Scale, Showcase & Graduation",
+          "topic": "Month 6 Transition — Demo Day & Graduation Prep",
+          "priority": "High",
+          "hours": {
+              "adama": 36,
+              "jordan": 3
+          },
+          "objective": "Strengthen Solar Sense China ecosystem by expanding research, manufacturing, and talent partnerships.",
+          "keyActivities": [
+              "Finalize collaboration agreements with universities and renewable energy research centers.",
+              "Conduct meetings with shortlisted manufacturing and supply chain partners.",
+              "Participate in university recruitment and talent networking activities.",
+              "Identify internship and graduate research opportunities supporting product development."
+          ],
+          "resourcesRequired": [
+              "University partnership proposals",
+              "Manufacturing evaluation reports",
+              "Talent recruitment materials"
+          ],
+          "deliverables": [
+              "University collaboration framework established",
+              "Manufacturing partnership roadmap finalized",
+              "Local talent pipeline identified",
+              "Research collaboration opportunities expanded"
+          ],
+          "successMetrics": [
+              "University and manufacturing partnerships advanced",
+              "Talent pipeline identified"
+          ],
+          "technicalTrack": "Finalize collaboration agreements with universities and renewable energy research centers. Conduct meetings with shortlisted manufacturing and supply chain partners.",
+          "relationshipTrack": "Participate in university recruitment and talent networking activities. Identify internship and graduate research opportunities supporting product development.",
+          "jordanTrack": "Weekly review and technical support aligned to: Strengthen Solar Sense China ecosystem by expanding research, manufacturing, and talent partnerships."
+      },
+      {
+          "weekNumber": 23,
+          "dates": "December 7-11, 2026",
+          "month": "December",
+          "phase": "Scale, Showcase & Graduation",
+          "topic": "Pilot Pipeline Expansion Sprints",
+          "priority": "Critical",
+          "hours": {
+              "adama": 45,
+              "jordan": 4
+          },
+          "objective": "Deliver a high-impact Demo Day presentation and maximize investor and strategic partnership opportunities.",
+          "keyActivities": [
+              "Present Solar Sense to investors, corporates, government representatives, and Plug and Play partners.",
+              "Conduct one-on-one meetings with interested investors immediately following presentations.",
+              "Showcase pilot results, localization progress, and manufacturing strategy.",
+              "Collect investor feedback and identify next-step actions for each opportunity."
+          ],
+          "resourcesRequired": [
+              "Demo Day presentation",
+              "Investor data room",
+              "Product demonstration and pilot results"
+          ],
+          "deliverables": [
+              "Successful Demo Day presentation delivered",
+              "8-10 investor and strategic partner follow-up meetings completed",
+              "New partnership opportunities identified",
+              "Investor interest and feedback documented"
+          ],
+          "successMetrics": [
+              "Demo Day presentation delivered",
+              "8-10 follow-up meetings completed"
+          ],
+          "technicalTrack": "Present Solar Sense to investors, corporates, government representatives, and Plug and Play partners. Conduct one-on-one meetings with interested investors immediately following presentations.",
+          "relationshipTrack": "Showcase pilot results, localization progress, and manufacturing strategy. Collect investor feedback and identify next-step actions for each opportunity.",
+          "jordanTrack": "Weekly review and technical support aligned to: Deliver a high-impact Demo Day presentation and maximize investor and strategic partnership opportunities."
+      },
+      {
+          "weekNumber": 24,
+          "dates": "December 14-18, 2026",
+          "month": "December",
+          "phase": "Scale, Showcase & Graduation",
+          "topic": "Flagship Demo Day Showcase",
+          "priority": "Critical",
+          "hours": {
+              "adama": 40,
+              "jordan": 6
+          },
+          "objective": "Transition from accelerator participant to an independently operating company with a clear China expansion strategy.",
+          "keyActivities": [
+              "Complete structured follow-up with all investors, partners, universities, and government contacts.",
+              "Finalize Solar Sense's 12-month China operating plan and commercialization roadmap.",
+              "Join Plug and Play alumni network and establish ongoing engagement with mentors and ecosystem partners.",
+              "Define fundraising milestones, pilot expansion targets, hiring priorities, and manufacturing objectives for the next year."
+          ],
+          "resourcesRequired": [
+              "CRM and partnership management tools",
+              "Growth strategy framework",
+              "Plug and Play alumni network"
+          ],
+          "deliverables": [
+              "Post-program operating plan completed",
+              "Investor follow-up system implemented",
+              "China growth roadmap finalized",
+              "Alumni engagement plan established"
+          ],
+          "successMetrics": [
+              "Program graduation complete",
+              "12-month China operating plan finalized"
+          ],
+          "technicalTrack": "Complete structured follow-up with all investors, partners, universities, and government contacts. Finalize Solar Sense's 12-month China operating plan and commercialization roadmap.",
+          "relationshipTrack": "Join Plug and Play alumni network and establish ongoing engagement with mentors and ecosystem partners. Define fundraising milestones, pilot expansion targets, hiring priorities, and manufacturing objectives for the next year.",
+          "jordanTrack": "Weekly review and technical support aligned to: Transition from accelerator participant to an independently operating company with a clear China expansion strategy."
+      }
   ],
 
   relationships: {
@@ -765,10 +1323,11 @@ const executionPlan = {
       month: 'July',
       tag: 'Phase 1',
       title: 'Land & Launch',
-      lead: 'Establish Solar Sense Pro China Presence & Research Market Mapping',
+      lead: "Establish operational presence in China and prepare Solar Sense Research Edition for the research and academic market",
       outcome: 'Identify 100 target organizations (universities, research labs)',
       weeks: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
       weekRange: '1-4',
+      endDate: '2026-07-31',
       deliverables: [
         'Solar Sense Pro operational in Nantong with WFOE registration underway',
         'China Market Opportunity Map completed',
@@ -790,10 +1349,11 @@ const executionPlan = {
       month: 'August',
       tag: 'Phase 2',
       title: 'Market Entry',
-      lead: 'Secure Pilot Partnerships & Validate Go-to-Market',
+      lead: 'Secure pilot partnerships with universities, research institutes, and solar research laboratories',
       outcome: 'Secure 2-3 pilot agreements with research institutions',
       weeks: ['Week 5', 'Week 6', 'Week 7', 'Week 8'],
       weekRange: '5-8',
+      endDate: '2026-08-28',
       deliverables: [
         '2-3 signed pilot agreements',
         '1-2 active pilot deployments initiated',
@@ -816,9 +1376,10 @@ const executionPlan = {
       tag: 'Phase 3',
       title: 'Manufacturing Kickoff',
       lead: 'Execute Pilots, Localize Product & Validate Manufacturing',
-      outcome: 'Evidence that Solar Sense Pro works in China and can be manufactured locally',
+      outcome: 'Evidence that Solar Sense Research Edition works in China and can be manufactured locally',
       weeks: ['Week 9', 'Week 10', 'Week 11', 'Week 12'],
       weekRange: '9-12',
+      endDate: '2026-09-25',
       deliverables: [
         'China Market Validation Report',
         'Chinese dashboard and documentation',
@@ -840,10 +1401,11 @@ const executionPlan = {
       month: 'October',
       tag: 'Phase 4',
       title: 'Hardware Ingestion',
-      lead: 'Build Investment Case & Investor-Ready Materials',
+      lead: 'Build a compelling investment case from pilot results and commercialization strategy',
       outcome: 'Convert pilot results and market traction into investor-ready materials',
       weeks: ['Week 13', 'Week 14', 'Week 15', 'Week 16'],
       weekRange: '13-16',
+      endDate: '2026-10-23',
       deliverables: [
         'Bilingual investor pitch deck (EN/CN)',
         'Five-year financial model',
@@ -865,10 +1427,11 @@ const executionPlan = {
       month: 'November',
       tag: 'Phase 5',
       title: 'Field Deployment',
-      lead: 'Active Fundraising & Strategic Capital Engagement',
+      lead: "Leverage Plug and Play's venture ecosystem for seed fundraising and due diligence",
       outcome: '15-20 investor meetings with active pipeline and due diligence',
       weeks: ['Week 17', 'Week 18', 'Week 19', 'Week 20'],
       weekRange: '17-20',
+      endDate: '2026-11-20',
       deliverables: [
         '15-20 investor meetings completed',
         'Active fundraising pipeline managed',
@@ -890,10 +1453,11 @@ const executionPlan = {
       month: 'December',
       tag: 'Phase 6',
       title: 'Scale, Showcase & Graduation',
-      lead: 'Demo Day Execution & Post-Program Planning',
+      lead: 'Showcase Solar Sense to investors, partners, and government stakeholders; establish sustainable China operating strategy',
       outcome: 'Successful graduation with sustainable China operating strategy',
       weeks: ['Week 21', 'Week 22', 'Week 23', 'Week 24'],
       weekRange: '21-24',
+      endDate: '2026-12-18',
       deliverables: [
         'Successful Demo Day presentation',
         '3-5 university partnerships formalized',
