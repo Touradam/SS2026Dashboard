@@ -6,10 +6,10 @@ A comprehensive project management dashboard for tracking the 6-month Solar Sens
 
 This web application provides a complete view of the Plug and Play Cross-Border Acceleration Camp - Nantong Summer Cohort program, including:
 
-- **26-Week Timeline** with interactive week cards
+- **24-Week Timeline** with interactive week cards
 - **Monthly Objectives** with detailed weekly breakdowns
 - **Relationship Matrix** for key contacts and partners
-- **Launch Readiness Checklist** with 14 critical items
+- **Launch Readiness Checklist** with 14 critical items across 5 categories
 - **Quarterly Milestones** (Q3 & Q4 2026)
 - **Key Dates Calendar** with countdown timers
 - **Glossary & Quick Reference** for acronyms and contacts
@@ -63,13 +63,14 @@ This web application provides a complete view of the Plug and Play Cross-Border 
 
 ```
 SolarSenseChinaDashboard/
-├── index.html              # Main HTML structure
+├── index.html              # Landing page with 6-phase roadmap
+├── execution.html          # Full execution dashboard
 ├── styles.css              # All styling and responsive design
-├── app.js                  # JavaScript functionality
-├── data.js                 # Execution plan data
-├── README.md               # This file
-├── china-launch-execution-plan.md    # Source document
-└── WEBAPP_DEVELOPMENT_GUIDE.md       # Development guidelines
+├── app.js                  # Dashboard JavaScript functionality
+├── roadmap.js              # Landing page roadmap rendering
+├── edit-handlers.js        # Inline editing and localStorage
+├── data.js                 # Execution plan data (single source of truth)
+└── README.md               # This file
 ```
 
 ## Usage
@@ -78,7 +79,7 @@ SolarSenseChinaDashboard/
 
 Use the header navigation menu to jump to different sections:
 - **Overview** - Dashboard summary and key metrics
-- **Timeline** - 26-week visual timeline
+- **Timeline** - 24-week visual timeline
 - **Monthly** - Month-by-month objectives
 - **Relationships** - Contact matrix
 - **Readiness** - Launch checklist
@@ -107,12 +108,12 @@ Click "Reset All" in the footer to clear all progress and start fresh. This acti
 - **Danger**: `#EF4444` (Red)
 
 ### Phase Colors
-- **July** (Pipeline Seeding): Blue `#3B82F6`
-- **August** (Audits & Commitments): Green `#10B981`
-- **September** (Production Kickoff): Orange `#F59E0B`
-- **October** (Hardware Validation): Purple `#8B5CF6`
-- **November** (Field Deployment): Red `#EF4444`
-- **December** (Scale & Graduation): Teal `#14B8A6`
+- **July** (Land & Launch): Blue `#6b6ea8`
+- **August** (Market Entry): Green `#5a9a82`
+- **September** (Manufacturing Kickoff): Gold `#b8924a`
+- **October** (Hardware Ingestion): Purple `#8b7aa8`
+- **November** (Field Deployment): Red `#c45c5c`
+- **December** (Scale, Showcase & Graduation): Teal `#5a9a82`
 
 ## Data Structure
 
@@ -122,22 +123,23 @@ All execution plan data is stored in `data.js` as structured JavaScript objects:
 executionPlan = {
   timeline: { ... },
   monthlyObjectives: [ ... ],
-  weeks: [ ... ],           // 26 weeks of detailed data
-  relationships: { ... },    // 9 key contacts
-  readinessChecklist: { ... }, // 14 checklist items
-  milestones: { ... },       // Q3 & Q4 milestones
-  keyDates: [ ... ],         // 12 critical dates
-  glossary: { ... },         // 14 acronyms
-  contacts: { ... }          // Key personnel
+  weeks: [ ... ],              // 24 weeks of detailed data
+  relationships: { ... },      // pnpCore, researchPartners, manufacturing
+  readinessChecklist: { ... }, // marketDevelopment, pilotDevelopment, fundraising, manufacturing, strategic
+  milestones: { ... },         // Q3 & Q4 milestones
+  keyDates: [ ... ],           // Critical program dates
+  glossary: { ... },
+  contacts: { ... },
+  roadmapPhases: [ ... ]       // 6 phase summaries for landing page
 }
 ```
 
 ## Browser Support
 
-- ✅ Chrome 90+
-- ✅ Firefox 88+
-- ✅ Safari 14+
-- ✅ Edge 90+
+- Chrome 90+
+- Firefox 88+
+- Safari 14+
+- Edge 90+
 
 ## Performance
 
@@ -169,8 +171,8 @@ Progress is saved in localStorage under the key `solarSenseDashboard`:
 ```javascript
 {
   "checklistProgress": {
-    "pilot-1": true,
-    "pilot-2": false,
+    "market-1": true,
+    "pilot-1": false,
     // ... all 14 items
   },
   "weekCompletions": {
@@ -222,26 +224,14 @@ The code is organized into clear sections:
 - Check browser console for JavaScript errors
 - Ensure all files are in the same directory
 
-## Future Enhancements
-
-Potential features for future versions:
-- PDF export of progress reports
-- Email reminder integration
-- Multi-user collaboration mode
-- Notion API integration
-- Progressive Web App (PWA) offline support
-- Dark mode toggle
-- Custom theme colors
-- Data import/export (CSV, JSON)
-
 ## Credits
 
 **Project**: Solar Sense Pro - China Launch Execution Plan  
 **Program**: Plug and Play Cross-Border Acceleration Camp  
 **Location**: Nantong, Jiangsu Province, China  
 **Timeline**: July 2026 - December 2026  
-**Version**: Draft 1.0  
-**Last Updated**: June 17, 2026
+**Version**: Draft 1.1  
+**Last Updated**: June 22, 2026
 
 ## License
 
@@ -251,9 +241,8 @@ This dashboard is built for internal use for the Solar Sense Pro China launch pr
 
 For questions or issues with this dashboard:
 1. Check the troubleshooting section above
-2. Review the source documentation (`china-launch-execution-plan.md`)
-3. Contact the program team
+2. Contact the program team
 
 ---
 
-**Built with ❤️ for Solar Sense Pro's China market entry**
+**Built for Solar Sense Pro's China market entry**
