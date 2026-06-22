@@ -81,12 +81,12 @@ function getCurrentWeek() {
         return 0; // Before start
     }
     if (today > endDate) {
-        return 27; // After end
+        return executionPlan.timeline.totalWeeks + 1; // After end
     }
     
     const daysPassed = getDaysBetween(startDate, today);
     const weekNumber = Math.floor(daysPassed / 7) + 1;
-    return Math.min(weekNumber, 26);
+    return Math.min(weekNumber, executionPlan.timeline.totalWeeks);
 }
 
 function formatCountdown(days) {
@@ -102,10 +102,20 @@ function formatCountdown(days) {
 // Progress Calculations
 // ====================================
 
+function getChecklistCategories() {
+    return Object.keys(executionPlan.readinessChecklist);
+}
+
+function getTotalChecklistItems() {
+    return getChecklistCategories().reduce((sum, category) => {
+        return sum + executionPlan.readinessChecklist[category].length;
+    }, 0);
+}
+
 function calculateOverallProgress() {
-    const totalItems = 14;
+    const totalItems = getTotalChecklistItems();
     const completedItems = Object.values(state.checklistProgress).filter(Boolean).length;
-    return Math.round((completedItems / totalItems) * 100);
+    return totalItems === 0 ? 0 : Math.round((completedItems / totalItems) * 100);
 }
 
 function calculateCategoryProgress(category) {
@@ -146,11 +156,11 @@ function updateOverview() {
     const overallProgress = calculateOverallProgress();
     
     document.getElementById('overall-progress').textContent = `${overallProgress}%`;
-    document.getElementById('current-week').textContent = currentWeek > 0 && currentWeek <= 26 ? `Week ${currentWeek}` : '—';
+    document.getElementById('current-week').textContent = currentWeek > 0 && currentWeek <= executionPlan.timeline.totalWeeks ? `Week ${currentWeek}` : '—';
     document.getElementById('days-remaining').textContent = daysRemaining > 0 ? `${daysRemaining} days` : 'Completed';
     
     const completedItems = Object.values(state.checklistProgress).filter(Boolean).length;
-    document.getElementById('checklist-progress').textContent = `${completedItems}/14`;
+    document.getElementById('checklist-progress').textContent = `${completedItems}/${getTotalChecklistItems()}`;
     
     // Calculate total hours
     const totalHours = executionPlan.weeks.reduce((sum, week) => {
@@ -165,12 +175,12 @@ function updateOverview() {
 
 function getPhaseClass(phase) {
     const phaseMap = {
-        'Pipeline Seeding': 'Pipeline',
-        'Audits & Commitments': 'Audits',
-        'Production Kickoff': 'Production',
-        'Hardware Validation': 'Hardware',
+        'Land & Launch': 'Pipeline',
+        'Market Entry': 'Audits',
+        'Manufacturing Kickoff': 'Production',
+        'Hardware Ingestion': 'Hardware',
         'Field Deployment': 'Field',
-        'Scale & Graduation': 'Scale'
+        'Scale, Showcase & Graduation': 'Scale'
     };
     return phaseMap[phase] || 'Pipeline';
 }
@@ -421,7 +431,7 @@ function setupMonthTabs() {
 function renderRelationships() {
     renderRelationshipCategory('pnpCore', 'pnp-core-list');
     renderRelationshipCategory('manufacturing', 'manufacturing-list');
-    renderRelationshipCategory('pilotChampions', 'pilot-champions-list');
+    renderRelationshipCategory('researchPartners', 'research-partners-list');
 }
 
 function renderRelationshipCategory(category, containerId) {
@@ -501,10 +511,18 @@ function setupRelationshipSearch() {
 // Checklist Section
 // ====================================
 
+const CHECKLIST_CATEGORIES = [
+    { key: 'marketDevelopment', containerId: 'market-checklist', countId: 'market-count' },
+    { key: 'pilotDevelopment', containerId: 'pilot-checklist', countId: 'pilot-count' },
+    { key: 'fundraising', containerId: 'fundraising-checklist', countId: 'fundraising-count' },
+    { key: 'manufacturing', containerId: 'manufacturing-checklist', countId: 'manufacturing-count' },
+    { key: 'strategic', containerId: 'strategic-checklist', countId: 'strategic-count' }
+];
+
 function renderChecklist() {
-    renderChecklistCategory('pilot', 'pilot-checklist', 'pilot-count');
-    renderChecklistCategory('manufacturing', 'manufacturing-checklist', 'manufacturing-count');
-    renderChecklistCategory('network', 'network-checklist', 'network-count');
+    CHECKLIST_CATEGORIES.forEach(({ key, containerId, countId }) => {
+        renderChecklistCategory(key, containerId, countId);
+    });
     updateChecklistProgress();
 }
 
@@ -578,9 +596,9 @@ function updateChecklistProgress() {
     statusElement.className = `progress-status ${statusClass}`;
     
     // Update category counts
-    updateCategoryCount('pilot', 'pilot-count');
-    updateCategoryCount('manufacturing', 'manufacturing-count');
-    updateCategoryCount('network', 'network-count');
+    CHECKLIST_CATEGORIES.forEach(({ key, countId }) => {
+        updateCategoryCount(key, countId);
+    });
     
     // Update overview
     updateOverview();
@@ -834,11 +852,12 @@ function exportProgress() {
         ...state,
         exportDate: new Date().toISOString(),
         overallProgress: calculateOverallProgress(),
-        categoryProgress: {
-            pilot: calculateCategoryProgress('pilot'),
-            manufacturing: calculateCategoryProgress('manufacturing'),
-            network: calculateCategoryProgress('network')
-        }
+        categoryProgress: Object.fromEntries(
+            getChecklistCategories().map(category => [
+                category,
+                calculateCategoryProgress(category)
+            ])
+        )
     };
     
     const dataStr = JSON.stringify(data, null, 2);
