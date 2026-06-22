@@ -30,6 +30,7 @@
                         <li><a href="execution.html" class="nav-link active">Execution</a></li>
                         <li><a href="#overview" class="nav-link">Overview</a></li>
                         <li><a href="#timeline" class="nav-link">Timeline</a></li>
+                        <li><a href="#week-activities" class="nav-link">Activities</a></li>
                         <li><a href="#monthly" class="nav-link">Monthly</a></li>
                         <li><a href="#relationships" class="nav-link">Relationships</a></li>
                         <li><a href="#checklist" class="nav-link">Readiness</a></li>
@@ -52,42 +53,44 @@
 
     <main class="main">
         <!-- Dashboard Overview Section -->
-        <section id="overview" class="section overview-section">
+        <section id="overview" class="section overview-section" data-spotlight>
+            <div class="hero-spotlight" aria-hidden="true"></div>
+            <div class="hero-particles" data-particles aria-hidden="true"></div>
             <img src="assets/logo.png" alt="Solar Sense Pro" class="execution-floating-logo">
             <div class="container">
                 <div class="execution-hero">
-                    <span class="hero-eyebrow">Internal Strategy Memo</span>
-                    <h1 class="hero-title execution-hero-title">China Launch Execution Plan</h1>
-                    <p class="hero-mission">Plug and Play Cross-Border Acceleration Camp - Nantong Summer Cohort</p>
-                    <div class="timeline-badge">
+                    <span class="hero-eyebrow" data-reveal>Internal Strategy Memo</span>
+                    <h1 class="hero-title execution-hero-title" data-reveal>China Launch Execution Plan</h1>
+                    <p class="hero-mission" data-reveal>Plug and Play Cross-Border Acceleration Camp - Nantong Summer Cohort</p>
+                    <div class="timeline-badge" data-reveal>
                         <span class="timeline-dates">July 2026 - December 2026</span>
                         <span class="timeline-duration">24 Weeks | 6 Months</span>
                     </div>
                 </div>
 
-                <div class="stats-grid">
-                    <div class="stat-card">
+                <div class="stats-grid" data-reveal-group>
+                    <div class="stat-card" data-reveal data-tilt>
                         <div class="stat-icon">📊</div>
                         <div class="stat-content">
                             <div class="stat-value" id="overall-progress">0%</div>
                             <div class="stat-label">Overall Progress</div>
                         </div>
                     </div>
-                    <div class="stat-card">
+                    <div class="stat-card" data-reveal data-tilt>
                         <div class="stat-icon">📅</div>
                         <div class="stat-content">
                             <div class="stat-value" id="current-week">Week 1</div>
                             <div class="stat-label">Current Week</div>
                         </div>
                     </div>
-                    <div class="stat-card">
+                    <div class="stat-card" data-reveal data-tilt>
                         <div class="stat-icon">⏱️</div>
                         <div class="stat-content">
                             <div class="stat-value" id="days-remaining">—</div>
                             <div class="stat-label">Days to Completion</div>
                         </div>
                     </div>
-                    <div class="stat-card">
+                    <div class="stat-card" data-reveal data-tilt>
                         <div class="stat-icon">✓</div>
                         <div class="stat-content">
                             <div class="stat-value" id="checklist-progress">0/14</div>
@@ -96,7 +99,7 @@
                     </div>
                 </div>
 
-                <div class="quick-stats">
+                <div class="quick-stats" data-reveal>
                     <div class="quick-stat">
                         <span class="quick-stat-label">Total Weeks:</span>
                         <span class="quick-stat-value">24</span>
@@ -118,7 +121,7 @@
             <div class="container">
                 <span class="section-eyebrow">Execution Roadmap</span>
                 <h2 class="section-title">24-Week Timeline</h2>
-                <p class="section-description">Interactive weekly timeline with phase-based color coding</p>
+                <p class="section-description">Interactive weekly timeline — each card shows dates, phase, priority, status, team hours, and activity preview</p>
                 
                 <div class="phase-legend">
                     <div class="legend-item"><span class="legend-color phase-july"></span>Land & Launch</div>
@@ -131,6 +134,26 @@
 
                 <div id="timeline-container" class="timeline-container">
                     <!-- Timeline weeks will be dynamically generated here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Week Activities Section -->
+        <section id="week-activities" class="section week-activities-section">
+            <div class="container">
+                <span class="section-eyebrow">Weekly Execution</span>
+                <h2 class="section-title">All Week Activities</h2>
+                <p class="section-description">Complete 24-week activity log with tags, dates, status, team assignments, and track details</p>
+
+                <div class="week-activities-filters">
+                    <button class="filter-btn active" data-week-filter="all">All Weeks</button>
+                    <button class="filter-btn" data-week-filter="plan">Plan</button>
+                    <button class="filter-btn" data-week-filter="execution">Execution</button>
+                    <button class="filter-btn" data-week-filter="archived">Archived</button>
+                </div>
+
+                <div id="week-activities-container" class="weeks-container">
+                    <!-- All week activity cards rendered dynamically -->
                 </div>
             </div>
         </section>
@@ -422,6 +445,7 @@
 
     <!-- Scripts -->
     <script src="data.js"></script>
+    <script src="motion.js"></script>
     <script src="edit-handlers.js"></script>
     <script src="app.js"></script>
 </body>

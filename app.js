@@ -173,6 +173,129 @@ function updateOverview() {
 // Timeline Section
 // ====================================
 
+function getWeekStatus(weekNumber) {
+    return state.customTags?.activity?.[`week-${weekNumber}`] || 'Plan';
+}
+
+function getWeekTopic(week) {
+    return state.customWeekData?.['week-topic']?.[`week-${week.weekNumber}`] || week.topic;
+}
+
+function getStatusBadgeClass(status) {
+    return `badge-${status.toLowerCase().replace(/\s+/g, '-')}`;
+}
+
+function getPriorityBadgeClass(priority) {
+    return `badge-${priority.toLowerCase()}`;
+}
+
+function buildWeekMetaTags(week, options = {}) {
+    const { editable = true, showMonth = true } = options;
+    const status = getWeekStatus(week.weekNumber);
+    const statusAttrs = editable
+        ? `data-editable-tag="activity" data-tag-id="week-${week.weekNumber}" title="Click to change status"`
+        : '';
+
+    return `
+        <span class="badge badge-phase">${week.phase}</span>
+        <span class="badge ${getPriorityBadgeClass(week.priority)}">${week.priority}</span>
+        <span class="badge ${getStatusBadgeClass(status)}" ${statusAttrs}>${status}</span>
+        ${showMonth ? `<span class="badge badge-month">${week.month}</span>` : ''}
+    `;
+}
+
+function buildWeekTeamHtml(week) {
+    return `
+        <div class="week-team">
+            <span class="team-member"><strong>Adama</strong> ${week.hours.adama}h</span>
+            <span class="team-separator">|</span>
+            <span class="team-member"><strong>Jordan</strong> ${week.hours.jordan}h</span>
+            <span class="team-separator">|</span>
+            <span class="team-total">${week.hours.adama + week.hours.jordan}h total</span>
+        </div>
+    `;
+}
+
+function buildWeekTracksHtml(week, editable = false) {
+    const weekId = week.weekNumber;
+    const customTechnical = state.customWeekData?.['technical-track']?.[`week-${weekId}`] || week.technicalTrack;
+    const customRelationship = state.customWeekData?.['relationship-track']?.[`week-${weekId}`] || week.relationshipTrack;
+    const customJordan = state.customWeekData?.['jordan-track']?.[`week-${weekId}`] || week.jordanTrack;
+    const textAttrs = editable
+        ? (type) => ` data-editable-text="${type}" data-text-id="week-${weekId}" title="Double-click to edit"`
+        : () => '';
+
+    return `
+        <div class="week-track">
+            <span class="track-label">Technical Track</span>
+            <p class="track-content"${textAttrs('technical-track')}>${customTechnical}</p>
+        </div>
+        <div class="week-track">
+            <span class="track-label">Relationship Track</span>
+            <p class="track-content"${textAttrs('relationship-track')}>${customRelationship}</p>
+        </div>
+        <div class="week-track">
+            <span class="track-label">Jordan Track</span>
+            <p class="track-content"${textAttrs('jordan-track')}>${customJordan}</p>
+        </div>
+    `;
+}
+
+function buildWeekDeliverablesHtml(week) {
+    if (!week.deliverables?.length) return '';
+    return `
+        <div class="week-deliverables">
+            <div class="deliverables-title">Deliverables</div>
+            <ul class="deliverables-list">
+                ${week.deliverables.map(d => `<li>${d}</li>`).join('')}
+            </ul>
+        </div>
+    `;
+}
+
+function buildWeekActivityPreview(week) {
+    const preview = week.deliverables?.slice(0, 2) || [];
+    if (!preview.length) return '';
+    return `
+        <ul class="week-activities-preview">
+            ${preview.map(item => `<li>${item}</li>`).join('')}
+        </ul>
+    `;
+}
+
+function buildWeekDetailCard(week, currentWeek) {
+    const isCurrentWeek = week.weekNumber === currentWeek;
+    const topic = getWeekTopic(week);
+    const status = getWeekStatus(week.weekNumber);
+
+    return `
+        <article class="week-detail-card ${isCurrentWeek ? 'current-week' : ''}"
+                 data-week="${week.weekNumber}"
+                 data-status="${status.toLowerCase()}"
+                 data-phase="${week.phase}">
+            <div class="week-detail-header">
+                <div class="week-detail-id">
+                    <span class="week-number-badge">Week ${week.weekNumber}</span>
+                    <span class="week-dates">${week.dates}</span>
+                </div>
+                <div class="week-meta week-meta--detail">
+                    ${buildWeekMetaTags(week)}
+                </div>
+            </div>
+            <h4 class="week-topic"
+                data-editable-text="week-topic"
+                data-text-id="week-${week.weekNumber}"
+                title="Double-click to edit">${topic}</h4>
+            ${buildWeekTeamHtml(week)}
+            ${buildWeekTracksHtml(week, true)}
+            ${buildWeekDeliverablesHtml(week)}
+            <button type="button" class="week-detail-expand-btn" data-week="${week.weekNumber}">
+                View full details
+            </button>
+        </article>
+    `;
+}
+
 function getPhaseClass(phase) {
     const phaseMap = {
         'Land & Launch': 'Pipeline',
@@ -192,13 +315,7 @@ function renderTimeline() {
     container.innerHTML = executionPlan.weeks.map(week => {
         const isCurrentWeek = week.weekNumber === currentWeek;
         const phaseClass = getPhaseClass(week.phase);
-        
-        // Load custom values if they exist
-        const customActivity = state.customTags?.activity?.[`week-${week.weekNumber}`];
-        const activity = customActivity || 'Plan';
-        
-        const customTopic = state.customWeekData?.['week-topic']?.[`week-${week.weekNumber}`];
-        const topic = customTopic || week.topic;
+        const topic = getWeekTopic(week);
         
         return `
             <div class="week-card ${isCurrentWeek ? 'current-week' : ''}" data-week="${week.weekNumber}">
@@ -212,15 +329,10 @@ function renderTimeline() {
                          data-text-id="week-${week.weekNumber}"
                          title="Double-click to edit">${topic}</div>
                     <div class="week-meta">
-                        <span class="badge badge-${activity.toLowerCase()}" 
-                              data-editable-tag="activity" 
-                              data-tag-id="week-${week.weekNumber}"
-                              title="Click to change activity status">${activity}</span>
-                        <span class="badge" style="background: var(--phase-${week.month.toLowerCase()}); color: white;">${week.month}</span>
+                        ${buildWeekMetaTags(week)}
                     </div>
-                    <div class="week-hours">
-                        Adama: ${week.hours.adama}h | Jordan: ${week.hours.jordan}h
-                    </div>
+                    ${buildWeekTeamHtml(week)}
+                    ${buildWeekActivityPreview(week)}
                 </div>
             </div>
         `;
@@ -235,6 +347,45 @@ function renderTimeline() {
     });
 }
 
+function renderWeekActivities() {
+    const container = document.getElementById('week-activities-container');
+    if (!container) return;
+
+    const currentWeek = getCurrentWeek();
+    container.innerHTML = executionPlan.weeks
+        .map(week => buildWeekDetailCard(week, currentWeek))
+        .join('');
+
+    container.querySelectorAll('.week-detail-expand-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showWeekModal(parseInt(btn.dataset.week, 10));
+        });
+    });
+}
+
+function setupWeekActivityFilters() {
+    const filterBtns = document.querySelectorAll('[data-week-filter]');
+    if (!filterBtns.length) return;
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.dataset.weekFilter;
+            document.querySelectorAll('.week-detail-card').forEach(card => {
+                if (filter === 'all') {
+                    card.style.display = '';
+                    return;
+                }
+                const status = card.dataset.status || '';
+                card.style.display = status === filter ? '' : 'none';
+            });
+        });
+    });
+}
+
 function showWeekModal(weekNumber) {
     const week = executionPlan.weeks.find(w => w.weekNumber === weekNumber);
     if (!week) return;
@@ -243,68 +394,49 @@ function showWeekModal(weekNumber) {
     const modalTitle = document.getElementById('modal-title');
     const modalBody = document.getElementById('modal-body');
     
-    // Load custom values
-    const customTopic = state.customWeekData?.['week-topic']?.[`week-${weekNumber}`] || week.topic;
-    const customActivity = state.customTags?.activity?.[`week-${weekNumber}`] || 'Plan';
-    const customTechnical = state.customWeekData?.['technical-track']?.[`week-${weekNumber}`] || week.technicalTrack;
-    const customRelationship = state.customWeekData?.['relationship-track']?.[`week-${weekNumber}`] || week.relationshipTrack;
-    const customJordan = state.customWeekData?.['jordan-track']?.[`week-${weekNumber}`] || week.jordanTrack;
+    const customTopic = getWeekTopic(week);
+    const status = getWeekStatus(weekNumber);
     
     modalTitle.textContent = `Week ${week.weekNumber}: ${customTopic}`;
     
     modalBody.innerHTML = `
         <div class="week-details">
             <div class="detail-section">
-                <div class="detail-title">📅 Dates</div>
+                <div class="detail-title">Dates</div>
                 <div class="detail-text">${week.dates}</div>
             </div>
+
+            <div class="detail-section">
+                <div class="detail-title">Tags</div>
+                <div class="week-meta week-meta--detail">
+                    ${buildWeekMetaTags(week)}
+                </div>
+            </div>
             
             <div class="detail-section">
-                <div class="detail-title">🎯 Activity Status</div>
-                <span class="badge badge-${customActivity.toLowerCase()}"
+                <div class="detail-title">Status</div>
+                <span class="badge ${getStatusBadgeClass(status)}"
                       data-editable-tag="activity" 
                       data-tag-id="week-${weekNumber}"
-                      title="Click to change activity status">${customActivity}</span>
+                      title="Click to change status">${status}</span>
+            </div>
+
+            <div class="detail-section">
+                <div class="detail-title">Team</div>
+                ${buildWeekTeamHtml(week)}
             </div>
             
-            <div class="detail-section">
-                <div class="detail-title">⏱️ Estimated Hours</div>
-                <div class="detail-text">Adama: ${week.hours.adama} hours | Jordan: ${week.hours.jordan} hours</div>
-            </div>
+            ${buildWeekTracksHtml(week, true)}
             
             <div class="detail-section">
-                <div class="detail-title">🔧 Technical Track</div>
-                <div class="detail-text" 
-                     data-editable-text="technical-track" 
-                     data-text-id="week-${weekNumber}"
-                     title="Double-click to edit">${customTechnical}</div>
-            </div>
-            
-            <div class="detail-section">
-                <div class="detail-title">🤝 Relationship Track</div>
-                <div class="detail-text" 
-                     data-editable-text="relationship-track" 
-                     data-text-id="week-${weekNumber}"
-                     title="Double-click to edit">${customRelationship}</div>
-            </div>
-            
-            <div class="detail-section">
-                <div class="detail-title">👨‍💼 Jordan Track</div>
-                <div class="detail-text" 
-                     data-editable-text="jordan-track" 
-                     data-text-id="week-${weekNumber}"
-                     title="Double-click to edit">${customJordan}</div>
-            </div>
-            
-            <div class="detail-section">
-                <div class="detail-title">📦 Deliverables</div>
+                <div class="detail-title">Deliverables</div>
                 <ul class="deliverable-list">
                     ${week.deliverables.map(d => `<li class="deliverable-item">${d}</li>`).join('')}
                 </ul>
             </div>
             
             <div class="detail-section">
-                <div class="detail-title">✓ Success Metrics</div>
+                <div class="detail-title">Success Metrics</div>
                 <ul class="metric-list">
                     ${week.successMetrics.map(m => `<li class="metric-item">${m}</li>`).join('')}
                 </ul>
@@ -356,35 +488,28 @@ function renderMonthContent(month) {
         </div>
         
         <div class="month-weeks">
-            ${monthWeeks.map(week => `
+            ${monthWeeks.map(week => {
+                const topic = getWeekTopic(week);
+                return `
                 <div class="week-accordion">
                     <div class="week-accordion-header">
-                        <div>
-                            <div class="week-accordion-title">Week ${week.weekNumber}: ${week.topic}</div>
-                            <div style="font-size: 14px; color: #6B7280; margin-top: 4px;">${week.dates}</div>
+                        <div class="week-accordion-summary">
+                            <div class="week-accordion-title-row">
+                                <span class="week-number-badge">Week ${week.weekNumber}</span>
+                                <span class="week-accordion-title">${topic}</span>
+                            </div>
+                            <div class="week-accordion-dates">${week.dates}</div>
+                            <div class="week-meta week-meta--compact">
+                                ${buildWeekMetaTags(week, { showMonth: false })}
+                            </div>
+                            ${buildWeekTeamHtml(week)}
                         </div>
                         <div class="week-accordion-icon">▼</div>
                     </div>
                     <div class="week-accordion-content">
                         <div class="week-details">
-                            <div class="detail-section">
-                                <div class="detail-title">Technical Track</div>
-                                <div class="detail-text">${week.technicalTrack}</div>
-                            </div>
-                            <div class="detail-section">
-                                <div class="detail-title">Relationship Track</div>
-                                <div class="detail-text">${week.relationshipTrack}</div>
-                            </div>
-                            <div class="detail-section">
-                                <div class="detail-title">Jordan Track</div>
-                                <div class="detail-text">${week.jordanTrack}</div>
-                            </div>
-                            <div class="detail-section">
-                                <div class="detail-title">Deliverables</div>
-                                <ul class="deliverable-list">
-                                    ${week.deliverables.map(d => `<li class="deliverable-item">${d}</li>`).join('')}
-                                </ul>
-                            </div>
+                            ${buildWeekTracksHtml(week)}
+                            ${buildWeekDeliverablesHtml(week)}
                             <div class="detail-section">
                                 <div class="detail-title">Success Metrics</div>
                                 <ul class="metric-list">
@@ -394,7 +519,7 @@ function renderMonthContent(month) {
                         </div>
                     </div>
                 </div>
-            `).join('')}
+            `}).join('')}
         </div>
     `;
     
@@ -785,16 +910,7 @@ function setupNavigation() {
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
     
-    // Mobile menu toggle
-    if (navToggle) {
-        navToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-            navToggle.setAttribute('aria-expanded', !isExpanded);
-        });
-    }
-    
-    // Smooth scroll
+    // Smooth scroll (mobile toggle handled by motion.js)
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -890,10 +1006,20 @@ function init() {
     if (typeof initTextEditing === 'function') {
         initTextEditing();
     }
+
+    document.addEventListener('weekStatusChanged', (e) => {
+        const weekNum = e.detail.tagId.replace('week-', '');
+        const card = document.querySelector(`.week-detail-card[data-week="${weekNum}"]`);
+        if (card) {
+            card.dataset.status = e.detail.newValue.toLowerCase();
+        }
+    });
     
     // Render all sections
     updateOverview();
     renderTimeline();
+    renderWeekActivities();
+    setupWeekActivityFilters();
     setupMonthTabs();
     renderRelationships();
     setupRelationshipSearch();

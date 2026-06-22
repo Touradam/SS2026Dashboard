@@ -54,6 +54,12 @@ function handleTagClick(e) {
     if (!state.customTags[tagType]) state.customTags[tagType] = {};
     state.customTags[tagType][tagId] = newValue;
     saveState();
+
+    if (tagType === 'activity') {
+        document.dispatchEvent(new CustomEvent('weekStatusChanged', {
+            detail: { tagId, newValue }
+        }));
+    }
     
     // Visual feedback
     badge.style.transform = 'scale(1.1)';
