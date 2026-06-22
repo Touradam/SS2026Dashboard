@@ -36,17 +36,18 @@
 
     <main class="main">
         <!-- Hero Section - Minimal & Elegant -->
-        <section class="hero-section">
-            <!-- Floating Logo -->
+        <section class="hero-section" data-spotlight>
+            <div class="hero-spotlight" aria-hidden="true"></div>
+            <div class="hero-particles" data-particles aria-hidden="true"></div>
             <img src="assets/logo.png" alt="Solar Sense Pro" class="floating-logo">
             
             <div class="container">
                 <div class="hero-content-centered">
-                    <span class="hero-eyebrow">Solar Sense Pro</span>
-                    <h1 class="hero-title">China Market Entry</h1>
-                    <p class="hero-mission">Establish Solar Sense Pro in China's research and academic solar market through Plug and Play's Nantong Cross-Border Acceleration Camp</p>
+                    <span class="hero-eyebrow" data-reveal>Solar Sense Pro</span>
+                    <h1 class="hero-title" data-reveal>China Market Entry</h1>
+                    <p class="hero-mission" data-reveal>Establish Solar Sense Pro in China's research and academic solar market through Plug and Play's Nantong Cross-Border Acceleration Camp</p>
                     
-                    <p class="hero-countdown-text" id="countdown-text">Launch in <span id="countdown-simple">—</span></p>
+                    <p class="hero-countdown-text" id="countdown-text" data-reveal>Launch in <span id="countdown-simple">—</span></p>
                 </div>
             </div>
         </section>
@@ -54,11 +55,36 @@
         <!-- Execution Roadmap - At-a-Glance -->
         <section class="roadmap-overview-section">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header" data-reveal>
                     <h2 class="section-title">6-Phase Execution Roadmap</h2>
                 </div>
 
-                <div class="roadmap-timeline" id="roadmap-timeline">
+                <div class="phase-countdown" id="phase-countdown" data-reveal aria-live="polite">
+                    <div class="phase-countdown-inner">
+                        <span class="phase-countdown-eyebrow">Next deadline</span>
+                        <div class="phase-countdown-body">
+                            <div class="phase-countdown-phase">
+                                <span class="phase-countdown-tag" id="pc-tag">—</span>
+                                <span class="phase-countdown-title" id="pc-title">—</span>
+                                <span class="phase-countdown-month" id="pc-month">—</span>
+                            </div>
+                            <div class="phase-countdown-timer" id="pc-timer" aria-label="Time remaining">
+                                <span class="countdown-segment">
+                                    <span class="countdown-value" id="pc-days">—</span><span class="countdown-suffix">d</span>
+                                </span>
+                                <span class="countdown-segment">
+                                    <span class="countdown-value" id="pc-hours">—</span><span class="countdown-suffix">h</span>
+                                </span>
+                                <span class="countdown-segment">
+                                    <span class="countdown-value" id="pc-minutes">—</span><span class="countdown-suffix">m</span>
+                                </span>
+                            </div>
+                        </div>
+                        <span class="phase-countdown-due" id="pc-due">—</span>
+                    </div>
+                </div>
+
+                <div class="flip-cards-grid roadmap-timeline" id="roadmap-timeline" data-reveal-group>
                     <!-- Phases will be dynamically generated here -->
                 </div>
             </div>
@@ -67,7 +93,7 @@
         <!-- Bottom CTA -->
         <section class="bottom-cta-section">
             <div class="container">
-                <div class="bottom-cta-content">
+                <div class="bottom-cta-content" data-reveal>
                     <a href="execution.html" class="btn btn-primary btn-lg">View Execution Dashboard</a>
                 </div>
             </div>
@@ -88,6 +114,7 @@
 
     <!-- Scripts -->
     <script src="data.js"></script>
+    <script src="motion.js"></script>
     <script src="roadmap.js"></script>
 </body>
 </html>

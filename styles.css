@@ -834,6 +834,135 @@ a:hover {
     transform: translateY(-1px);
 }
 
+.week-progress {
+    margin: var(--space-md) 0;
+}
+
+.week-progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xs);
+}
+
+.week-progress-label {
+    font-family: var(--font-display);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.week-progress-stats {
+    font-family: var(--font-display);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    color: var(--gold);
+}
+
+.week-progress-bar {
+    height: 10px;
+    margin-bottom: 0;
+}
+
+.week-progress--compact .week-progress-bar {
+    height: 6px;
+}
+
+.week-progress--compact {
+    margin: var(--space-sm) 0 0;
+}
+
+.week-todo-section {
+    margin-top: var(--space-md);
+}
+
+.week-todo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+}
+
+.week-todo-count {
+    font-family: var(--font-display);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    color: var(--gold);
+}
+
+.week-todo-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.week-todo-item {
+    padding: var(--space-sm) var(--space-md);
+    background: var(--ink-raised);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--text-dim);
+    transition: border-color var(--duration-fast) var(--ease),
+        background var(--duration-fast) var(--ease);
+}
+
+.week-todo-item.completed {
+    border-left-color: var(--status-resource);
+    background: var(--status-resource-bg);
+    border-color: var(--status-resource-border);
+}
+
+.week-todo-item-header {
+    display: flex;
+    align-items: start;
+    gap: var(--space-sm);
+}
+
+.week-todo-label {
+    flex: 1;
+    font-size: var(--font-size-sm);
+    color: var(--text);
+    cursor: pointer;
+    line-height: 1.5;
+}
+
+.week-todo-item.completed .week-todo-label {
+    color: var(--text-muted);
+    text-decoration: line-through;
+}
+
+.week-activities-preview-wrap {
+    margin-top: var(--space-sm);
+}
+
+.week-preview-progress {
+    display: block;
+    font-family: var(--font-display);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: var(--space-xs);
+}
+
+.week-preview-complete {
+    margin-top: var(--space-sm);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    color: var(--status-resource);
+}
+
+.week-detail-card.week-complete,
+.week-card.week-complete {
+    border-color: var(--status-resource-border);
+}
+
 .execution-page .week-header {
     color: var(--ink);
 }

@@ -62,9 +62,35 @@
                     <span class="hero-eyebrow" data-reveal>Internal Strategy Memo</span>
                     <h1 class="hero-title execution-hero-title" data-reveal>China Launch Execution Plan</h1>
                     <p class="hero-mission" data-reveal>Plug and Play Cross-Border Acceleration Camp - Nantong Summer Cohort</p>
-                    <div class="timeline-badge" data-reveal>
-                        <span class="timeline-dates">July 2026 - December 2026</span>
-                        <span class="timeline-duration">24 Weeks | 6 Months</span>
+                    <div class="timeline-badge timeline-badge--compact" data-reveal>
+                        <span class="timeline-dates">July 2026 – December 2026</span>
+                        <span class="timeline-separator">·</span>
+                        <span class="timeline-duration">24 weeks · 6 phases</span>
+                    </div>
+                </div>
+
+                <div class="phase-countdown phase-countdown--execution" id="phase-countdown" data-reveal aria-live="polite">
+                    <div class="phase-countdown-inner">
+                        <span class="phase-countdown-eyebrow">Next deadline</span>
+                        <div class="phase-countdown-body">
+                            <div class="phase-countdown-phase">
+                                <span class="phase-countdown-tag" id="pc-tag">—</span>
+                                <span class="phase-countdown-title" id="pc-title">—</span>
+                                <span class="phase-countdown-month" id="pc-month">—</span>
+                            </div>
+                            <div class="phase-countdown-timer" id="pc-timer" aria-label="Time remaining">
+                                <span class="countdown-segment">
+                                    <span class="countdown-value" id="pc-days">—</span><span class="countdown-suffix">d</span>
+                                </span>
+                                <span class="countdown-segment">
+                                    <span class="countdown-value" id="pc-hours">—</span><span class="countdown-suffix">h</span>
+                                </span>
+                                <span class="countdown-segment">
+                                    <span class="countdown-value" id="pc-minutes">—</span><span class="countdown-suffix">m</span>
+                                </span>
+                            </div>
+                        </div>
+                        <span class="phase-countdown-due" id="pc-due">—</span>
                     </div>
                 </div>
 
@@ -119,11 +145,13 @@
         <!-- Timeline Visualization Section -->
         <section id="timeline" class="section timeline-section">
             <div class="container">
-                <span class="section-eyebrow">Execution Roadmap</span>
-                <h2 class="section-title">24-Week Timeline</h2>
-                <p class="section-description">Interactive weekly timeline — each card shows dates, phase, priority, status, team hours, and activity preview</p>
+                <div class="section-intro" data-reveal>
+                    <span class="section-eyebrow">Execution Roadmap</span>
+                    <h2 class="section-title">24-Week Timeline</h2>
+                    <p class="section-description">Interactive weekly timeline with phase-based color coding</p>
+                </div>
                 
-                <div class="phase-legend">
+                <div class="phase-legend" data-reveal>
                     <div class="legend-item"><span class="legend-color phase-july"></span>Land & Launch</div>
                     <div class="legend-item"><span class="legend-color phase-august"></span>Market Entry</div>
                     <div class="legend-item"><span class="legend-color phase-september"></span>Manufacturing Kickoff</div>
@@ -132,7 +160,7 @@
                     <div class="legend-item"><span class="legend-color phase-december"></span>Scale, Showcase & Graduation</div>
                 </div>
 
-                <div id="timeline-container" class="timeline-container">
+                <div id="timeline-container" class="timeline-container" data-reveal-group>
                     <!-- Timeline weeks will be dynamically generated here -->
                 </div>
             </div>
@@ -141,18 +169,20 @@
         <!-- Week Activities Section -->
         <section id="week-activities" class="section week-activities-section">
             <div class="container">
-                <span class="section-eyebrow">Weekly Execution</span>
-                <h2 class="section-title">All Week Activities</h2>
-                <p class="section-description">Complete 24-week activity log with tags, dates, status, team assignments, and track details</p>
+                <div class="section-intro" data-reveal>
+                    <span class="section-eyebrow">Weekly Execution</span>
+                    <h2 class="section-title">All Week Activities</h2>
+                    <p class="section-description">Complete activity log with tracks, deliverables, and team assignments</p>
+                </div>
 
-                <div class="week-activities-filters">
+                <div class="week-activities-filters" data-reveal>
                     <button class="filter-btn active" data-week-filter="all">All Weeks</button>
                     <button class="filter-btn" data-week-filter="plan">Plan</button>
                     <button class="filter-btn" data-week-filter="execution">Execution</button>
                     <button class="filter-btn" data-week-filter="archived">Archived</button>
                 </div>
 
-                <div id="week-activities-container" class="weeks-container">
+                <div id="week-activities-container" class="week-activities-grid" data-reveal-group>
                     <!-- All week activity cards rendered dynamically -->
                 </div>
             </div>
@@ -161,9 +191,11 @@
         <!-- Monthly Objectives Section -->
         <section id="monthly" class="section monthly-section">
             <div class="container">
-                <span class="section-eyebrow">Strategic Planning</span>
-                <h2 class="section-title">Monthly Objectives</h2>
-                <p class="section-description">Detailed monthly goals and weekly breakdowns</p>
+                <div class="section-intro" data-reveal>
+                    <span class="section-eyebrow">Strategic Planning</span>
+                    <h2 class="section-title">Monthly Objectives</h2>
+                    <p class="section-description">Detailed monthly goals and weekly breakdowns</p>
+                </div>
 
                 <div class="month-tabs">
                     <button class="month-tab active" data-month="July">July</button>
@@ -183,9 +215,11 @@
         <!-- Relationship Matrix Section -->
         <section id="relationships" class="section relationships-section">
             <div class="container">
-                <span class="section-eyebrow">Network Building</span>
-                <h2 class="section-title">Relationship Matrix</h2>
-                <p class="section-description">Key contacts and strategic partnerships</p>
+                <div class="section-intro" data-reveal>
+                    <span class="section-eyebrow">Network Building</span>
+                    <h2 class="section-title">Relationship Matrix</h2>
+                    <p class="section-description">Key contacts and strategic partnerships</p>
+                </div>
 
                 <div class="search-bar">
                     <input type="text" id="relationship-search" class="search-input" placeholder="Search relationships...">
@@ -219,11 +253,13 @@
         <!-- Launch Readiness Checklist Section -->
         <section id="checklist" class="section checklist-section">
             <div class="container">
-                <span class="section-eyebrow">Operational Metrics</span>
-                <h2 class="section-title">Launch Readiness Checklist</h2>
-                <p class="section-description">14 critical items to achieve 100% launch readiness by December 31, 2026</p>
+                <div class="section-intro" data-reveal>
+                    <span class="section-eyebrow">Operational Metrics</span>
+                    <h2 class="section-title">Launch Readiness Checklist</h2>
+                    <p class="section-description">14 critical items to achieve 100% launch readiness by December 31, 2026</p>
+                </div>
 
-                <div class="overall-progress">
+                <div class="overall-progress" data-reveal>
                     <div class="progress-header">
                         <span class="progress-label">Overall Completion</span>
                         <span class="progress-percentage" id="checklist-overall-percent">0%</span>
@@ -291,12 +327,14 @@
         <!-- Quarterly Milestones Section -->
         <section id="milestones" class="section milestones-section">
             <div class="container">
-                <span class="section-eyebrow">Key Deliverables</span>
-                <h2 class="section-title">Quarterly Milestones</h2>
-                <p class="section-description">Critical checkpoints for Q3 and Q4 2026</p>
+                <div class="section-intro" data-reveal>
+                    <span class="section-eyebrow">Key Deliverables</span>
+                    <h2 class="section-title">Quarterly Milestones</h2>
+                    <p class="section-description">Critical checkpoints for Q3 and Q4 2026</p>
+                </div>
 
-                <div class="milestones-grid">
-                    <div class="milestone-card">
+                <div class="milestones-grid" data-reveal-group>
+                    <div class="milestone-card" data-reveal>
                         <div class="milestone-header">
                             <h3 class="milestone-title">Q3 2026</h3>
                             <span class="milestone-date">September 30, 2026</span>
@@ -314,7 +352,7 @@
                         </div>
                     </div>
 
-                    <div class="milestone-card">
+                    <div class="milestone-card" data-reveal>
                         <div class="milestone-header">
                             <h3 class="milestone-title">Q4 2026</h3>
                             <span class="milestone-date">December 31, 2026</span>
@@ -338,11 +376,13 @@
         <!-- Key Dates Calendar Section -->
         <section id="dates" class="section dates-section">
             <div class="container">
-                <span class="section-eyebrow">Timeline Events</span>
-                <h2 class="section-title">Key Dates Calendar</h2>
-                <p class="section-description">Critical events from July to December 2026</p>
+                <div class="section-intro" data-reveal>
+                    <span class="section-eyebrow">Timeline Events</span>
+                    <h2 class="section-title">Key Dates Calendar</h2>
+                    <p class="section-description">Critical events from July to December 2026</p>
+                </div>
 
-                <div class="countdown-banner" id="next-event-banner">
+                <div class="countdown-banner" id="next-event-banner" data-reveal>
                     <span class="countdown-label">Next Event:</span>
                     <span class="countdown-event" id="next-event-name">—</span>
                     <span class="countdown-time" id="next-event-countdown">—</span>
@@ -368,9 +408,11 @@
         <!-- Glossary & Quick Reference Section -->
         <section id="glossary" class="section glossary-section">
             <div class="container">
-                <span class="section-eyebrow">Reference Materials</span>
-                <h2 class="section-title">Glossary & Quick Reference</h2>
-                <p class="section-description">Acronyms and key contacts</p>
+                <div class="section-intro" data-reveal>
+                    <span class="section-eyebrow">Reference Materials</span>
+                    <h2 class="section-title">Glossary & Quick Reference</h2>
+                    <p class="section-description">Acronyms and key contacts</p>
+                </div>
 
                 <div class="glossary-grid">
                     <div class="glossary-panel">

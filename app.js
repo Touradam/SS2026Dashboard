@@ -7,6 +7,7 @@
 
 const state = {
     checklistProgress: {},
+    weekTaskProgress: {},
     weekCompletions: {},
     milestoneProgress: { q3: {}, q4: {} },
     currentMonth: 'July',
@@ -29,6 +30,7 @@ function loadState() {
             const parsed = JSON.parse(saved);
             Object.assign(state, parsed);
         }
+        if (!state.weekTaskProgress) state.weekTaskProgress = {};
     } catch (error) {
         console.error('Error loading state:', error);
     }
@@ -216,24 +218,166 @@ function buildWeekTeamHtml(week) {
     `;
 }
 
+function getWeekTaskId(weekNumber, type, index) {
+    return `week-${weekNumber}-${type}-${index}`;
+}
+
+function isWeekTaskComplete(taskId) {
+    return Boolean(state.weekTaskProgress[taskId]);
+}
+
+function calculateWeekProgress(weekNumber) {
+    const week = executionPlan.weeks.find(w => w.weekNumber === weekNumber);
+    if (!week) return { completed: 0, total: 0, percentage: 0 };
+
+    const activityCount = week.keyActivities?.length || 0;
+    const deliverableCount = week.deliverables?.length || 0;
+    const total = activityCount + deliverableCount;
+    let completed = 0;
+
+    (week.keyActivities || []).forEach((_, index) => {
+        if (isWeekTaskComplete(getWeekTaskId(weekNumber, 'activity', index))) completed++;
+    });
+    (week.deliverables || []).forEach((_, index) => {
+        if (isWeekTaskComplete(getWeekTaskId(weekNumber, 'deliverable', index))) completed++;
+    });
+
+    return {
+        completed,
+        total,
+        percentage: total === 0 ? 0 : Math.round((completed / total) * 100)
+    };
+}
+
+function buildWeekProgressBarHtml(weekNumber, compact = false) {
+    const { completed, total, percentage } = calculateWeekProgress(weekNumber);
+    return `
+        <div class="week-progress ${compact ? 'week-progress--compact' : ''}" data-week-progress="${weekNumber}">
+            <div class="week-progress-header">
+                <span class="week-progress-label">Week Progress</span>
+                <span class="week-progress-stats">${completed}/${total} · ${percentage}%</span>
+            </div>
+            <div class="progress-bar week-progress-bar">
+                <div class="progress-fill week-progress-fill" style="width: ${percentage}%"></div>
+            </div>
+        </div>
+    `;
+}
+
+function buildWeekTodoListHtml(week, items, type, label) {
+    if (!items?.length) return '';
+
+    let completedInSection = 0;
+    const listItems = items.map((text, index) => {
+        const taskId = getWeekTaskId(week.weekNumber, type, index);
+        const isChecked = isWeekTaskComplete(taskId);
+        if (isChecked) completedInSection++;
+
+        return `
+            <li class="week-todo-item ${isChecked ? 'completed' : ''}">
+                <div class="week-todo-item-header">
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox"
+                               class="checkbox week-task-checkbox"
+                               id="${taskId}"
+                               data-task-id="${taskId}"
+                               data-week="${week.weekNumber}"
+                               ${isChecked ? 'checked' : ''}>
+                    </div>
+                    <label for="${taskId}" class="week-todo-label">${text}</label>
+                </div>
+            </li>
+        `;
+    }).join('');
+
+    return `
+        <div class="week-todo-section" data-week="${week.weekNumber}" data-todo-type="${type}">
+            <div class="week-todo-header">
+                <span class="track-label">${label}</span>
+                <span class="week-todo-count" data-week-section="${week.weekNumber}" data-section-type="${type}">
+                    ${completedInSection}/${items.length}
+                </span>
+            </div>
+            <ul class="week-todo-list">
+                ${listItems}
+            </ul>
+        </div>
+    `;
+}
+
+function buildWeekKeyActivitiesHtml(week) {
+    return buildWeekTodoListHtml(week, week.keyActivities, 'activity', 'Key Activities');
+}
+
+function buildWeekDeliverablesHtml(week) {
+    return buildWeekTodoListHtml(week, week.deliverables, 'deliverable', 'Deliverables');
+}
+
+function updateWeekProgressUI(weekNumber) {
+    const { completed, total, percentage } = calculateWeekProgress(weekNumber);
+
+    document.querySelectorAll(`[data-week-progress="${weekNumber}"]`).forEach(el => {
+        const stats = el.querySelector('.week-progress-stats');
+        const fill = el.querySelector('.week-progress-fill');
+        if (stats) stats.textContent = `${completed}/${total} · ${percentage}%`;
+        if (fill) fill.style.width = `${percentage}%`;
+    });
+
+    const week = executionPlan.weeks.find(w => w.weekNumber === weekNumber);
+    if (!week) return;
+
+    ['activity', 'deliverable'].forEach(type => {
+        const items = type === 'activity' ? week.keyActivities : week.deliverables;
+        if (!items?.length) return;
+
+        let sectionCompleted = 0;
+        items.forEach((_, index) => {
+            if (isWeekTaskComplete(getWeekTaskId(weekNumber, type, index))) sectionCompleted++;
+        });
+
+        document.querySelectorAll(`[data-week-section="${weekNumber}"][data-section-type="${type}"]`).forEach(el => {
+            el.textContent = `${sectionCompleted}/${items.length}`;
+        });
+    });
+
+    document.querySelectorAll(`.week-detail-card[data-week="${weekNumber}"], .week-card[data-week="${weekNumber}"]`).forEach(card => {
+        card.classList.toggle('week-complete', percentage === 100 && total > 0);
+    });
+}
+
+function setupWeekTaskHandlers() {
+    document.body.addEventListener('change', (e) => {
+        const checkbox = e.target.closest('.week-task-checkbox');
+        if (!checkbox) return;
+
+        e.stopPropagation();
+
+        const taskId = checkbox.dataset.taskId;
+        const weekNumber = parseInt(checkbox.dataset.week, 10);
+        state.weekTaskProgress[taskId] = checkbox.checked;
+        saveState();
+
+        const item = checkbox.closest('.week-todo-item');
+        if (item) {
+            item.classList.toggle('completed', checkbox.checked);
+        }
+
+        updateWeekProgressUI(weekNumber);
+    });
+
+    document.body.addEventListener('click', (e) => {
+        if (e.target.closest('.week-task-checkbox, .week-todo-label, .week-todo-item')) {
+            e.stopPropagation();
+        }
+    });
+}
+
 function buildWeekObjectiveHtml(week) {
     if (!week.objective) return '';
     return `
         <div class="week-objective">
             <span class="track-label">Objective</span>
             <p class="track-content">${week.objective}</p>
-        </div>
-    `;
-}
-
-function buildWeekKeyActivitiesHtml(week) {
-    if (!week.keyActivities?.length) return '';
-    return `
-        <div class="week-key-activities">
-            <span class="track-label">Key Activities</span>
-            <ul class="deliverables-list">
-                ${week.keyActivities.map(a => `<li>${a}</li>`).join('')}
-            </ul>
         </div>
     `;
 }
@@ -287,25 +431,36 @@ function buildWeekTracksHtml(week, editable = false) {
     `;
 }
 
-function buildWeekDeliverablesHtml(week) {
-    if (!week.deliverables?.length) return '';
-    return `
-        <div class="week-deliverables">
-            <div class="deliverables-title">Deliverables</div>
-            <ul class="deliverables-list">
-                ${week.deliverables.map(d => `<li>${d}</li>`).join('')}
-            </ul>
-        </div>
-    `;
-}
-
 function buildWeekActivityPreview(week) {
-    const preview = week.keyActivities?.slice(0, 2) || week.deliverables?.slice(0, 2) || [];
-    if (!preview.length) return '';
+    const { completed, total, percentage } = calculateWeekProgress(week.weekNumber);
+    if (total === 0) return '';
+
+    const incomplete = [];
+    (week.keyActivities || []).forEach((text, index) => {
+        if (!isWeekTaskComplete(getWeekTaskId(week.weekNumber, 'activity', index))) {
+            incomplete.push(text);
+        }
+    });
+    (week.deliverables || []).forEach((text, index) => {
+        if (!isWeekTaskComplete(getWeekTaskId(week.weekNumber, 'deliverable', index))) {
+            incomplete.push(text);
+        }
+    });
+
+    const preview = incomplete.slice(0, 2);
+    if (!preview.length && percentage === 100) {
+        return `<p class="week-preview-complete">All tasks complete</p>`;
+    }
+
     return `
-        <ul class="week-activities-preview">
-            ${preview.map(item => `<li>${item}</li>`).join('')}
-        </ul>
+        <div class="week-activities-preview-wrap">
+            <span class="week-preview-progress">${completed}/${total} done</span>
+            ${preview.length ? `
+                <ul class="week-activities-preview">
+                    ${preview.map(item => `<li>${item}</li>`).join('')}
+                </ul>
+            ` : ''}
+        </div>
     `;
 }
 
@@ -313,9 +468,11 @@ function buildWeekDetailCard(week, currentWeek) {
     const isCurrentWeek = week.weekNumber === currentWeek;
     const topic = getWeekTopic(week);
     const status = getWeekStatus(week.weekNumber);
+    const progress = calculateWeekProgress(week.weekNumber);
+    const isComplete = progress.percentage === 100 && progress.total > 0;
 
     return `
-        <article class="week-detail-card ${isCurrentWeek ? 'current-week' : ''}"
+        <article class="week-detail-card ${isCurrentWeek ? 'current-week' : ''} ${isComplete ? 'week-complete' : ''}"
                  data-reveal
                  data-week="${week.weekNumber}"
                  data-status="${status.toLowerCase()}"
@@ -334,6 +491,7 @@ function buildWeekDetailCard(week, currentWeek) {
                 data-text-id="week-${week.weekNumber}"
                 title="Double-click to edit">${topic}</h4>
             ${buildWeekTeamHtml(week)}
+            ${buildWeekProgressBarHtml(week.weekNumber)}
             ${buildWeekObjectiveHtml(week)}
             ${buildWeekKeyActivitiesHtml(week)}
             ${buildWeekResourcesHtml(week)}
@@ -366,9 +524,11 @@ function renderTimeline() {
         const isCurrentWeek = week.weekNumber === currentWeek;
         const phaseClass = getPhaseClass(week.phase);
         const topic = getWeekTopic(week);
+        const progress = calculateWeekProgress(week.weekNumber);
+        const isComplete = progress.percentage === 100 && progress.total > 0;
         
         return `
-            <div class="week-card ${isCurrentWeek ? 'current-week' : ''}" data-reveal data-week="${week.weekNumber}">
+            <div class="week-card ${isCurrentWeek ? 'current-week' : ''} ${isComplete ? 'week-complete' : ''}" data-reveal data-week="${week.weekNumber}">
                 <div class="week-header phase-${phaseClass}">
                     <div class="week-number">Week ${week.weekNumber}</div>
                     <div class="week-dates">${week.dates}</div>
@@ -382,6 +542,7 @@ function renderTimeline() {
                         ${buildWeekMetaTags(week)}
                     </div>
                     ${buildWeekTeamHtml(week)}
+                    ${buildWeekProgressBarHtml(week.weekNumber, true)}
                     ${buildWeekActivityPreview(week)}
                 </div>
             </div>
@@ -390,8 +551,9 @@ function renderTimeline() {
     
     // Add click handlers
     document.querySelectorAll('.week-card').forEach(card => {
-        card.addEventListener('click', () => {
-            const weekNum = parseInt(card.dataset.week);
+        card.addEventListener('click', (e) => {
+            if (e.target.closest('.week-task-checkbox, .week-todo-label, .week-todo-item, .week-todo-list')) return;
+            const weekNum = parseInt(card.dataset.week, 10);
             showWeekModal(weekNum);
         });
     });
@@ -451,6 +613,7 @@ function showWeekModal(weekNumber) {
     
     modalBody.innerHTML = `
         <div class="week-details">
+            ${buildWeekProgressBarHtml(weekNumber)}
             <div class="detail-section">
                 <div class="detail-title">Dates</div>
                 <div class="detail-text">${week.dates}</div>
@@ -479,14 +642,7 @@ function showWeekModal(weekNumber) {
             ${buildWeekObjectiveHtml(week)}
             ${buildWeekKeyActivitiesHtml(week)}
             ${buildWeekResourcesHtml(week)}
-            
-            <div class="detail-section">
-                <div class="detail-title">Deliverables</div>
-                <ul class="deliverable-list">
-                    ${week.deliverables.map(d => `<li class="deliverable-item">${d}</li>`).join('')}
-                </ul>
-            </div>
-            
+            ${buildWeekDeliverablesHtml(week)}
             ${buildWeekSuccessMetricsHtml(week)}
         </div>
     `;
@@ -550,6 +706,7 @@ function renderMonthContent(month) {
                                 ${buildWeekMetaTags(week, { showMonth: false })}
                             </div>
                             ${buildWeekTeamHtml(week)}
+                            ${buildWeekProgressBarHtml(week.weekNumber, true)}
                         </div>
                         <div class="week-accordion-icon">▼</div>
                     </div>
@@ -1064,6 +1221,7 @@ function init() {
     renderTimeline();
     renderWeekActivities();
     setupWeekActivityFilters();
+    setupWeekTaskHandlers();
     setupMonthTabs();
     renderRelationships();
     setupRelationshipSearch();
