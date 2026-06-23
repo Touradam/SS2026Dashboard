@@ -2622,7 +2622,25 @@ a:hover {
 .logo {
     display: flex;
     align-items: center;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
     gap: var(--space-3);
+    text-decoration: none;
+    color: inherit;
+    border-radius: var(--radius-sm);
+    transition: opacity var(--duration-fast) var(--ease);
+}
+
+.logo-link:hover .logo-title {
+    color: var(--gold-light);
+}
+
+.logo-link:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
 }
 
 .logo-image {
