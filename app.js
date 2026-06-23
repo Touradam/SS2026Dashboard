@@ -163,12 +163,6 @@ function updateOverview() {
     
     const completedItems = Object.values(state.checklistProgress).filter(Boolean).length;
     document.getElementById('checklist-progress').textContent = `${completedItems}/${getTotalChecklistItems()}`;
-    
-    // Calculate total hours
-    const totalHours = executionPlan.weeks.reduce((sum, week) => {
-        return sum + week.hours.adama + week.hours.jordan;
-    }, 0);
-    document.getElementById('total-hours').textContent = totalHours;
 }
 
 // ====================================
@@ -1107,9 +1101,9 @@ function setupNavigation() {
                 // Close mobile menu
                 if (navMenu) {
                     navMenu.classList.remove('active');
-                    if (navToggle) {
-                        navToggle.setAttribute('aria-expanded', 'false');
-                    }
+                    navToggle?.classList.remove('active');
+                    navToggle?.setAttribute('aria-expanded', 'false');
+                    document.body.classList.remove('nav-open');
                 }
             }
         });
